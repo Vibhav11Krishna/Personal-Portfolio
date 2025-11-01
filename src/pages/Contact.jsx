@@ -23,7 +23,8 @@ const Contact = () => {
   }, []);
 
   // Base API URL (from .env)
-  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+  const API_URL = "https://personal-portfolio-backend-il4k.onrender.com";
+
 
 
   // Handle input change
