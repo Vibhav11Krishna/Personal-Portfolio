@@ -45,8 +45,8 @@ const projects = [
       { icon: <FaReact />, color: "#61DBFB" },
       { icon: <FaJsSquare />, color: "#f7df1e" },
     ],
-    link: "#",
-    github: "https://github.com/yourusername/shreepati-educational",
+    link: "https://shreepati-educational-services-a35b.vercel.app/",
+    github: "https://github.com/Vibhav11Krishna/Shreepati-Educational-Services",
   },
   {
     id: 3,
