@@ -25,50 +25,60 @@ import coursesImg from "../assets/services.png";
 import contactImg from "../assets/partners.png";
 import founderImg from "../assets/founder.jpg";
 
-// Common styles
+// --- Styles ---
+const tableStyle = {
+  width: "100%",
+  borderCollapse: "collapse",
+  background: "#2b2b2b",
+  borderRadius: "10px",
+};
+const tableHeader = { padding: "0.8rem", textAlign: "left", fontWeight: "bold" };
+const tableCell = { padding: "0.8rem", borderBottom: "1px solid #333" };
 const linkStyle = {
   display: "inline-flex",
   alignItems: "center",
-  gap: "0.4rem",
-  padding: "0.5rem 1rem",
+  gap: "0.5rem",
+  padding: "0.6rem 1.2rem",
   background: "#FF3B3B",
   color: "#fff",
-  borderRadius: "6px",
+  borderRadius: "8px",
   fontWeight: "600",
   textDecoration: "none",
-  fontSize: "0.9rem",
   transition: "all 0.3s ease",
 };
 
+// --- Glow Function ---
 const handleGlow = (e, isHover) => {
   e.currentTarget.style.transform = isHover ? "scale(1.05)" : "scale(1)";
-  e.currentTarget.style.boxShadow = isHover ? "0 0 10px #FF3B3B" : "none";
+  e.currentTarget.style.boxShadow = isHover ? "0 0 15px #FF3B3B" : "none";
 };
 
-const SesWebsitePage = () => {
-  const projectOverview = [
-    { img: homepageImg, title: "Home Page", desc: "Landing section introducing the consultancy with services and mission." },
-    { img: aboutImg, title: "About Page", desc: "Explains the consultancy’s history, goals, and guidance philosophy." },
-    { img: coursesImg, title: "Services Page", desc: "Displays available educational and admission guidance services." },
-    { img: contactImg, title: "Partners Page", desc: "Collaboration of partners for upliftment of the company." },
-  ];
+// --- Project Overview Data ---
+const projectOverview = [
+  { img: homepageImg, title: "Home Page", desc: "Landing section introducing the consultancy with services and mission." },
+  { img: aboutImg, title: "About Page", desc: "Explains the consultancy’s history, goals, and guidance philosophy." },
+  { img: coursesImg, title: "Services Page", desc: "Displays available educational and admission guidance services." },
+  { img: contactImg, title: "Partners Page", desc: "Collaboration of partners for upliftement of the company." },
+];
 
+const SesWebsitePage = () => {
   return (
-    <section style={{ background: "#1E1E1E", color: "#E0E0E0", padding: "3rem 1.5rem" }}>
+    <section style={{ background: "#1E1E1E", color: "#E0E0E0", padding: "4rem 2rem" }}>
+      
       {/* Header */}
       <div style={{ textAlign: "center", marginBottom: "3rem" }}>
         <img
           src={websiteImg}
           alt="Shreepati Educational Services"
           style={{
-            width: "280px",
-            height: "auto",
-            objectFit: "contain",
+            width: "310px",
+            height: "190px",
+            objectFit: "cover",
             borderRadius: "12px",
             marginBottom: "1rem",
           }}
         />
-        <h1 style={{ color: "#FF3B3B", fontSize: "2rem", marginBottom: "1rem" }}>
+        <h1 style={{ color: "#FF3B3B", fontSize: "2.5rem", marginBottom: "1rem" }}>
           Shreepati Educational Services Website
         </h1>
         <p style={{ fontSize: "1rem", color: "#ccc", maxWidth: "800px", margin: "0 auto" }}>
@@ -78,14 +88,27 @@ const SesWebsitePage = () => {
         </p>
       </div>
 
+      {/* Project Overview */}
+      <div style={{ maxWidth: "900px", margin: "0 auto 3rem" }}>
+        <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Project Overview</h2>
+        <p style={{ lineHeight: "1.8", marginBottom: "1rem" }}>
+          This project was a personal milestone — creating a professional consultancy website for my father’s business.
+          It represents both a technical learning experience and a meaningful contribution to his consultancy.
+        </p>
+        <p style={{ lineHeight: "1.8" }}>
+          The goal was to design a responsive and dynamic platform where students and parents can easily access
+          course details, services, and contact information — all within a seamless, modern interface.
+        </p>
+      </div>
+
       {/* Website Pages */}
       <div style={{ maxWidth: "900px", margin: "0 auto 3rem" }}>
         <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Website Pages</h2>
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-            gap: "1.2rem",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: "1.5rem",
           }}
         >
           {projectOverview.map((page, idx) => (
@@ -93,12 +116,12 @@ const SesWebsitePage = () => {
               key={idx}
               style={{
                 background: "#2b2b2b",
-                borderRadius: "10px",
+                borderRadius: "12px",
                 padding: "1rem",
                 transition: "transform 0.3s ease, box-shadow 0.3s ease",
               }}
               onMouseOver={(e) =>
-                (e.currentTarget.style.transform = "translateY(-5px) scale(1.02)")
+                (e.currentTarget.style.transform = "translateY(-6px) scale(1.02)")
               }
               onMouseOut={(e) => (e.currentTarget.style.transform = "none")}
             >
@@ -107,37 +130,112 @@ const SesWebsitePage = () => {
                 alt={page.title}
                 style={{
                   width: "100%",
-                  height: "180px",
+                  height: "200px",
                   objectFit: "cover",
                   borderRadius: "8px",
-                  marginBottom: "0.6rem",
+                  marginBottom: "0.8rem",
                 }}
               />
-              <h3 style={{ color: "#FF3B3B", marginBottom: "0.4rem" }}>{page.title}</h3>
-              <p style={{ fontSize: "0.9rem", color: "#ccc" }}>{page.desc}</p>
+              <h3 style={{ color: "#FF3B3B", marginBottom: "0.5rem" }}>{page.title}</h3>
+              <p style={{ fontSize: "0.95rem", color: "#ccc" }}>{page.desc}</p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Services Table */}
-      <div style={{ maxWidth: "1000px", margin: "0 auto 3rem", padding: "0 0.5rem" }}>
-        <h2 style={{ color: "#FF3B3B", marginBottom: "1.2rem", textAlign: "center" }}>Our Services</h2>
-        <div style={{ overflowX: "auto", borderRadius: "10px" }}>
-          <table style={{ width: "100%", borderCollapse: "collapse", background: "#2b2b2b" }}>
+      {/* Technology Stack */}
+      <div style={{ maxWidth: "800px", margin: "0 auto 3rem" }}>
+        <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Technology Stack</h2>
+        <table style={tableStyle}>
+          <thead>
+            <tr style={{ background: "#FF3B3B", color: "#fff" }}>
+              <th style={tableHeader}>Technology</th>
+              <th style={tableHeader}>Purpose</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style={tableCell}><FaReact /> React.js</td><td style={tableCell}>Frontend framework for UI</td></tr>
+            <tr><td style={tableCell}><SiTailwindcss /> Tailwind CSS</td><td style={tableCell}>Responsive styling</td></tr>
+            <tr><td style={tableCell}><FaNode /> Node.js</td><td style={tableCell}>Backend runtime environment</td></tr>
+            <tr><td style={tableCell}><SiExpress /> Express.js</td><td style={tableCell}>API and backend routing</td></tr>
+            <tr><td style={tableCell}><SiPostgresql /> PostgreSQL</td><td style={tableCell}>Data management and storage</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      {/* Founder Section */}
+      <div style={{ maxWidth: "900px", margin: "0 auto 3rem", textAlign: "center" }}>
+        <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>About Founder & Organization</h2>
+        <img
+          src={founderImg}
+          alt="Founder"
+          style={{
+            width: "200px",
+            height: "230px",
+            objectFit: "cover",
+            marginBottom: "1rem",
+          }}
+        />
+        <p style={{ color: "#E0E0E0", maxWidth: "700px", margin: "0 auto", lineHeight: "1.8" }}>
+          <strong>Mr. Jayant Krishna</strong> founded Shreepati Educational Services        
+           with a vision to provide guidance to students and parents seeking the right educational path.
+          The website represents his mission to reach a wider audience and bring all consultancy services
+          under one modern platform.
+        </p>
+      </div>
+
+      {/* Services Section */}
+      <div
+        style={{
+          maxWidth: "1000px",
+          margin: "0 auto 3rem",
+          padding: "1rem",
+        }}
+      >
+        <h2
+          style={{
+            color: "#FF3B3B",
+            marginBottom: "1.5rem",
+            textAlign: "center",
+            fontSize: "1.8rem",
+          }}
+        >
+          Our Services
+        </h2>
+
+        <div
+          style={{
+            overflowX: "auto",
+            borderRadius: "10px",
+            boxShadow: "0 0 15px rgba(255, 59, 59, 0.1)",
+          }}
+        >
+          <table
+            style={{
+              width: "100%",
+              borderCollapse: "collapse",
+              background: "#2b2b2b",
+              borderRadius: "10px",
+            }}
+          >
             <thead>
               <tr style={{ background: "#FF3B3B", color: "#fff", textAlign: "left" }}>
-                <th style={{ padding: "0.8rem" }}>Service</th>
-                <th style={{ padding: "0.8rem" }}>Description</th>
+                <th style={{ padding: "1rem", fontWeight: "700", width: "35%", fontSize: "1rem" }}>Service</th>
+                <th style={{ padding: "1rem", fontWeight: "700", fontSize: "1rem" }}>Description</th>
               </tr>
             </thead>
             <tbody>
               {[
-                { icon: <FaLaptopCode />, title: "Collaboration Guidance", desc: "Form strong partnerships with universities and networks." },
-                { icon: <FaServer />, title: "Affiliation Guidance", desc: "Support for obtaining affiliation from boards/universities." },
-                { icon: <FaDatabase />, title: "New Institutions Setup", desc: "Assistance for setting up and recognition of new colleges." },
-                { icon: <FaPaintBrush />, title: "New Schools Setup", desc: "Step-by-step guidance for school setup with approvals." },
-                { icon: <FaGlobe />, title: "DPR & Consultancy", desc: "Project reports covering financial and academic aspects." },
+                { icon: <FaLaptopCode />, title: "Collaboration Guidance", desc: "Form strong partnerships with universities, industry, and networks to enhance academic growth." },
+                { icon: <FaServer />, title: "Affiliation Guidance", desc: "Complete support for obtaining affiliation from recognized boards and universities." },
+                { icon: <FaDatabase />, title: "New Institutions Setup", desc: "Assist in establishing and getting recognition for new colleges or mid-level institutions." },
+                { icon: <FaPaintBrush />, title: "New Schools Setup", desc: "Step-by-step guidance to establish schools with approvals and documentation." },
+                { icon: <FaGlobe />, title: "DPR & Consultancy", desc: "Prepare detailed project reports covering financial, academic, and infrastructure aspects." },
+                { icon: <FaMobileAlt />, title: "Overseas Admissions & Visa", desc: "Counseling and application support for international studies and visa documentation." },
+                { icon: <FaCloud />, title: "Educational Loans & HR", desc: "Consultation for securing loans and streamlining HR for institutions." },
+                { icon: <FaUsers />, title: "Domestic Admission Counseling", desc: "Guide students across India in selecting the right courses and institutions." },
+                { icon: <FaUserTie />, title: "Accreditation Assistance", desc: "Help institutions achieve national and international accreditation efficiently." },
+                { icon: <FaChartLine />, title: "Data & Document Management", desc: "Customized solutions for managing institutional data, libraries, and documents." },
               ].map((service, idx) => (
                 <tr
                   key={idx}
@@ -148,11 +246,11 @@ const SesWebsitePage = () => {
                   onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(255,59,59,0.1)")}
                   onMouseLeave={(e) => (e.currentTarget.style.background = "none")}
                 >
-                  <td style={{ padding: "0.9rem", display: "flex", alignItems: "center", gap: "0.5rem", color: "#fff" }}>
-                    <span style={{ color: "#FF3B3B" }}>{service.icon}</span>
+                  <td style={{ padding: "1rem", display: "flex", alignItems: "center", gap: "0.6rem", color: "#fff", fontWeight: "600" }}>
+                    <span style={{ color: "#FF3B3B", fontSize: "1.2rem" }}>{service.icon}</span>
                     {service.title}
                   </td>
-                  <td style={{ padding: "0.9rem", color: "#ccc", fontSize: "0.9rem" }}>{service.desc}</td>
+                  <td style={{ padding: "1rem", color: "#ccc", lineHeight: "1.6" }}>{service.desc}</td>
                 </tr>
               ))}
             </tbody>
@@ -160,69 +258,47 @@ const SesWebsitePage = () => {
         </div>
       </div>
 
-      {/* My Learnings Section */}
-      <div style={{ maxWidth: "900px", margin: "0 auto 3rem", textAlign: "center" }}>
-        <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>My Learnings & Experience</h2>
-        <p style={{ lineHeight: "1.8", color: "#ccc", marginBottom: "1rem" }}>
-          This project was not just about development — it was about understanding client needs, 
-          planning UI/UX, and managing end-to-end deployment. I learned to connect frontend and backend efficiently, 
-          handle responsive layouts, and maintain clean Git commits for production-ready deployment.
-        </p>
-      </div>
-
-      {/* Deployment Links */}
+      {/* Deployment */}
       <div style={{ maxWidth: "900px", margin: "0 auto 3rem", textAlign: "center" }}>
         <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Deployment</h2>
-        <p style={{ lineHeight: "1.6", marginBottom: "1rem", color: "#ccc" }}>
-          Hosted on <strong>Vercel</strong> with continuous GitHub integration for automatic updates.
+        <p style={{ lineHeight: "1.8", marginBottom: "1rem" }}>
+          Hosted on <strong>Vercel</strong> with continuous deployment from GitHub for faster updates and scalability.
         </p>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(130px, 1fr))",
-            gap: "0.8rem",
-            justifyContent: "center",
-          }}
-        >
-          <a href="https://github.com/Vibhav11Krishna/Shreepati-Educational-Services" target="_blank" rel="noopener noreferrer"
-            style={linkStyle} onMouseEnter={(e) => handleGlow(e, true)} onMouseLeave={(e) => handleGlow(e, false)}>
+
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2, auto)", gap: "1rem", justifyContent: "center" }}>
+          <a href="https://github.com/Vibhav11Krishna/Shreepati-Educational-Services" target="_blank" rel="noopener noreferrer" style={linkStyle}
+             onMouseEnter={(e) => handleGlow(e, true)} onMouseLeave={(e) => handleGlow(e, false)}>
             <FaGithub /> GitHub
           </a>
-          <a href="https://shreepati-educational-services-a35b.vercel.app/" target="_blank" rel="noopener noreferrer"
-            style={linkStyle} onMouseEnter={(e) => handleGlow(e, true)} onMouseLeave={(e) => handleGlow(e, false)}>
-            <FaGlobe /> Website
+          <a href="https://shreepati-educational-services-a35b.vercel.app/" target="_blank" rel="noopener noreferrer" style={linkStyle}
+             onMouseEnter={(e) => handleGlow(e, true)} onMouseLeave={(e) => handleGlow(e, false)}>
+            <FaGlobe /> View Website
           </a>
-          <a href="https://www.instagram.com/ses_consultancy" target="_blank" rel="noopener noreferrer"
-            style={linkStyle} onMouseEnter={(e) => handleGlow(e, true)} onMouseLeave={(e) => handleGlow(e, false)}>
+          <a href="https://www.instagram.com/ses_consultancy?igsh=d2I5dmN5ZmIwcm00" target="_blank" rel="noopener noreferrer" style={linkStyle}
+             onMouseEnter={(e) => handleGlow(e, true)} onMouseLeave={(e) => handleGlow(e, false)}>
             <FaInstagram /> Instagram
           </a>
-          <a href="https://x.com/SES_Consultancy" target="_blank" rel="noopener noreferrer"
-            style={linkStyle} onMouseEnter={(e) => handleGlow(e, true)} onMouseLeave={(e) => handleGlow(e, false)}>
-            <FaTwitter /> X
+          <a href="https://x.com/SES_Consultancy" target="_blank" rel="noopener noreferrer" style={linkStyle}
+             onMouseEnter={(e) => handleGlow(e, true)} onMouseLeave={(e) => handleGlow(e, false)}>
+            <FaTwitter /> X (Twitter)
           </a>
         </div>
       </div>
 
       {/* Summary */}
-      <div style={{ maxWidth: "900px", margin: "0 auto 2rem", textAlign: "center" }}>
-        <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Summary</h2>
-        <p style={{ lineHeight: "1.8", color: "#E0E0E0" }}>
-          Building this website helped me gain hands-on experience in full-stack web development, UI/UX planning,
-          and project deployment. It strengthened my confidence in taking real-world projects and delivering
-          professional digital solutions.
+      <div style={{ maxWidth: "900px", margin: "0 auto 4rem" }}>
+        <h2 style={{ color: "#FF3B3B", marginBottom: "1rem", textAlign: "center" }}>Summary & Key Learnings</h2>
+        <p style={{ lineHeight: "1.8", color: "#E0E0E0", marginBottom: "1rem" }}>
+          Developing this consultancy website was a complete end-to-end experience that combined design thinking, full-stack development, and deployment.
         </p>
+        <ul style={{ lineHeight: "1.8", color: "#ccc", listStyle: "none", padding: 0 }}>
+          <li>⚡ Learned how to structure a full React project efficiently.</li>
+          <li>⚡ Improved backend API setup and database design skills.</li>
+          <li>⚡ Gained experience with responsive UI and accessibility.</li>
+          <li>⚡ Understood client communication and project deployment.</li>
+          <li>⚡ Learned to manage version control and collaboration via GitHub.</li>
+        </ul>
       </div>
-
-      {/* Responsive Styling */}
-      <style>
-        {`
-          @media (max-width: 600px) {
-            h1 { font-size: 1.5rem !important; }
-            h2 { font-size: 1.2rem !important; }
-            table td, table th { font-size: 0.85rem !important; }
-          }
-        `}
-      </style>
     </section>
   );
 };
