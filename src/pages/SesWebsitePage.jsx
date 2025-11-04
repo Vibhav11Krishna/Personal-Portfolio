@@ -23,7 +23,7 @@ import homepageImg from "../assets/home.png";
 import aboutImg from "../assets/about.png";
 import coursesImg from "../assets/services.png";
 import contactImg from "../assets/partners.png";
-import founderImg from "../assets/Founder.jpg";
+import founderImg from "../assets/founder.jpg";
 
 // --- Styles ---
 const tableStyle = {
