@@ -62,8 +62,8 @@ const CreativeXPage = () => {
           src={hackathonLogo}
           alt="CreativeX Logo"
           style={{
-            width: "150px",
-            height: "150px",
+            width: "310px",
+            height: "190px",
             objectFit: "cover",
             borderRadius: "12px",
             marginBottom: "1rem",

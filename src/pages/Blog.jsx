@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNode } from "react-icons/fa";
-import { SiPhp, SiMysql, SiMongodb } from "react-icons/si";
+import { SiPhp, SiMysql, SiMongodb,SiPostgresql} from "react-icons/si";
 import { Link } from "react-router-dom";
 
 import internshipImg from "../assets/sss.png";
 import hackathonImg from "../assets/creativex.jpg";
+import fatherWebsiteImg from "../assets/logoshreepati.png"; // ← Add your father’s website image here
 
 const blogPosts = [
   {
@@ -22,7 +23,7 @@ const blogPosts = [
       { icon: <SiPhp />, color: "#8892BE" },
       { icon: <SiMysql />, color: "#00758F" },
     ],
-    link: "/internship", // React Router path
+    link: "/internship",
   },
   {
     title: "Creative-X Hackathon",
@@ -38,7 +39,24 @@ const blogPosts = [
       { icon: <SiMongodb />, color: "#47A248" },
       { icon: <SiMysql />, color: "#00758F" },
     ],
-    link: "/creativex", // React Router path
+    link: "/creativex",
+  },
+
+  {
+    title: "Building Shreepati Educational Services Website",
+    company: "Personal Project ",
+    month: "November",
+    year: 2025,
+    description:
+      "Developed a complete educational consultancy website using React, Vite, and Tailwind CSS. Designed all pages, made it responsive, and deployed it on Vercel.",
+    img: fatherWebsiteImg,
+    tech: [
+     
+      { icon: <FaReact />, color: "#61DBFB" },
+        { icon: <FaNode />, color: "#3C873A" },
+        {icon:<SiPostgresql />,color:"#0075BF"}
+    ],
+    link: "/seswebsite", // 
   },
 ];
 
@@ -71,11 +89,15 @@ const Blog = () => {
             </div>
             <div className="blog-content">
               <h3>{post.title}</h3>
-              <p className="company">{post.company} - {post.month} {post.year}</p>
+              <p className="company">
+                {post.company} - {post.month} {post.year}
+              </p>
               <p className="desc">{post.description}</p>
               <div className="tech-icons">
                 {post.tech.map((t, i) => (
-                  <div key={i} style={{ color: t.color }}>{t.icon}</div>
+                  <div key={i} style={{ color: t.color }}>
+                    {t.icon}
+                  </div>
                 ))}
               </div>
               <Link to={post.link} style={{ color: "#FF3B3B", fontWeight: 600 }}>
@@ -152,11 +174,6 @@ const Blog = () => {
           animation: fadeInUp 0.8s forwards;
         }
         @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-        @keyframes glow {
-          0% { text-shadow: 0 0 8px #FF3B3B; }
-          50% { text-shadow: 0 0 15px #FF3B3B; }
-          100% { text-shadow: 0 0 8px #FF3B3B; }
-        }
         @media (max-width: 768px) {
           .blog-card { 
             flex-direction: column;

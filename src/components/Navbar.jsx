@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa"; // ✅ added icons
 
 const Navbar = () => {
   const sections = [
@@ -20,7 +21,7 @@ const Navbar = () => {
       <nav
         className="navbar-wrapper d-flex align-items-center justify-content-between"
         style={{
-          padding: "0.5rem 1.5rem",
+          padding: "0.7rem 1.5rem",
           width: "950px",
           maxWidth: "95%",
           background: "rgba(255, 255, 255, 0.05)",
@@ -29,8 +30,12 @@ const Navbar = () => {
           border: "1px solid rgba(255,255,255,0.2)",
           boxShadow: "0 8px 32px rgba(0,0,0,0.37)",
           position: "relative",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
         }}
       >
+        {/* ✅ Brand always left and inline */}
         <span
           className="brand"
           style={{
@@ -44,8 +49,12 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <div
-          className="nav-menu d-none d-lg-flex gap-4 justify-content-end"
-          style={{ flex: 1, justifyContent: "flex-end" }}
+          className="nav-menu d-none d-lg-flex gap-4"
+          style={{
+            flex: 1,
+            justifyContent: "flex-end",
+            alignItems: "center",
+          }}
         >
           {sections.map((section) => (
             <Link
@@ -55,7 +64,10 @@ const Navbar = () => {
               style={{
                 padding: "0.5rem 1rem",
                 borderRadius: "12px",
-                background: location.pathname === section.path ? "rgba(255,59,59,0.8)" : "transparent",
+                background:
+                  location.pathname === section.path
+                    ? "rgba(255,59,59,0.8)"
+                    : "transparent",
                 color: "#fff",
                 fontWeight: "600",
                 textDecoration: "none",
@@ -67,22 +79,27 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* ✅ Mobile Menu Button */}
         <button
           className="drawer-toggle d-lg-none"
           onClick={() => setIsOpen(!isOpen)}
           style={{
-            padding: "0.5rem 1rem",
+            padding: "0.6rem 1rem",
             borderRadius: "12px",
             background: "rgba(255,59,59,0.8)",
             color: "#fff",
-            fontWeight: "600",
+            fontWeight: "700",
             border: "none",
             cursor: "pointer",
             marginLeft: "auto",
+            fontSize: "1.4rem",
+            transition: "all 0.3s ease",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          ☰
+          {isOpen ? <FaTimes size={22} color="#fff" /> : <FaBars size={22} color="#fff" />}
         </button>
 
         {/* Mobile Drawer */}
@@ -94,13 +111,14 @@ const Navbar = () => {
               top: "100%",
               right: 0,
               width: "100%",
-              background: "rgba(30,30,30,0.9)",
+              background: "rgba(30,30,30,0.95)",
               backdropFilter: "blur(15px)",
               borderRadius: "0 0 20px 20px",
               display: "flex",
               flexDirection: "column",
               padding: "1rem 0",
               zIndex: 9,
+              animation: "slideDown 0.3s ease",
             }}
           >
             {sections.map((section) => (
@@ -108,11 +126,16 @@ const Navbar = () => {
                 key={section.name}
                 to={section.path}
                 onClick={() => setIsOpen(false)}
-                className={`drawer-btn ${location.pathname === section.path ? "active" : ""}`}
+                className={`drawer-btn ${
+                  location.pathname === section.path ? "active" : ""
+                }`}
                 style={{
                   padding: "0.8rem 1rem",
                   textAlign: "center",
-                  background: location.pathname === section.path ? "rgba(255,59,59,0.8)" : "transparent",
+                  background:
+                    location.pathname === section.path
+                      ? "rgba(255,59,59,0.8)"
+                      : "transparent",
                   color: "#fff",
                   fontWeight: "600",
                   textDecoration: "none",
@@ -126,6 +149,21 @@ const Navbar = () => {
           </div>
         )}
       </nav>
+
+      {/* ✅ Smooth dropdown animation + hover effect */}
+      <style>
+        {`
+          @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+
+          .drawer-toggle:hover {
+            background: rgba(255,59,59,1);
+            transform: scale(1.05);
+          }
+        `}
+      </style>
     </div>
   );
 };
