@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNode } from "react-icons/fa";
-import { SiPhp, SiMysql, SiMongodb,SiPostgresql} from "react-icons/si";
+import { SiPhp, SiMysql, SiMongodb, SiPostgresql } from "react-icons/si";
 import { Link } from "react-router-dom";
 
 import internshipImg from "../assets/sss.png";
 import hackathonImg from "../assets/creativex.jpg";
-import fatherWebsiteImg from "../assets/logoshreepati.png"; // ← Add your father’s website image here
+import fatherWebsiteImg from "../assets/logoshreepati.png"; // ← Father’s website image
 
 const blogPosts = [
   {
@@ -41,22 +41,20 @@ const blogPosts = [
     ],
     link: "/creativex",
   },
-
   {
     title: "Building Shreepati Educational Services Website",
-    company: "Personal Project ",
+    company: "Personal Project",
     month: "November",
     year: 2025,
     description:
       "Developed a complete educational consultancy website using React, Vite, and Tailwind CSS. Designed all pages, made it responsive, and deployed it on Vercel.",
     img: fatherWebsiteImg,
     tech: [
-     
       { icon: <FaReact />, color: "#61DBFB" },
-        { icon: <FaNode />, color: "#3C873A" },
-        {icon:<SiPostgresql />,color:"#0075BF"}
+      { icon: <FaNode />, color: "#3C873A" },
+      { icon: <SiPostgresql />, color: "#0075BF" },
     ],
-    link: "/seswebsite", // 
+    link: "/seswebsite",
   },
 ];
 
@@ -68,7 +66,13 @@ const Blog = () => {
   }, []);
 
   return (
-    <section style={{ background: "#1E1E1E", color: "#E0E0E0", padding: "4rem 2rem" }}>
+    <section
+      style={{
+        background: "#1E1E1E",
+        color: "#E0E0E0",
+        padding: "4rem 2rem",
+      }}
+    >
       <h2
         style={{
           textAlign: "center",
@@ -90,16 +94,18 @@ const Blog = () => {
             <div className="blog-content">
               <h3>{post.title}</h3>
               <p className="company">
-                {post.company} - {post.month} {post.year}
+                {post.company} — {post.month} {post.year}
               </p>
               <p className="desc">{post.description}</p>
+
               <div className="tech-icons">
                 {post.tech.map((t, i) => (
-                  <div key={i} style={{ color: t.color }}>
+                  <div key={i} className="tech-icon" style={{ color: t.color }}>
                     {t.icon}
                   </div>
                 ))}
               </div>
+
               <Link to={post.link} style={{ color: "#FF3B3B", fontWeight: 600 }}>
                 Read More
               </Link>
@@ -116,6 +122,7 @@ const Blog = () => {
           max-width: 1000px;
           margin: 0 auto;
         }
+
         .blog-card {
           background: #2b2b2b;
           border-radius: 16px;
@@ -126,20 +133,24 @@ const Blog = () => {
           flex-direction: row;
           height: 220px;
         }
+
         .blog-card:hover {
           transform: translateY(-6px) scale(1.02);
           box-shadow: 0 12px 30px rgba(255,59,59,0.5);
         }
+
         .blog-img {
           width: 40%;
           height: 100%;
           overflow: hidden;
         }
+
         .blog-img img {
           width: 100%;
           height: 100%;
           object-fit: cover;
         }
+
         .blog-content {
           padding: 1rem;
           display: flex;
@@ -147,40 +158,72 @@ const Blog = () => {
           justify-content: space-between;
           width: 60%;
         }
+
         .blog-content h3 {
           color: #FF3B3B;
           margin-bottom: 0.3rem;
           font-size: 1.4rem;
         }
+
         .company {
           font-weight: 600;
           color: #ccc;
           font-size: 0.9rem;
         }
+
         .desc {
           color: #ddd;
           font-size: 0.85rem;
           margin-bottom: 0.5rem;
         }
+
+        /* 🔥 Bigger + Hoverable Icons */
         .tech-icons {
           display: flex;
-          gap: 0.5rem;
+          gap: 1rem;
           flex-wrap: wrap;
           margin-bottom: 0.5rem;
         }
+
+        .tech-icon {
+          font-size: 1.7rem;
+          transition: transform 0.3s ease, text-shadow 0.3s ease;
+        }
+
+        .tech-icon:hover {
+          transform: scale(1.3);
+          text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
+        }
+
         .fade-in {
           opacity: 0;
           transform: translateY(20px);
           animation: fadeInUp 0.8s forwards;
         }
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+        @keyframes fadeInUp {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
         @media (max-width: 768px) {
-          .blog-card { 
+          .blog-card {
             flex-direction: column;
             height: auto;
           }
-          .blog-img { width: 100%; height: 220px; }
-          .blog-content { width: 100%; padding: 0.8rem; }
+          .blog-img {
+            width: 100%;
+            height: 220px;
+          }
+          .blog-content {
+            width: 100%;
+            padding: 0.8rem;
+          }
+          .tech-icon {
+            font-size: 2rem;
+          }
         }
       `}</style>
     </section>

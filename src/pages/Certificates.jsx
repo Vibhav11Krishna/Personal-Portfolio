@@ -6,6 +6,7 @@ import {
   FaJsSquare,
   FaReact,
   FaNode,
+  FaRobot,
 } from "react-icons/fa";
 import {
   SiMysql,
@@ -25,13 +26,14 @@ import uiuxImg from "../assets/uiux.jpg";
 import ciscoImg from "../assets/cisco.jpg";
 import logoImg from "../assets/creativex.jpg";
 import ciscoImg2 from "../assets/cisco2.jpg";
+import aiImg from "../assets/skillsindia.png";
 
 const certificates = [
   {
     title: "Front-End Development Internship",
     issuer: "Internshipwala",
     year: 2024,
-    month: "Feburary",
+    month: "February",
     description:
       "Mastered modern HTML, CSS, and responsive layouts. Gained practical experience in web page design, UI best practices, and real-world project implementation.",
     img: frontendImg,
@@ -103,19 +105,14 @@ const certificates = [
     tech: [{ icon: <SiCplusplus />, color: "#00599C" }],
   },
   {
-    title: "Creative-X Winner Internal Hackathon",
-    issuer: "SIH - Smart India Hackathon",
+    title: "SOAR: AI To Acquire",
+    issuer: "Skills India (Microsoft)",
     year: 2025,
-    month: "September",
+    month: "November",
     description:
-      "Won the internal hackathon Creative-X by developing an innovative full-stack solution using React, Node.js, MongoDB, and MySQL integration.",
-    img: logoImg,
-    tech: [
-      { icon: <FaReact />, color: "#61DBFB" },
-      { icon: <FaNode />, color: "#3C873A" },
-      { icon: <SiMongodb />, color: "#47A248" },
-      { icon: <SiMysql />, color: "#00758F" },
-    ],
+      "Successfully completed the SOAR: AI To Acquire program by Skills India in collaboration with Microsoft, focused on developing AI literacy, responsible use of AI, and practical applications of machine learning.",
+    img: aiImg,
+    tech: [{ icon: <FaRobot />, color: "#0078D4" }],
   },
 ];
 
@@ -169,7 +166,11 @@ const Certificates = () => {
                   <p className="desc">{cert.description}</p>
                   <div className="tech-icons">
                     {cert.tech.map((t, i) => (
-                      <div key={i} style={{ color: t.color }}>
+                      <div
+                        key={i}
+                        className="tech-icon"
+                        style={{ color: t.color }}
+                      >
                         {t.icon}
                       </div>
                     ))}
@@ -238,7 +239,21 @@ const Certificates = () => {
         .cert-content h3 { color: #FF3B3B; font-size: 1.8rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
         .issuer { color: #ccc; font-weight: 600; margin-bottom: 0.5rem; }
         .desc { color: #aaa; font-size: 0.95rem; margin-bottom: 1rem; }
-        .tech-icons { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+
+        /* 🔥 Bigger and Hoverable Icons */
+        .tech-icons {
+          display: flex;
+          gap: 1rem;
+          flex-wrap: wrap;
+        }
+        .tech-icon {
+          font-size: 1.9rem;
+          transition: transform 0.3s ease, text-shadow 0.3s ease;
+        }
+        .tech-icon:hover {
+          transform: scale(1.3);
+          text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
+        }
 
         .fade-in { opacity: 0; transform: translateY(30px); animation: fadeInUp 0.8s forwards; }
         @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
