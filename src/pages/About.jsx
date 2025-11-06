@@ -1,39 +1,49 @@
-import React, { useEffect, useState } from "react";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJsSquare,
-  FaReact,
-  FaNodeJs,
-  FaPython,
-  FaLaptopCode,
-  FaPaintBrush,
-} from "react-icons/fa";
-import { SiFigma, SiCanva, SiBootstrap, SiMysql } from "react-icons/si";
+import React, { useEffect, useState, useRef } from "react";
+import { FaLightbulb, FaRocket, FaHeart, FaFileDownload } from "react-icons/fa";
 import Leader from "../assets/leader.png";
 import dpsLogo from "../assets/dps.png";
 import doonLogo from "../assets/doon.png";
 import rpLogo from "../assets/rps.png";
 
+import tenthPDF from "../assets/10th.pdf";
+import twelfthPDF from "../assets/12th.pdf";
+import degreePDF from "../assets/Resume.pdf";
+import resumePDF from "../assets/Resume.pdf";
+
 const About = () => {
-  const [loaded, setLoaded] = useState(false);
-  useEffect(() => setLoaded(true), []);
+  const [visibleSections, setVisibleSections] = useState({});
+  const sectionRefs = {
+    profile: useRef(null),
+    extras: useRef(null),
+    education: useRef(null),
+    resume: useRef(null),
+  };
 
-  const leftIcons = [
-    { icon: FaHtml5, color: "#E34F26" },
-    { icon: FaCss3Alt, color: "#264DE4" },
-    { icon: FaJsSquare, color: "#F7DF1E" },
-    { icon: FaReact, color: "#61DBFB" },
-    { icon: FaNodeJs, color: "#3C873A" },
-  ];
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleSections((prev) => ({
+              ...prev,
+              [entry.target.dataset.section]: true,
+            }));
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
 
-  const rightIcons = [
-    { icon: FaPython, color: "#306998" },
-    { icon: SiMysql, color: "#00758F" },
-    { icon: SiBootstrap, color: "#563D7C" },
-    { icon: SiFigma, color: "#A259FF" },
-    { icon: SiCanva, color: "#00C4CC" },
-  ];
+    Object.values(sectionRefs).forEach((ref) => {
+      if (ref.current) observer.observe(ref.current);
+    });
+
+    return () => {
+      Object.values(sectionRefs).forEach((ref) => {
+        if (ref.current) observer.unobserve(ref.current);
+      });
+    };
+  }, []);
 
   const education = [
     {
@@ -42,7 +52,9 @@ const About = () => {
       year: 2020,
       board: "CBSE",
       percentage: "81%",
-      color: "#0ce71a",
+      desc: "Built a strong academic foundation with focus on Science and Mathematics.",
+      color: "#4CAF50",
+      doc: tenthPDF,
     },
     {
       title: "12th - Doon Public School",
@@ -50,7 +62,9 @@ const About = () => {
       year: 2022,
       board: "CBSE",
       percentage: "73%",
-      color: "#264DE4",
+      desc: "Explored computer science concepts and participated in school tech fairs.",
+      color: "#2196F3",
+      doc: twelfthPDF,
     },
     {
       title: "B.Tech CSE - RP Sharma Institute",
@@ -58,286 +72,233 @@ const About = () => {
       year: 2025,
       board: "University",
       percentage: "CGPA 8.5",
-      color: "#FF3B3B",
+      desc: "Pursuing Computer Science Engineering with focus on Full Stack and AI/ML.",
+      color: "#FF9800",
+      doc: degreePDF,
     },
   ];
 
-  const hobbies = [
-    { title: "Video Editing", icon: FaLaptopCode, color: "#4CAF50" },
-    { title: "UI/UX Design", icon: SiFigma, color: "#A259FF" },
-    { title: "Motion Graphics", icon: FaPaintBrush, color: "#E91E63" },
-    { title: "Exploring Web Tech", icon: FaReact, color: "#61DBFB" },
-    { title: "Learning New Tools", icon: SiCanva, color: "#00C4CC" },
+  const extras = [
+    {
+      icon: FaLightbulb,
+      color: "#FFD700",
+      title: "Who I Am",
+      desc: "A creative full-stack developer blending logic with design, passionate about turning ideas into interactive experiences.",
+    },
+    {
+      icon: FaRocket,
+      color: "#03A9F4",
+      title: "What I Do",
+      desc: "Develop responsive and engaging websites using React, Node, and modern UI/UX principles.",
+    },
+    {
+      icon: FaHeart,
+      color: "#E91E63",
+      title: "My Passion",
+      desc: "Building projects that inspire, learning cutting-edge tech, and exploring how AI can enhance digital design.",
+    },
   ];
 
-  const highlights = [
-    {
-      title: "Passionate Learner",
-      text: "Always exploring new tools and technologies in web development.",
-      color: "#00C4CC",
-    },
-    {
-      title: "Creative Thinker",
-      text: "Blend creativity with logic to design functional, aesthetic web experiences.",
-      color: "#A259FF",
-    },
-    {
-      title: "Goal-Oriented",
-      text: "Focused on becoming a full-stack developer with strong fundamentals.",
-      color: "#FF3B3B",
-    },
-  ];
+  const resumeColor = "#9C27B0";
 
   return (
     <section
       style={{
-        position: "relative",
         width: "100%",
-        padding: "5rem 2rem",
-        background: "#121212",
+        background: "rgba(255,255,255,0.05)",
         color: "#E0E0E0",
-        opacity: loaded ? 1 : 0,
-        transform: loaded ? "translateY(0)" : "translateY(30px)",
-        transition: "opacity 1s ease, transform 1s ease",
+        padding: "5rem 1.5rem",
       }}
     >
-      {/* Desktop Side Icons */}
-      <div className="desktop-left-icons">
-        {leftIcons.map((item, idx) => {
-          const Icon = item.icon;
-          return (
-            <div key={idx} className="tech-icon" style={{ color: item.color }}>
-              <Icon />
-            </div>
-          );
-        })}
-      </div>
-      <div className="desktop-right-icons">
-        {rightIcons.map((item, idx) => {
-          const Icon = item.icon;
-          return (
-            <div key={idx} className="tech-icon" style={{ color: item.color }}>
-              <Icon />
-            </div>
-          );
-        })}
-      </div>
-
-      {/* Mobile Top Icons */}
-      <div className="mobile-top-icons">
-        {leftIcons.map((item, idx) => {
-          const Icon = item.icon;
-          return (
-            <div
-              key={idx}
-              className="mobile-tech-icon"
-              style={{ color: item.color }}
-            >
-              <Icon />
-            </div>
-          );
-        })}
-      </div>
-
-      {/* About Section */}
-      <div className="about-box fade-in">
-        <div className="profile-img bounce-in">
-          <img src={Leader} alt="Profile" />
-        </div>
-
+      {/* Profile */}
+      <div
+        ref={sectionRefs.profile}
+        data-section="profile"
+        className={`profile ${
+          visibleSections.profile ? "animate-fade-up" : "hidden"
+        }`}
+      >
+        <img src={Leader} alt="Pulkit Krishna" />
         <h2>About Me</h2>
         <p>
-          I’m <strong style={{ color: "#FF3B3B" }}>Pulkit Krishna</strong>, a
-          passionate Full-Stack Developer and Creative Technologist who enjoys
-          building clean, fast, and user-friendly applications. I focus on
-          blending functionality with creativity to craft immersive digital
-          experiences.
+          Hi, I'm <span style={{ color: "#ff0000ff" }}>Pulkit Krishna</span>, a
+          passionate <strong>Full Stack Developer</strong> and{" "}
+          <strong>AI/ML enthusiast</strong> from India. I love building
+          intelligent, user-focused web applications that are fast, responsive,
+          and aesthetically pleasing. My goal is to merge creative design with
+          powerful backend logic to deliver seamless digital experiences.
+          <br />
+          <br />I enjoy exploring new technologies, solving real-world problems
+          through code, and constantly improving my technical and creative
+          abilities. When I’m not coding, I love participating in hackathons,
+          working on open-source projects, and collaborating with like-minded
+          developers.
         </p>
-
-        {/* Personal Highlights */}
-        <div className="highlight-section">
-          <h3 className="subheading">Personal Highlights</h3>
-          <div className="highlight-grid">
-            {highlights.map((item, idx) => (
-              <div
-                key={idx}
-                className="highlight-card"
-                style={{
-                  borderColor: item.color,
-                  boxShadow: `0 0 15px ${item.color}40`,
-                }}
-              >
-                <h4 style={{ color: item.color }}>{item.title}</h4>
-                <p>{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Education & Hobbies */}
-        <div className="cards-wrapper">
-          <div className="card-container">
-            <h3 className="subheading">Education</h3>
-            {education.map((edu, idx) => (
-              <div
-                key={idx}
-                className="card-item slide-up"
-                style={{ borderColor: edu.color }}
-              >
-                <img src={edu.logo} alt={edu.title} />
-                <div className="card-text">
-                  <strong style={{ color: edu.color }}>{edu.title}</strong>
-                  <span>
-                    {edu.board} - {edu.percentage}
-                  </span>
-                  <span>{edu.year}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="card-container">
-            <h3 className="subheading">Hobbies & Skills</h3>
-            {hobbies.map((hobby, idx) => {
-              const Icon = hobby.icon;
-              return (
-                <div
-                  key={idx}
-                  className="card-item slide-up"
-                  style={{ color: hobby.color }}
-                >
-                  <Icon size={40} />
-                  <span>{hobby.title}</span>
-                </div>
-              );
-            })}
-          </div>
-        </div>
       </div>
 
-      {/* Mobile Bottom Icons */}
-      <div className="mobile-bottom-icons">
-        {rightIcons.map((item, idx) => {
+      {/* Extras */}
+      <div
+        ref={sectionRefs.extras}
+        data-section="extras"
+        className="extras-grid"
+      >
+        {extras.map((item, idx) => {
           const Icon = item.icon;
           return (
             <div
               key={idx}
-              className="mobile-tech-icon"
-              style={{ color: item.color }}
+              className={`extra-card ${
+                visibleSections.extras
+                  ? idx % 2 === 0
+                    ? "animate-left"
+                    : "animate-right"
+                  : "hidden"
+              }`}
+              style={{
+                borderColor: item.color,
+                boxShadow: `0 0 15px ${item.color}55`,
+              }}
             >
-              <Icon />
+              <Icon size={65} color={item.color} />
+              <h3 style={{ color: item.color }}>{item.title}</h3>
+              <p>{item.desc}</p>
             </div>
           );
         })}
       </div>
 
-      {/* CSS */}
+      {/* Education */}
+      <div
+        ref={sectionRefs.education}
+        data-section="education"
+        className={`education-section ${
+          visibleSections.education ? "animate-fade-up" : "hidden"
+        }`}
+      >
+        <h3 className="subheading">Education & Qualifications</h3>
+        <div className="education-grid">
+          {education.map((edu, idx) => (
+            <div
+              key={idx}
+              className={`edu-card ${
+                visibleSections.education
+                  ? idx % 2 === 0
+                    ? "animate-left"
+                    : "animate-right"
+                  : "hidden"
+              }`}
+              style={{
+                borderTop: `6px solid ${edu.color}`,
+                boxShadow: `0 0 15px ${edu.color}55`,
+              }}
+            >
+              <div className="edu-header">
+                <img src={edu.logo} alt={edu.title} />
+                <div className="edu-title">
+                  <h4 style={{ color: edu.color }}>{edu.title}</h4>
+                  <p>
+                    {edu.board} • {edu.year}
+                  </p>
+                  <p style={{ fontWeight: "600" }}>{edu.percentage}</p>
+                </div>
+              </div>
+              <p className="edu-desc">{edu.desc}</p>
+              <a
+                href={edu.doc}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="edu-btn"
+                style={{ background: edu.color }}
+              >
+                <FaFileDownload /> View Certificate
+              </a>
+            </div>
+          ))}
+        </div>
+
+        {/* Resume */}
+        <div
+          ref={sectionRefs.resume}
+          data-section="resume"
+          className={`resume-box ${
+            visibleSections.resume ? "animate-fade-up" : "hidden"
+          }`}
+          style={{
+            borderTop: `6px solid ${resumeColor}`,
+            boxShadow: `0 0 20px ${resumeColor}55`,
+          }}
+        >
+          <h4 style={{ color: resumeColor, fontSize: "1.6rem" }}>My Resume</h4>
+          <p
+            style={{
+              maxWidth: "700px",
+              margin: "1rem auto",
+              color: "#ccc",
+              lineHeight: "1.8",
+            }}
+          >
+            Want to explore more about my professional journey, projects, and
+            skills? Download my resume below to learn more about my technical
+            expertise and accomplishments.
+          </p>
+          <a
+            href={resumePDF}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="resume-btn"
+            style={{ background: resumeColor }}
+          >
+            <FaFileDownload /> View My Resume
+          </a>
+        </div>
+      </div>
+
       <style>{`
-        .desktop-left-icons, .desktop-right-icons {
-          position: absolute; top: 20%;
-          display: flex; flex-direction: column; gap: 2rem;
-        }
-        .desktop-left-icons { left: 1rem; }
-        .desktop-right-icons { right: 1rem; }
+        .hidden { opacity: 0; transform: translateY(40px); }
 
-        .tech-icon {
-          width: 70px; height: 70px; border-radius: 15px;
-          background: rgba(255,255,255,0.05);
-          display: flex; justify-content: center; align-items: center;
-          font-size: 2rem; transition: all 0.3s ease; cursor: pointer;
-        }
-        .tech-icon:hover { transform: scale(1.3); box-shadow: 0 0 20px currentColor; }
+        /* Scroll Animations */
+        .animate-fade-up { animation: fadeUp 0.8s forwards; }
+        .animate-left { animation: slideLeft 0.8s forwards; }
+        .animate-right { animation: slideRight 0.8s forwards; }
 
-        .about-box {
-          max-width: 1200px; margin: 0 auto;
-          padding: 3rem; background: rgba(255,255,255,0.05);
-          border-radius: 35px; backdrop-filter: blur(15px);
-          display: flex; flex-direction: column; align-items: center;
-          text-align: center;
-        }
+        @keyframes fadeUp { 0% { opacity:0; transform:translateY(40px); } 100% { opacity:1; transform:translateY(0); } }
+        @keyframes slideLeft { 0% { opacity:0; transform:translateX(-60px); } 100% { opacity:1; transform:translateX(0); } }
+        @keyframes slideRight { 0% { opacity:0; transform:translateX(60px); } 100% { opacity:1; transform:translateX(0); } }
 
-        .profile-img {
-          width: 200px; height: 200px; border-radius: 50%;
-          overflow: hidden; border: 4px solid #FF3B3B;
-          box-shadow: 0 0 25px rgba(255,59,59,0.5);
+        /* Hover Effects */
+        .extra-card, .edu-card, .resume-box {
+          transition: all 0.4s ease;
         }
-        .profile-img img { width: 100%; height: 100%; object-fit: cover; }
-
-        h2 { color: #FF3B3B; font-family: 'Orbitron', sans-serif; font-size: 2.8rem; margin-top: 1rem; text-shadow: 0 0 10px rgba(255,59,59,0.6); }
-        .subheading { color: #FF3B3B; font-size: 1.8rem; margin-bottom: 1rem; font-family: 'Orbitron', sans-serif; text-align: center; }
-
-        p { max-width: 900px; font-size: 1.2rem; line-height: 1.8; font-family: 'Poppins', sans-serif; margin: 0 auto 2rem auto; }
-
-        /* Highlights */
-        .highlight-grid {
-          display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;
-        }
-        .highlight-card {
-          flex: 1 1 280px; padding: 1.5rem;
-          border: 2px solid; border-radius: 20px;
-          background: rgba(255,255,255,0.05);
-          transition: all 0.4s ease; text-align: center;
-        }
-        .highlight-card:hover {
-          transform: translateY(-8px) scale(1.03);
+        .extra-card:hover, .edu-card:hover, .resume-box:hover {
+          transform: translateY(-8px) scale(1.05);
+          box-shadow: 0 0 25px rgba(255,255,255,0.3);
           background: rgba(255,255,255,0.1);
-          box-shadow: 0 0 25px rgba(255,59,59,0.4);
-        }
-        .highlight-card h4 { font-size: 1.3rem; margin-bottom: 0.5rem; }
-
-        /* Cards */
-        .cards-wrapper {
-          display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 3rem;
-        }
-        .card-container {
-          flex: 1 1 400px; background: rgba(255,255,255,0.05);
-          border-radius: 25px; padding: 2rem; text-align: center;
-        }
-        .card-item {
-          display: flex; align-items: center; justify-content: center;
-          gap: 1rem; margin: 1rem auto; padding: 1rem;
-          border-radius: 15px; border: 2px solid transparent;
-          background: rgba(255,255,255,0.08); transition: all 0.3s ease;
-        }
-        .card-item:hover { transform: scale(1.05); background: rgba(255,255,255,0.12); }
-
-        .card-item img { width: 60px; height: 60px; border-radius: 12px; }
-        .card-text { display: flex; flex-direction: column; align-items: center; }
-
-        /* Animations */
-        .fade-in { animation: fadeIn 1.5s ease; }
-        .bounce-in { animation: bounceIn 1.2s ease; }
-        .slide-up { animation: slideUp 1s ease; }
-
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        @keyframes bounceIn {
-          0% { transform: scale(0.5); opacity: 0; }
-          60% { transform: scale(1.2); opacity: 1; }
-          100% { transform: scale(1); }
-        }
-        @keyframes slideUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Mobile */
-        .mobile-top-icons, .mobile-bottom-icons {
-          display: none; justify-content: space-around; margin: 1rem 0;
-        }
-        .mobile-tech-icon {
-          width: 60px; height: 60px; border-radius: 50%;
-          display: flex; justify-content: center; align-items: center;
-          background: rgba(255,255,255,0.05);
-          font-size: 2.5rem; transition: all 0.3s ease; cursor: pointer;
-        }
-        .mobile-tech-icon:hover { transform: scale(1.4); box-shadow: 0 0 20px currentColor; }
+        /* Layout Styling */
+        .profile { text-align:center; margin-bottom:3rem; }
+        .profile img { width:210px; height:210px; border-radius:50%; object-fit:cover; }
+        .profile h2 { margin-top:1rem; font-family:'Orbitron', sans-serif; color:#ff260a; font-size:2.8rem; }
+        .profile p { max-width:850px; margin:1rem auto 2rem; line-height:1.9; font-size:1.15rem; color:#d1d1d1; text-align:justify; }
 
-        @media (max-width: 900px) {
-          .desktop-left-icons, .desktop-right-icons { display: none; }
-          .mobile-top-icons, .mobile-bottom-icons { display: flex; }
-          .about-box { width: 95%; padding: 2rem; }
-          .highlight-grid, .cards-wrapper { flex-direction: column; align-items: center; }
-          .card-item { flex-direction: column; text-align: center; }
+        .extras-grid { display:flex; justify-content:center; align-items:stretch; flex-wrap:wrap; gap:2.5rem; margin-bottom:4rem; }
+        .extra-card { flex:1 1 320px; background:rgba(255,255,255,0.06); border:2px solid; border-radius:22px; padding:2.8rem 2rem; text-align:center; min-height:320px; }
+
+        .education-section { margin-top:4rem; text-align:center; }
+        .subheading { color:#ff0000; font-family:'Orbitron', sans-serif; font-size:2.2rem; margin-bottom:2.5rem; }
+        .education-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(330px,1fr)); gap:2.5rem; }
+        .edu-card { background:rgba(255,255,255,0.05); border-radius:15px; padding:2rem; }
+        .edu-header { display:flex; align-items:center; gap:1.2rem; margin-bottom:1.5rem; }
+        .edu-header img { width:100px; height:100px; border-radius:15px; }
+        .edu-title h4 { font-size:1.4rem; margin-bottom:0.4rem; }
+        .edu-btn, .resume-btn { display:inline-flex; align-items:center; gap:0.5rem; color:#fff; text-decoration:none; padding:0.8rem 1.4rem; border-radius:10px; font-weight:600; }
+
+        .resume-box { margin-top:3rem; background:rgba(255,255,255,0.05); border-radius:15px; padding:2rem; }
+
+        @media (max-width:900px) {
+          .extras-grid { flex-direction:column; align-items:center; }
+          .education-grid { grid-template-columns:1fr; }
+          .profile p { text-align:center; }
         }
       `}</style>
     </section>

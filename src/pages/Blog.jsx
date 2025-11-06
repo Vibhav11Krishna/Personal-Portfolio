@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNode } from "react-icons/fa";
 import { SiPhp, SiMysql, SiMongodb, SiPostgresql } from "react-icons/si";
 import { Link } from "react-router-dom";
 
 import internshipImg from "../assets/sss.png";
 import hackathonImg from "../assets/creativex.jpg";
-import fatherWebsiteImg from "../assets/logoshreepati.png"; // ← Father’s website image
+import fatherWebsiteImg from "../assets/logoshreepati.png";
 
 const blogPosts = [
   {
@@ -59,20 +59,37 @@ const blogPosts = [
 ];
 
 const Blog = () => {
-  const [animate, setAnimate] = useState(false);
+  const [visibleCards, setVisibleCards] = useState({});
+  const cardRefs = useRef([]);
 
   useEffect(() => {
-    setAnimate(true);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleCards((prev) => ({
+              ...prev,
+              [entry.target.dataset.index]: true,
+            }));
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    cardRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      cardRefs.current.forEach((el) => {
+        if (el) observer.unobserve(el);
+      });
+    };
   }, []);
 
   return (
-    <section
-      style={{
-        background: "#1E1E1E",
-        color: "#E0E0E0",
-        padding: "4rem 2rem",
-      }}
-    >
+    <section style={{ background: "#1E1E1E", color: "#E0E0E0", padding: "4rem 2rem" }}>
       <h2
         style={{
           textAlign: "center",
@@ -87,7 +104,18 @@ const Blog = () => {
 
       <div className="blog-grid">
         {blogPosts.map((post, idx) => (
-          <div key={idx} className={`blog-card ${animate ? "fade-in" : ""}`}>
+          <div
+            key={idx}
+            ref={(el) => (cardRefs.current[idx] = el)}
+            data-index={idx}
+            className={`blog-card ${
+              visibleCards[idx]
+                ? idx % 2 === 0
+                  ? "animate-left"
+                  : "animate-right"
+                : "hidden"
+            }`}
+          >
             <div className="blog-img">
               <img src={post.img} alt={post.title} />
             </div>
@@ -97,7 +125,6 @@ const Blog = () => {
                 {post.company} — {post.month} {post.year}
               </p>
               <p className="desc">{post.description}</p>
-
               <div className="tech-icons">
                 {post.tech.map((t, i) => (
                   <div key={i} className="tech-icon" style={{ color: t.color }}>
@@ -105,7 +132,6 @@ const Blog = () => {
                   </div>
                 ))}
               </div>
-
               <Link to={post.link} style={{ color: "#FF3B3B", fontWeight: 600 }}>
                 Read More
               </Link>
@@ -115,6 +141,14 @@ const Blog = () => {
       </div>
 
       <style>{`
+        .hidden { opacity: 0; transform: translateY(20px); }
+
+        .animate-left { animation: slideLeft 0.8s forwards; }
+        .animate-right { animation: slideRight 0.8s forwards; }
+
+        @keyframes slideLeft { 0% { opacity:0; transform:translateX(-60px); } 100% { opacity:1; transform:translateX(0); } }
+        @keyframes slideRight { 0% { opacity:0; transform:translateX(60px); } 100% { opacity:1; transform:translateX(0); } }
+
         .blog-grid {
           display: grid;
           grid-template-columns: 1fr;
@@ -139,91 +173,23 @@ const Blog = () => {
           box-shadow: 0 12px 30px rgba(255,59,59,0.5);
         }
 
-        .blog-img {
-          width: 40%;
-          height: 100%;
-          overflow: hidden;
-        }
+        .blog-img { width: 40%; height: 100%; overflow: hidden; }
+        .blog-img img { width: 100%; height: 100%; object-fit: cover; }
 
-        .blog-img img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
+        .blog-content { padding: 1rem; display:flex; flex-direction:column; justify-content:space-between; width:60%; }
+        .blog-content h3 { color: #FF3B3B; margin-bottom: 0.3rem; font-size:1.4rem; }
+        .company { font-weight:600; color:#ccc; font-size:0.9rem; }
+        .desc { color:#ddd; font-size:0.85rem; margin-bottom:0.5rem; }
 
-        .blog-content {
-          padding: 1rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          width: 60%;
-        }
+        .tech-icons { display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:0.5rem; }
+        .tech-icon { font-size:1.7rem; transition: transform 0.3s ease, text-shadow 0.3s ease; }
+        .tech-icon:hover { transform: scale(1.3); text-shadow: 0 0 12px currentColor, 0 0 20px currentColor; }
 
-        .blog-content h3 {
-          color: #FF3B3B;
-          margin-bottom: 0.3rem;
-          font-size: 1.4rem;
-        }
-
-        .company {
-          font-weight: 600;
-          color: #ccc;
-          font-size: 0.9rem;
-        }
-
-        .desc {
-          color: #ddd;
-          font-size: 0.85rem;
-          margin-bottom: 0.5rem;
-        }
-
-        /* 🔥 Bigger + Hoverable Icons */
-        .tech-icons {
-          display: flex;
-          gap: 1rem;
-          flex-wrap: wrap;
-          margin-bottom: 0.5rem;
-        }
-
-        .tech-icon {
-          font-size: 1.7rem;
-          transition: transform 0.3s ease, text-shadow 0.3s ease;
-        }
-
-        .tech-icon:hover {
-          transform: scale(1.3);
-          text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
-        }
-
-        .fade-in {
-          opacity: 0;
-          transform: translateY(20px);
-          animation: fadeInUp 0.8s forwards;
-        }
-
-        @keyframes fadeInUp {
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @media (max-width: 768px) {
-          .blog-card {
-            flex-direction: column;
-            height: auto;
-          }
-          .blog-img {
-            width: 100%;
-            height: 220px;
-          }
-          .blog-content {
-            width: 100%;
-            padding: 0.8rem;
-          }
-          .tech-icon {
-            font-size: 2rem;
-          }
+        @media (max-width:768px) {
+          .blog-card { flex-direction:column; height:auto; }
+          .blog-img { width:100%; height:220px; }
+          .blog-content { width:100%; padding:0.8rem; }
+          .tech-icon { font-size:2rem; }
         }
       `}</style>
     </section>

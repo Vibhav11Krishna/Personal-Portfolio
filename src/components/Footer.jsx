@@ -2,10 +2,10 @@ import React from "react";
 import {
   FaInstagram,
   FaWhatsapp,
-  FaFacebook,
   FaLinkedin,
   FaEnvelope,
 } from "react-icons/fa";
+import { SiGithub } from "react-icons/si"; // ✅ modern GitHub icon
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -22,7 +22,7 @@ const Footer = () => {
   const socials = [
     { icon: <FaInstagram />, color: "#E1306C", link: "https://instagram.com/KrishnaPulkit11" },
     { icon: <FaWhatsapp />, color: "#25D366", link: "https://wa.me/7209749002" },
-    { icon: <FaFacebook />, color: "#1877F2", link: "https://facebook.com" },
+    { icon: <SiGithub />, color: "#fff", link: "https://github.com/Vibhav11Krishna" }, // ✅ updated
     { icon: <FaLinkedin />, color: "#0A66C2", link: "https://www.linkedin.com/in/pulkit-krishna-4152802b3" },
     { icon: <FaEnvelope />, color: "#FF3B3B", link: "mailto:pulkitkrishna2005@gmail.com" },
   ];

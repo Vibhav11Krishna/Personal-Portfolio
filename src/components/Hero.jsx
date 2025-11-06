@@ -2,14 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import {
   FaInstagram,
   FaWhatsapp,
-  FaFacebook,
   FaLinkedin,
-  FaGithub,
   FaEnvelope,
 } from "react-icons/fa";
+import { SiGithub } from "react-icons/si"; 
 import Leader from "../assets/leader.png";
 import Resume from "../assets/Resume.pdf"; 
-
 
 const roles = ["Full-Stack Developer", "Video Editor", "React Enthusiast"];
 const quotes = [
@@ -20,10 +18,9 @@ const quotes = [
 const socialLinks = [
   { icon: FaInstagram, color: "#E1306C", link: "https://instagram.com/KrishnaPulkit11" },
   { icon: FaWhatsapp, color: "#25D366", link: "https://wa.me/7209749002" },
-  { icon: FaFacebook, color: "#1877F2", link: "https://facebook.com" },
+  { icon: SiGithub, color: "#fff", link: "https://github.com/Vibhav11Krishna" },
   { icon: FaLinkedin, color: "#0A66C2", link: "https://www.linkedin.com/in/pulkit-krishna-4152802b3" },
-  { icon: FaGithub, color: "#fff", link: "https://github.com/Vibhav11Krishna" },
-  { icon: FaEnvelope, color: "#1DA1F2", link: "pulkitkrishna2005@gmail.com" },
+  { icon: FaEnvelope, color: "#FF3B3B", link: "mailto:pulkitkrishna2005@gmail.com" },
 ];
 
 const Hero = () => {
@@ -46,7 +43,7 @@ const Hero = () => {
           setIndex((prev) => (prev + 1) % roles.length);
         }, 1500);
       }
-    }, 150);
+    }, 120);
     return () => clearTimeout(timeout);
   }, [subIndex, index]);
 
@@ -96,14 +93,14 @@ const Hero = () => {
           <p className="quote">"{quotes[quoteIndex]}"</p>
 
           <div className="btn-group">
-           <a
+            <a
               href={Resume}
               download="Pulkit_Krishna_Resume.pdf"
               className="hero-btn"
             >
               Download CV
             </a>
-            <button onClick={scrollToContact} className="hero-btn">
+            <button onClick={scrollToContact} className="hero-btn outline">
               Let's Connect
             </button>
           </div>
@@ -134,7 +131,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* CSS */}
       <style>{`
         .hero-section {
           width: 100%;
@@ -156,7 +152,7 @@ const Hero = () => {
           background: rgba(255,255,255,0.05);
           border-radius: 30px;
           backdrop-filter: blur(20px);
-          box-shadow: 0 0 40px rgba(255,59,59,0.3);
+          box-shadow: 0 0 50px rgba(255,59,59,0.3);
           opacity: 0;
           transform: translateY(40px);
           transition: all 1s ease;
@@ -181,7 +177,7 @@ const Hero = () => {
           font-size: 2.5rem;
           font-family: 'Orbitron', sans-serif;
           margin-bottom: 1rem;
-          white-space: nowrap; /* keep in one line */
+          white-space: nowrap;
         }
 
         .highlight {
@@ -221,6 +217,11 @@ const Hero = () => {
           box-shadow: 0 0 15px rgba(255,59,59,0.4);
         }
 
+        .hero-btn.outline {
+          background: transparent;
+          border: 2px solid #FF3B3B;
+        }
+
         .hero-btn:hover {
           transform: scale(1.05);
           box-shadow: 0 0 25px rgba(255,59,59,0.7);
@@ -228,7 +229,7 @@ const Hero = () => {
 
         .socials {
           display: flex;
-          gap: 1.2rem;
+          gap: 1.5rem;
           font-size: 1.8rem;
           flex-wrap: wrap;
         }
@@ -238,8 +239,8 @@ const Hero = () => {
         }
 
         .socials a:hover {
-          transform: scale(1.5);
-          text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+          transform: scale(1.4);
+          text-shadow: 0 0 12px currentColor, 0 0 20px currentColor;
         }
 
         .hero-image {
@@ -256,7 +257,7 @@ const Hero = () => {
           border-radius: 25px;
           overflow: hidden;
           border: 3px solid #FF3B3B;
-          box-shadow: 0 0 40px rgba(255,59,59,0.5);
+          box-shadow: 0 0 50px rgba(255,59,59,0.5);
           animation: floatImage 3s ease-in-out infinite;
           transition: all 0.5s ease;
         }
@@ -280,64 +281,24 @@ const Hero = () => {
           50% { transform: translateY(-10px); }
         }
 
-        /* Mobile Responsive */
         @media (max-width: 900px) {
           .hero-container {
             flex-direction: column-reverse;
             text-align: center;
             padding: 3rem 1.5rem;
           }
-
-          .hero-text {
-            padding: 0;
-            align-items: center;
-          }
-
-          .hero-text h1 {
-            font-size: 2.3rem;
-            white-space: nowrap;
-          }
-
-          .quote {
-            font-size: 1rem;
-          }
-
-          .btn-group {
-            justify-content: center;
-          }
-
-          .socials {
-            justify-content: center;
-          }
-
-          .image-wrapper {
-            width: 280px;
-            height: 280px;
-          }
+          .hero-text { align-items: center; }
+          .btn-group { justify-content: center; }
+          .socials { justify-content: center; }
+          .image-wrapper { width: 280px; height: 280px; }
         }
 
         @media (max-width: 500px) {
-          .hero-text h1 {
-            font-size: 1.6rem;
-          }
-
-          .hero-text h3 {
-            font-size: 1rem;
-          }
-
-          .quote {
-            font-size: 0.9rem;
-          }
-
-          .image-wrapper {
-            width: 240px;
-            height: 240px;
-          }
-
-          .hero-btn {
-            font-size: 0.9rem;
-            padding: 0.7rem 1.4rem;
-          }
+          .hero-text h1 { font-size: 1.6rem; }
+          .hero-text h3 { font-size: 1rem; }
+          .quote { font-size: 0.9rem; }
+          .image-wrapper { width: 240px; height: 240px; }
+          .hero-btn { font-size: 0.9rem; padding: 0.7rem 1.4rem; }
         }
       `}</style>
     </section>
@@ -345,5 +306,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-          

@@ -58,7 +58,7 @@ const certificates = [
       { icon: <FaHtml5 />, color: "#E34F26" },
       { icon: <FaCss3Alt />, color: "#264DE4" },
       { icon: <FaJsSquare />, color: "#F7DF1E" },
-      { icon: <SiBootstrap />, color: "#563D7C" },
+   
     ],
   },
   {

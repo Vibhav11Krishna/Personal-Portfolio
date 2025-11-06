@@ -1,204 +1,188 @@
-import React, { useRef, useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
+import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaInstagram, FaWhatsapp } from "react-icons/fa";
 
 const Contact = () => {
-  const sectionRef = useRef();
-  const [visible, setVisible] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setVisible(entry.isIntersecting),
-      { threshold: 0.3 }
-    );
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-    };
-  }, []);
-
-  // Base API URL (from .env)
-  const API_URL = "https://personal-portfolio-backend-il4k.onrender.com";
-
-
-
-  // Handle input change
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  // Handle submit (send data to backend)
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    try {
-      await axios.post(`${API_URL}/api/contact`, formData);
-      alert("✅ Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" });
-    } catch (error) {
-      console.error("❌ Error sending message:", error);
-      alert("Failed to send message. Please try again later.");
-    }
-    setLoading(false);
-  };
+  const contacts = [
+    {
+      title: "Email Me",
+      icon: <FaEnvelope />,
+      info: "pulkitkrishna2005@gmail.com",
+      link: "mailto:pulkitkrishna2005@gmail.com",
+      bg: "linear-gradient(135deg, #FF3B3B, #FF7B7B)",
+    },
+    {
+      title: "Call Me",
+      icon: <FaPhone />,
+      info: "+91 7209749002",
+      link: "tel:+917209749002",
+      bg: "linear-gradient(135deg, #FF7B59, #FFA17F)",
+    },
+    {
+      title: "LinkedIn",
+      icon: <FaLinkedin />,
+      info: "Connect on LinkedIn",
+      link: "https://www.linkedin.com/in/pulkit-krishna-4152802b3",
+      bg: "linear-gradient(135deg, #0A66C2, #1E90FF)",
+    },
+    {
+      title: "GitHub",
+      icon: <FaGithub />,
+      info: "View My Projects",
+      link: "https://github.com/Vibhav11Krishna",
+      bg: "linear-gradient(135deg, #333, #555)",
+    },
+    {
+      title: "Instagram",
+      icon: <FaInstagram />,
+      info: "@pulkitkrishna",
+      link: "https://instagram.com/KrishnaPulkit11",
+      bg: "linear-gradient(135deg, #E4405F, #F77737)",
+    },
+    {
+      title: "WhatsApp",
+      icon: <FaWhatsapp />,
+      info: "Chat on WhatsApp",
+      link: "https://wa.me/917209749002",
+      bg: "linear-gradient(135deg, #25D366, #128C7E)",
+    },
+  ];
 
   return (
-    <section ref={sectionRef} className="contact-section">
-      <div className={`contact-form-wrapper ${visible ? "visible" : ""}`}>
+    <section className="contact-section">
+      <div className="heading-wrapper">
         <h2>Let's Connect</h2>
         <p className="contact-intro">
-          Have an idea, project, or collaboration in mind?  
-          Reach out via the form below.
+          You can reach out to me through the following platforms:
         </p>
+      </div>
 
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <textarea
-            name="message"
-            rows="6"
-            placeholder="Your Message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          ></textarea>
-          <button type="submit" disabled={loading}>
-            {loading ? "Sending..." : "Send Message"}
-          </button>
-        </form>
-
-        <div className="contact-details">
-          <p><strong>Email:</strong> pulkitkrishna2005@gmail.com</p>
-          <p><strong>Phone:</strong> +91 7209749002</p>
+      <div className="outer-box">
+        <div className="cards-wrapper">
+          {contacts.map((c, idx) => (
+            <a
+              key={idx}
+              href={c.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-card"
+              style={{ 
+                background: c.bg, 
+                animationDelay: `${idx * 0.15}s` 
+              }}
+            >
+              <div className="icon">{c.icon}</div>
+              <h3>{c.title}</h3>
+              <p>{c.info}</p>
+            </a>
+          ))}
         </div>
       </div>
 
       <style>{`
         .contact-section {
           min-height: 100vh;
-          width: 100%;
           padding: 6rem 2rem;
-          background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
-          color: #E0E0E0;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          position: relative;
-        }
-
-        .contact-form-wrapper {
-          width: 80%;
-          max-width: 900px;
-          padding: 4rem 3rem;
-          background: rgba(255,255,255,0.05);
-          border-radius: 25px;
-          backdrop-filter: blur(20px);
-          box-shadow: 0 0 35px rgba(255,59,59,0.15);
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 2rem;
-          text-align: center;
-          opacity: 0;
-          transform: translateY(60px);
-          transition: all 0.8s ease;
-        }
-        .contact-form-wrapper.visible {
-          opacity: 1;
-          transform: translateY(0);
+          justify-content: center;
+          background: linear-gradient(135deg, #0c0c0c, #1a1a1a);
+          color: #fff;
         }
 
-        .contact-form-wrapper h2 {
+        .heading-wrapper {
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+
+        .contact-section h2 {
           font-family: 'Orbitron', sans-serif;
-          font-size: 2.8rem;
+          font-size: 3rem;
           color: #FF3B3B;
-          text-shadow: 0 0 10px rgba(255,59,59,0.6);
+          margin-bottom: 1rem;
+          text-shadow: 0 0 12px rgba(255,59,59,0.6);
         }
 
         .contact-intro {
-          font-size: 1rem;
           color: #ccc;
-          max-width: 700px;
+          font-size: 1.1rem;
           line-height: 1.6;
         }
 
-        form {
+        .outer-box {
+          background: #2b2b2b;
+          padding: 3rem;
+          border-radius: 20px;
+          display: flex;
+          justify-content: center;
           width: 100%;
-          display: flex;
-          flex-direction: column;
-          gap: 1.5rem;
+          max-width: 1000px;
         }
 
-        input, textarea {
-          padding: 1.2rem;
-          border-radius: 12px;
-          border: 1px solid rgba(255,255,255,0.2);
-          background: rgba(255,255,255,0.08);
+        .cards-wrapper {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 2rem;
+          width: 100%;
+        }
+
+        .contact-card {
+          padding: 2rem 1.5rem;
+          border-radius: 20px;
+          text-align: center;
           color: #fff;
-          font-size: 1rem;
-          transition: all 0.3s ease;
-        }
-        input:focus, textarea:focus {
-          outline: none;
-          border-color: #FF3B3B;
-          box-shadow: 0 0 10px rgba(255,59,59,0.3);
+          text-decoration: none;
+          box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+          opacity: 0;
+          transform: translateY(60px);
+          animation: slideUp 0.6s forwards ease-out;
         }
 
-        button {
-          padding: 1rem 2.5rem;
-          font-size: 1.2rem;
-          border-radius: 15px;
-          font-weight: 600;
-          background: linear-gradient(90deg, #FF3B3B, #ff7b7b);
-          color: #fff;
-          border: none;
-          transition: all 0.4s ease;
-          cursor: pointer;
-          letter-spacing: 0.5px;
-        }
-        button:hover {
-          transform: scale(1.05);
-          box-shadow: 0 0 25px rgba(255,59,59,0.6);
-        }
-
-        .contact-details {
-          margin-top: 1.5rem;
-          font-size: 1rem;
-          color: #ccc;
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-
-        @media (max-width: 768px) {
-          .contact-section {
-            padding: 3rem 1rem;
+        @keyframes slideUp {
+          to {
+            opacity: 1;
+            transform: translateY(0);
           }
-          .contact-form-wrapper {
-            width: 95%;
-            padding: 3rem 2rem;
+        }
+
+        .contact-card:hover {
+          transform: translateY(0) scale(1.05);
+          box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-card .icon {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+          transition: transform 0.3s ease-in-out;
+        }
+
+        .contact-card:hover .icon {
+          transform: scale(1.1);
+        }
+
+        .contact-card h3 {
+          font-size: 1.3rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .contact-card p {
+          font-size: 1rem;
+          color: #eee;
+        }
+
+        @media(max-width:1024px){
+          .cards-wrapper { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media(max-width:768px){
+          .cards-wrapper { grid-template-columns: 1fr; }
+          .outer-box { padding: 2rem; }
+          .contact-section { padding: 4rem 1rem; }
+          .heading-wrapper h2,
+          .heading-wrapper p {
+            text-align: center;
           }
-          .contact-form-wrapper h2 { font-size: 2.2rem; }
-          .contact-intro { font-size: 0.95rem; }
         }
       `}</style>
     </section>

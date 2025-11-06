@@ -10,7 +10,6 @@ import {
 } from "react-icons/fa";
 import { SiFigma, SiCanva, SiMysql, SiMongodb, SiPhp } from "react-icons/si";
 
-// Images
 import HRImg from "../assets/HRManagement.png";
 import ShreepatiImg from "../assets/EducationalWebsite.png";
 import PortfolioImg from "../assets/PortfolioWebsite.png";
@@ -83,7 +82,6 @@ const projects = [
     image: HeadphoneLogo,
     tech: [{ icon: <SiFigma />, color: "#fb07beff" }],
     link: "https://www.figma.com/proto/b1GbvJTBSqK8BXULj2QOIT/pulkit-projects?node-id=12-15&t=H3b7YoLnjWFXwCJF-1",
-   
   },
   {
     id: 6,
@@ -92,7 +90,6 @@ const projects = [
     image: BicycleLogo,
     tech: [{ icon: <SiFigma />, color: "#fb07beff" }],
     link: "https://www.figma.com/proto/b1GbvJTBSqK8BXULj2QOIT/pulkit-projects?node-id=81-21&t=H3b7YoLnjWFXwCJF-1",
-    
   },
   {
     id: 7,
@@ -101,7 +98,6 @@ const projects = [
     image: Green,
     tech: [{ icon: <SiFigma />, color: "#fb07beff" }],
     link: "#",
-   
   },
   {
     id: 8,
@@ -110,7 +106,6 @@ const projects = [
     image: EducationLogo,
     tech: [{ icon: <SiFigma />, color: "#fb07beff" }],
     link: "#",
-   
   },
 ];
 
@@ -129,7 +124,7 @@ const Projects = () => {
         alignItems: "center",
       }}
     >
-      {/* Heading animation */}
+      {/* Heading */}
       <motion.h1
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -207,12 +202,14 @@ const Projects = () => {
                 {project.description}
               </p>
 
+              {/* Tech Icons */}
               <div
                 style={{
                   display: "flex",
                   justifyContent: "center",
-                  gap: "0.5rem",
-                  fontSize: "1.5rem",
+                  gap: "0.7rem",
+                  fontSize: "2rem",
+                  marginBottom: "1rem",
                 }}
               >
                 {project.tech.map((tech, i) => (
@@ -221,14 +218,19 @@ const Projects = () => {
                     style={{
                       color: tech.color,
                       display: "inline-block",
+                      transition: "transform 0.3s ease",
                     }}
-                    whileHover={{ scale: 1.3, rotate: 10 }}
+                    whileHover={{
+                      scale: 1.4,
+                      rotate: 10,
+                    }}
                   >
                     {tech.icon}
                   </motion.span>
                 ))}
               </div>
 
+              {/* Buttons */}
               <div
                 style={{
                   display: "flex",
@@ -254,22 +256,25 @@ const Projects = () => {
                 >
                   View Project
                 </motion.a>
-                <motion.a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  style={{
-                    padding: "6px 14px",
-                    borderRadius: "8px",
-                    backgroundColor: "#0e76a8",
-                    color: "#fff",
-                    fontWeight: "600",
-                    textDecoration: "none",
-                  }}
-                >
-                  View on GitHub
-                </motion.a>
+
+                {project.github && (
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    style={{
+                      padding: "6px 14px",
+                      borderRadius: "8px",
+                      backgroundColor: "#0e76a8",
+                      color: "#fff",
+                      fontWeight: "600",
+                      textDecoration: "none",
+                    }}
+                  >
+                    View on GitHub
+                  </motion.a>
+                )}
               </div>
             </div>
           </motion.div>
