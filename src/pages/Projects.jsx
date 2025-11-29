@@ -7,9 +7,10 @@ import {
   FaReact,
   FaBootstrap,
   FaNode,
+  FaGithub,
 } from "react-icons/fa";
 import { SiFigma, SiCanva, SiMysql, SiMongodb, SiPhp } from "react-icons/si";
-
+import { SiExpo } from "react-icons/si";
 import HRImg from "../assets/HRManagement.png";
 import ShreepatiImg from "../assets/EducationalWebsite.png";
 import PortfolioImg from "../assets/PortfolioWebsite.png";
@@ -18,12 +19,17 @@ import HeadphoneLogo from "../assets/HeadphoneProduct.jpg";
 import BicycleLogo from "../assets/office2.png";
 import EducationLogo from "../assets/office3.png";
 import Green from "../assets/office1.png";
+import ParlourLogo from "../assets/Parlour.png";
+import Trackerlogo from "../assets/Trackerlogo.png";
 
-const projects = [
+/* --------------------- PROJECT CATEGORIES --------------------- */
+
+const websiteProjects = [
   {
     id: 1,
     title: "HR Management System",
-    description: "Role-based dashboards for employees and admins with clean workflows.",
+    description:
+      "Role-based dashboards for employees and admins with clean workflows.",
     image: HRImg,
     tech: [
       { icon: <FaHtml5 />, color: "#FF6600" },
@@ -35,6 +41,7 @@ const projects = [
     link: "http://hr-management-dashboard.great-site.net",
     github: "https://github.com/Vibhav11Krishna/hr-management-system",
   },
+
   {
     id: 2,
     title: "Educational Website",
@@ -45,10 +52,29 @@ const projects = [
       { icon: <FaJsSquare />, color: "#f7df1e" },
     ],
     link: "https://shreepati-educational-services-a35b.vercel.app/",
-    github: "https://github.com/Vibhav11Krishna/Shreepati-Educational-Services",
+    github:
+      "https://github.com/Vibhav11Krishna/Shreepati-Educational-Services",
   },
+
   {
     id: 3,
+    title: "Parlour Website",
+    description:
+      "A premium parlour website built for a stylish and interactive customer experience.",
+    image: ParlourLogo,
+    tech: [
+      { icon: <FaHtml5 />, color: "#FF6600" },
+      { icon: <FaCss3Alt />, color: "#264de4" },
+      { icon: <FaJsSquare />, color: "#f7df1e" },
+      { icon: <SiPhp />, color: "#bc17e1ff" },
+      { icon: <SiMysql />, color: "#00758F" },
+    ],
+    link:
+      "https://www.figma.com/proto/b1GbvJTBSqK8BXULj2QOIT/pulkit-projects?node-id=12-15",
+  },
+
+  {
+    id: 4,
     title: "Portfolio Website",
     description: "Premium portfolio layout using React and responsive design.",
     image: PortfolioImg,
@@ -61,10 +87,12 @@ const projects = [
     link: "https://personal-portfolio-nr1k.vercel.app/",
     github: "https://github.com/Vibhav11Krishna/personal-portfolio",
   },
+
   {
-    id: 4,
+    id: 5,
     title: "CreativeX",
-    description: "Internal hackathon winning project using full-stack development.",
+    description:
+      "Internal hackathon winning project using full-stack development.",
     image: CreativeXImg,
     tech: [
       { icon: <FaReact />, color: "#61DBFB" },
@@ -75,39 +103,216 @@ const projects = [
     link: "#",
     github: "https://github.com/yourusername/creative-x",
   },
-  {
-    id: 5,
-    title: "Headphone Product",
-    description: "Figma design turned into responsive web UI for headphones product.",
-    image: HeadphoneLogo,
-    tech: [{ icon: <SiFigma />, color: "#fb07beff" }],
-    link: "https://www.figma.com/proto/b1GbvJTBSqK8BXULj2QOIT/pulkit-projects?node-id=12-15&t=H3b7YoLnjWFXwCJF-1",
-  },
+];
+
+const figmaProjects = [
   {
     id: 6,
-    title: "Bicycle Website",
-    description: "Figma-based design for a clean and modern bicycle website.",
-    image: BicycleLogo,
+    title: "Headphone Product",
+    description: "Figma design turned into responsive web UI for headphones.",
+    image: HeadphoneLogo,
     tech: [{ icon: <SiFigma />, color: "#fb07beff" }],
-    link: "https://www.figma.com/proto/b1GbvJTBSqK8BXULj2QOIT/pulkit-projects?node-id=81-21&t=H3b7YoLnjWFXwCJF-1",
+    link:
+      "https://www.figma.com/proto/b1GbvJTBSqK8BXULj2QOIT/pulkit-projects?node-id=12-15",
   },
+
   {
     id: 7,
+    title: "Bicycle Website",
+    description: "Clean and modern bicycle website Figma UI.",
+    image: BicycleLogo,
+    tech: [{ icon: <SiFigma />, color: "#fb07beff" }],
+    link:
+      "https://www.figma.com/proto/b1GbvJTBSqK8BXULj2QOIT/pulkit-projects?node-id=81-21",
+  },
+
+  {
+    id: 8,
     title: "Education Website",
-    description: "Designed and implemented responsive education website using Figma mockup.",
+    description: "Education website UI designed using Figma.",
     image: Green,
     tech: [{ icon: <SiFigma />, color: "#fb07beff" }],
     link: "#",
   },
+
   {
-    id: 8,
+    id: 9,
     title: "Cafe Website",
-    description: "Designed and implemented responsive cafe website using Figma mockup.",
+    description: "Responsive cafe website designed in Figma.",
     image: EducationLogo,
     tech: [{ icon: <SiFigma />, color: "#fb07beff" }],
     link: "#",
   },
 ];
+
+
+const appProjects = [
+  {
+    id: 10,
+    title: "Expense Tracker",
+    description: "Cross-platform Expo React Native app with clean UI and smooth performance.",
+    image: Trackerlogo,
+    tech: [
+   
+      { icon: <SiExpo />, color: "#000000" },   // ← Expo Icon Added
+
+    ],
+    link: "https://expo.dev/accounts/pulkitkrishna11/projects/ExpenseTracker/builds/ea6a56cd-2721-4b9e-9328-ae2ddc098f1a",
+    
+  },
+];
+
+
+
+/* ---------------- GRID COMPONENT ---------------- */
+
+const ProjectGrid = ({ data }) => (
+  <>
+    <div
+      className="project-grid"
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(3, 1fr)",
+        gap: "2rem",
+        width: "100%",
+        marginTop: "2rem",
+        maxWidth: "1400px",
+      }}
+    >
+      {data.map((project, idx) => (
+        <motion.div
+          key={idx}
+          className="project-card"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: idx * 0.1 }}
+          viewport={{ once: true }}
+          whileHover={{ scale: 1.08 }}
+          style={{
+            background: "rgba(255,255,255,0.06)",
+            backdropFilter: "blur(12px)",
+            borderRadius: "15px",
+            overflow: "hidden",
+            textAlign: "center",
+            transition: "0.3s ease",
+            paddingBottom: "1rem",
+          }}
+        >
+          <div style={{ width: "100%", height: "200px" }}>
+            <img
+              src={project.image}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
+          </div>
+
+          <div style={{ padding: "1rem" }}>
+            <h3 style={{ color: "#FF3B3B" }}>{project.title}</h3>
+            <p style={{ color: "#ccc", fontSize: "0.9rem" }}>
+              {project.description}
+            </p>
+
+            {/* ICONS */}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: "0.7rem",
+                fontSize: "2rem",
+                marginTop: "0.7rem",
+              }}
+            >
+              {project.tech.map((t, i) => (
+                <motion.span
+                  key={i}
+                  style={{ color: t.color }}
+                  whileHover={{ scale: 1.3 }}
+                >
+                  {t.icon}
+                </motion.span>
+              ))}
+            </div>
+
+            {/* BUTTONS */}
+            <div
+              style={{
+                marginTop: "1rem",
+                display: "flex",
+                justifyContent: "center",
+                gap: "1rem",
+                flexWrap: "wrap",
+              }}
+            >
+              {/* VIEW PROJECT BUTTON */}
+              {project.link && (
+                <motion.a
+                  href={project.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{ scale: 1.15 }}
+                  style={{
+                    padding: "8px 16px",
+                    borderRadius: "8px",
+                    background: "rgba(255, 0, 85, 0.9)",
+                    color: "#fff",
+                    textDecoration: "none",
+                    fontWeight: "600",
+                    boxShadow: "0 0 10px rgba(255, 0, 85, 0.7)",
+                    transition: "0.3s",
+                  }}
+                >
+                  View Project
+                </motion.a>
+              )}
+
+              {/* VIEW GITHUB BUTTON */}
+              {project.github && (
+                <motion.a
+                  href={project.github}
+                  target="_blank"
+                  rel="noreferrer"
+                  whileHover={{ scale: 1.15 }}
+                  style={{
+                    padding: "8px 16px",
+                    borderRadius: "8px",
+                    background: "rgba(0, 140, 255, 0.9)",
+                    color: "#fff",
+                    textDecoration: "none",
+                    fontWeight: "600",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    boxShadow: "0 0 10px rgba(0, 140, 255, 0.7)",
+                    transition: "0.3s",
+                  }}
+                >
+                  <FaGithub /> GitHub
+                </motion.a>
+              )}
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+
+    {/* RESPONSIVE GRID */}
+    <style>
+      {`
+        @media (max-width: 1024px) {
+          .project-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+        }
+        @media (max-width: 600px) {
+          .project-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}
+    </style>
+  </>
+);
+
+/* ---------------- MAIN SECTION ---------------- */
 
 const Projects = () => {
   return (
@@ -116,177 +321,34 @@ const Projects = () => {
       style={{
         minHeight: "100vh",
         width: "100%",
-        padding: "2rem 1rem 4rem 1rem",
+        padding: "2rem 1rem",
         background: "#1E1E1E",
         color: "#E0E0E0",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
+        textAlign: "center",
       }}
     >
-      {/* Heading */}
       <motion.h1
         initial={{ opacity: 0, y: -30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, type: "spring" }}
-        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
         style={{
           color: "#FF3B3B",
           fontFamily: "'Orbitron', sans-serif",
-          textShadow: "0 0 6px rgba(255, 59, 59, 0.5)",
-          letterSpacing: "2px",
-          marginBottom: "4rem",
+          marginBottom: "3rem",
+          textShadow: "0 0 6px rgba(255, 59, 59, 0.6)",
         }}
       >
         Projects
       </motion.h1>
 
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-          gap: "3rem",
-          width: "100%",
-          maxWidth: "1400px",
-        }}
-      >
-        {projects.map((project, idx) => (
-          <motion.div
-            key={idx}
-            className="project-card"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.6,
-              delay: idx * 0.15,
-              ease: "easeOut",
-            }}
-            viewport={{ once: true }}
-            style={{
-              background: "rgba(255, 255, 255, 0.05)",
-              backdropFilter: "blur(12px)",
-              borderRadius: "15px",
-              overflow: "hidden",
-              display: "flex",
-              flexDirection: "column",
-              textAlign: "center",
-              transition: "all 0.3s ease",
-            }}
-          >
-            <div style={{ width: "100%", height: "220px", position: "relative" }}>
-              <img
-                src={project.image}
-                alt={project.title}
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                }}
-              />
-            </div>
+      <h2 style={{ color: "#FF3B3B", marginTop: "2rem" }}>Websites</h2>
+      <ProjectGrid data={websiteProjects} />
 
-            <div style={{ padding: "1rem" }}>
-              <h3 style={{ color: "#FF3B3B", marginBottom: "0.5rem" }}>
-                {project.title}
-              </h3>
-              <p
-                style={{
-                  color: "#ccc",
-                  fontSize: "0.9rem",
-                  marginBottom: "0.8rem",
-                }}
-              >
-                {project.description}
-              </p>
+      <h2 style={{ color: "#FF3B3B", marginTop: "3rem" }}>Figma Designs</h2>
+      <ProjectGrid data={figmaProjects} />
 
-              {/* Tech Icons */}
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  gap: "0.7rem",
-                  fontSize: "2rem",
-                  marginBottom: "1rem",
-                }}
-              >
-                {project.tech.map((tech, i) => (
-                  <motion.span
-                    key={i}
-                    style={{
-                      color: tech.color,
-                      display: "inline-block",
-                      transition: "transform 0.3s ease",
-                    }}
-                    whileHover={{
-                      scale: 1.4,
-                      rotate: 10,
-                    }}
-                  >
-                    {tech.icon}
-                  </motion.span>
-                ))}
-              </div>
-
-              {/* Buttons */}
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  gap: "0.8rem",
-                  marginTop: "1rem",
-                  flexWrap: "wrap",
-                }}
-              >
-                <motion.a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  style={{
-                    padding: "6px 14px",
-                    borderRadius: "8px",
-                    backgroundColor: "#FF3B3B",
-                    color: "#fff",
-                    fontWeight: "600",
-                    textDecoration: "none",
-                  }}
-                >
-                  View Project
-                </motion.a>
-
-                {project.github && (
-                  <motion.a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ scale: 1.05 }}
-                    style={{
-                      padding: "6px 14px",
-                      borderRadius: "8px",
-                      backgroundColor: "#0e76a8",
-                      color: "#fff",
-                      fontWeight: "600",
-                      textDecoration: "none",
-                    }}
-                  >
-                    View on GitHub
-                  </motion.a>
-                )}
-              </div>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
-      <style>{`
-        .project-card:hover {
-          box-shadow: 0 0 20px #FF3B3B, 0 0 30px rgba(255, 59, 59, 0.5);
-          transform: translateY(-5px);
-        }
-      `}</style>
+      <h2 style={{ color: "#FF3B3B", marginTop: "3rem" }}>App Development</h2>
+      <ProjectGrid data={appProjects} />
     </section>
   );
 };

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import internshipImg from "../assets/sss.png";
 import hackathonImg from "../assets/creativex.jpg";
 import fatherWebsiteImg from "../assets/logoshreepati.png";
+import ClientImg from "../assets/style.jpg";
 
 const blogPosts = [
   {
@@ -41,7 +42,8 @@ const blogPosts = [
     ],
     link: "/creativex",
   },
-  {
+  
+ {
     title: "Building Shreepati Educational Services Website",
     company: "Personal Project",
     month: "November",
@@ -55,7 +57,25 @@ const blogPosts = [
       { icon: <SiPostgresql />, color: "#0075BF" },
     ],
     link: "/seswebsite",
-  },
+  }, 
+
+   {
+    title: "Building Parlour Webiste For Client",
+    company: "Client Project",
+    month: "December",
+    year: 2025,
+    description:
+      "A luxury Parlour website designed with a premium black-and-gold theme to showcase services and enhance customer bookings.",
+    img: ClientImg,
+    tech: [
+     { icon: <FaHtml5 />, color: "#E34F26" },
+      { icon: <FaCss3Alt />, color: "#264DE4" },
+      { icon: <FaJsSquare />, color: "#F7DF1E" },
+      { icon: <SiPhp />, color: "#8892BE" },
+      { icon: <SiMysql />, color: "#00758F" },
+    ],
+    link: "/seswebsite",
+  }, 
 ];
 
 const Blog = () => {
