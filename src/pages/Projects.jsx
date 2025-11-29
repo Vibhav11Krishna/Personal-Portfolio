@@ -20,7 +20,7 @@ import BicycleLogo from "../assets/office2.png";
 import EducationLogo from "../assets/office3.png";
 import Green from "../assets/office1.png";
 import ParlourLogo from "../assets/Parlour.png";
-import trackerlogo from "../assets/trackerlogo.png";
+import tracker from "../assets/tracker.png";
 
 /* --------------------- PROJECT CATEGORIES --------------------- */
 
@@ -151,7 +151,7 @@ const appProjects = [
     id: 10,
     title: "Expense Tracker",
     description: "Cross-platform Expo React Native app with clean UI and smooth performance.",
-    image: trackerlogo,
+    image: tracker,
     tech: [
    
       { icon: <SiExpo />, color: "#000000" },   // ← Expo Icon Added
