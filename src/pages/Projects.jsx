@@ -21,6 +21,7 @@ import EducationLogo from "../assets/office3.png";
 import Green from "../assets/office1.png";
 import ParlourLogo from "../assets/parlour.png";
 import tracker from "../assets/tracker.png";
+import billing from "../assets/billing.png";
 
 /* --------------------- PROJECT CATEGORIES --------------------- */
 
@@ -70,11 +71,31 @@ const websiteProjects = [
       { icon: <SiMysql />, color: "#00758F" },
     ],
     link:
-      "https://www.figma.com/proto/b1GbvJTBSqK8BXULj2QOIT/pulkit-projects?node-id=12-15",
+      "https://style-n-shine.great-site.net/?i=2",
+      github:
+      "https://github.com/Vibhav11Krishna/style-n-shine-website",
   },
 
-  {
+   {
     id: 4,
+    title: "Parlour Billing System",
+    description:
+      "A billing system having whatsaap integration and pdf veiwing and veiw bills section.",
+    image: billing,
+    tech: [
+      { icon: <FaHtml5 />, color: "#FF6600" },
+      { icon: <FaCss3Alt />, color: "#264de4" },
+      { icon: <FaJsSquare />, color: "#f7df1e" },
+      { icon: <SiPhp />, color: "#bc17e1ff" },
+      { icon: <SiMysql />, color: "#00758F" },
+    ],
+    link:
+      "https://billingapp.great-site.net/?i=1",
+      github:
+      "https://github.com/Vibhav11Krishna/StyleNShine-Billing",
+  },
+  {
+    id: 5,
     title: "Portfolio Website",
     description: "Premium portfolio layout using React and responsive design.",
     image: PortfolioImg,
@@ -89,7 +110,7 @@ const websiteProjects = [
   },
 
   {
-    id: 5,
+    id: 6,
     title: "CreativeX",
     description:
       "Internal hackathon winning project using full-stack development.",
@@ -107,7 +128,7 @@ const websiteProjects = [
 
 const figmaProjects = [
   {
-    id: 6,
+    id: 7,
     title: "Headphone Product",
     description: "Figma design turned into responsive web UI for headphones.",
     image: HeadphoneLogo,
@@ -117,7 +138,7 @@ const figmaProjects = [
   },
 
   {
-    id: 7,
+    id: 8,
     title: "Bicycle Website",
     description: "Clean and modern bicycle website Figma UI.",
     image: BicycleLogo,
@@ -127,7 +148,7 @@ const figmaProjects = [
   },
 
   {
-    id: 8,
+    id: 9,
     title: "Education Website",
     description: "Education website UI designed using Figma.",
     image: Green,
@@ -136,7 +157,7 @@ const figmaProjects = [
   },
 
   {
-    id: 9,
+    id: 10,
     title: "Cafe Website",
     description: "Responsive cafe website designed in Figma.",
     image: EducationLogo,
@@ -148,7 +169,7 @@ const figmaProjects = [
 
 const appProjects = [
   {
-    id: 10,
+    id: 11,
     title: "Expense Tracker",
     description: "Cross-platform Expo React Native app with clean UI and smooth performance.",
     image: tracker,
