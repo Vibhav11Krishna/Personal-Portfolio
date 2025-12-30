@@ -15,6 +15,7 @@ import rpLogo from "../assets/rps.png";
 import sssLogo from "../assets/sss.png";
 import sihLogo from "../assets/sih.jpg";
 import teamPhoto from "../assets/group.jpg";
+import style from "../assets/style.jpg";
 
 const Timeline = () => {
   useEffect(() => {
@@ -45,8 +46,9 @@ const Timeline = () => {
     { year: "2024–2025", image: <img src={rpLogo} alt="RP Sharma" style={imgStyle} />, label: "Completed 1st Year B.Tech CSE", description: "Gained strong foundations in HTML, CSS, and JavaScript.", skills: [<FaHtml5 size={35} color="#E34F26" style={iconStyle} />, <FaCss3Alt size={35} color="#1572B6" style={iconStyle} />, <FaJs size={35} color="#F7DF1E" style={iconStyle} />] },
     { year: "2025", image: <img src={sssLogo} alt="SSS" style={imgStyle} />, label: "Internship - Software Services & Solutions", description: "Worked on real-world projects using PHP and MySQL.", skills: [<FaPhp size={35} color="#777BB4" style={iconStyle} />, <SiMysql size={35} color="#00618A" style={iconStyle} />] },
     { year: "2025", image: <img src={sihLogo} alt="SIH" style={imgStyle} />, label: "SIH Hackathon Winner - Creative X", description: "Developed full-stack apps using React, Node.js, and MongoDB with my team.", skills: [<FaReact size={35} color="#61DBFB" style={iconStyle} />, <FaNodeJs size={35} color="#3C873A" style={iconStyle} />, <SiMongodb size={35} color="#3C873A" style={iconStyle} />], extraBox: { srcs: [teamPhoto], alt: "Team & Logo", desc: "Team Creativex presenting SIH solution and SIH logo" } },
-  ];
+    { year: "2025", image: <img src={style} alt="SNS" style={imgStyle} />, label: "Client Project : Style N Shine", description: "Made an website & billing system for client parlour.", skills: [<FaPhp size={35} color="#777BB4" style={iconStyle} />, <SiMysql size={35} color="#00618A" style={iconStyle} />,<FaHtml5 size={35} color="#E34F26" style={iconStyle} />, <FaCss3Alt size={35} color="#1572B6" style={iconStyle} />, <FaJs size={35} color="#F7DF1E" style={iconStyle} />],  },
 
+  ]; 
   return (
     <section className="timeline-section">
       <h2 className="timeline-title">My Journey</h2>
@@ -191,7 +193,7 @@ const Timeline = () => {
         }
 
         .timeline-image {
-          width: 100px;
+          width: 130px;
           height: 100px;
           background: #111;
           border-radius: 10px;

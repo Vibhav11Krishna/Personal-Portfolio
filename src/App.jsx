@@ -12,7 +12,8 @@ import Certificates from "./pages/Certificates";
 import Contact from "./pages/Contact";
 import InternshipPage from "./pages/InternshipPage";
 import CreativeXPage from "./pages/CreativeXPage";
-import SesWebsitePage from "./pages/SesWebsitePage"; // ✅ fixed typo: 'frpm' → 'from'
+import SesWebsitePage from "./pages/SesWebsitePage"; 
+import SnsWebsitePage from "./pages/SnsWebsitePage";
 
 function App() {
   return (
@@ -33,7 +34,8 @@ function App() {
               <Route path="/blog" element={<Blog />} />
               <Route path="/internship" element={<InternshipPage />} />
               <Route path="/creativex" element={<CreativeXPage />} />
-              <Route path="/seswebsite" element={<SesWebsitePage />} /> {/* ✅ added route */}
+              <Route path="/seswebsite" element={<SesWebsitePage />} /> 
+              <Route path="/snswebsite" element={<SnsWebsitePage />} />
               <Route path="/timeline" element={<Timeline />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>

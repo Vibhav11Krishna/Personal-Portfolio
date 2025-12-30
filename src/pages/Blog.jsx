@@ -60,7 +60,7 @@ const blogPosts = [
   }, 
 
    {
-    title: "Building Parlour Webiste For Client",
+    title: "Building Parlour Webiste & Billing System For Client",
     company: "Client Project",
     month: "December",
     year: 2025,
@@ -74,7 +74,7 @@ const blogPosts = [
       { icon: <SiPhp />, color: "#8892BE" },
       { icon: <SiMysql />, color: "#00758F" },
     ],
-    link: "/seswebsite",
+    link: "/snswebsite",
   }, 
 ];
 
