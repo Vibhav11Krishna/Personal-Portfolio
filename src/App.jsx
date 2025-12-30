@@ -14,6 +14,7 @@ import InternshipPage from "./pages/InternshipPage";
 import CreativeXPage from "./pages/CreativeXPage";
 import SesWebsitePage from "./pages/SesWebsitePage"; 
 import SnsWebsitePage from "./pages/SnsWebsitePage";
+import ExpenseTrackerPage from "./pages/ExpenseTrackerPage";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
               <Route path="/creativex" element={<CreativeXPage />} />
               <Route path="/seswebsite" element={<SesWebsitePage />} /> 
               <Route path="/snswebsite" element={<SnsWebsitePage />} />
+               <Route path="/expensepage" element={<ExpenseTrackerPage />} />
               <Route path="/timeline" element={<Timeline />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>

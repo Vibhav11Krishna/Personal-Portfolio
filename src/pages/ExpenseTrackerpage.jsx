@@ -25,17 +25,14 @@ import {
   FaDatabase,
   FaPalette
 } from "react-icons/fa";
-
+import { SiExpo } from "react-icons/si";
 import { SiTailwindcss, SiExpress, SiPostgresql } from "react-icons/si";
-import websiteImg from "../assets/style.jpg";
-import homepageImg from "../assets/parlour.png";
-import aboutImg from "../assets/parlour1.png";
-import serviceImg from "../assets/parlour2.png";
-import bookingImg from "../assets/parlour3.png";
-import contactImg from "../assets/parlour5.png";
-import billingImg from "../assets/parlour6.png";
-import veiwImg from "../assets/parlour7.png";
-import invoiceImg from "../assets/parlour8.png";
+import websiteImg from "../assets/tracker.png";
+import homepageImg from "../assets/tracker1.jpg";
+import aboutImg from "../assets/tracker2.jpg";
+import serviceImg from "../assets/tracker3.jpg";
+import bookingImg from "../assets/tracker4.jpg";
+
 // Cloudinary Imports
 import { Cloudinary } from "@cloudinary/url-gen";
 import { AdvancedVideo } from "@cloudinary/react";
@@ -77,18 +74,16 @@ const handleGlow = (e, isHover) => {
 
 // --- Project Overview Data ---
 const projectOverview = [
-  { img: homepageImg, title: "Home Page", desc: "Landing section introducing the parlour with photos and phone numbers." },
-  { img: aboutImg, title: "About Page", desc: "Explains the parlours goals, experts introduction & the owner." },
-  { img: serviceImg, title: "Services Page", desc: "Displays available services regarding the parlour." },
-  { img: bookingImg, title: "Booking Page", desc: "Booking page is done by whatsaap integration using api " },
-  { img: contactImg, title: "Contact Page", desc: "Contact page having address & phone numbers to contact and has map to locate the parlour" },
-  { img: billingImg, title: "Billing Page", desc: "Billing page has inputs having name, phone numbers & address and what the customer has done in the parlour with the services listed with the headings" },
-  { img: veiwImg, title: "Veiw Bills Page", desc: "Client can veiw bills accoroading to their date time and id's of invoice " },
-  { img: invoiceImg, title: "Invoice Page", desc: "Invoice page having all the required inputs of the customer name,phone number and the services which he/she opted for in the parlour." },
+  { img: homepageImg, title: "Home Page", desc: "Landing section where there are 4 icons to show expenses in their way." },
+  { img: aboutImg, title: "Welcome Page", desc: "Welcoming page with effects of dollar icons to showcase." },
+  { img: serviceImg, title: "Signup Page", desc: "Sign up page where visitors can create his/her account by adding username and password." },
+  { img: bookingImg, title: "Login Page", desc: "Login page where he/she can login to his/her account to see the expenses and can track their own expenses " },
+  
+  
    
 ];
 
-const SesWebsitePage = () => {
+const ExpenseTrackerPage = () => {
    // ---------- CLOUDINARY VIDEO CONFIG ----------
   const cld = new Cloudinary({
     cloud: {
@@ -97,7 +92,7 @@ const SesWebsitePage = () => {
   });
 
   const snsVideo = cld
-    .video("webiste-demo_vayndd") // <-- replace with your Cloudinary file id
+    .video("WhatsApp_Video_2025-12-30_at_15.11.17_a060da7b_ujadfb") // <-- replace with your Cloudinary file id
     .delivery(format("auto"))
     .delivery(quality("auto"))
     .resize(fill().width(300).height(700));
@@ -115,8 +110,8 @@ const SesWebsitePage = () => {
           src={websiteImg}
           alt="Shreepati Educational Services"
           style={{
-            width: "310px",
-            height: "280px",
+            width: "200px",
+            height: "200px",
             objectFit: "cover",
             borderRadius: "12px",
             marginBottom: "1rem",
@@ -129,7 +124,7 @@ const SesWebsitePage = () => {
             marginBottom: "1rem",
           }}
         >
-          Style N Shine Website & Billing System
+        Expense Tracker App
         </h1>
         <p
           style={{
@@ -139,8 +134,8 @@ const SesWebsitePage = () => {
             margin: "0 auto",
           }}
         >
-          A professional Parlour website built for{" "}
-          <strong>Style N Shine</strong>, and made a billing system for the client, it was my first client project , made with the techonological stack having javascript, Php & MySQL with frontend skill set having Html and Css.
+          An app which is used to track the expenses and made by using{" "}
+          <strong>React Native Expo</strong>, and this app build is my first foot to the app developement journey, it emphasizes many of things in this journey to make frontend to backend.
         </p>
       </div>
 
@@ -150,14 +145,14 @@ const SesWebsitePage = () => {
           Project Overview
         </h2>
         <p style={{ lineHeight: "1.8", marginBottom: "1rem" }}>
-          This project was a personal milestone creating a professional
-          Parlour website for the client business. It represents both a
-          technical learning experience and a meaningful contribution to his
-          parlour business.
+          This project was a personal milestone creating a App
+          named Expense Tracker  for the uplifement of my app developement skill. It represents both a
+          technical learning experience and a meaningful contribution to the 
+          skills of my app developement.
         </p>
         <p style={{ lineHeight: "1.8" }}>
           The goal was to design a responsive and dynamic platform where
-         visitors can book their slots efficiently and can see the services accoroading to their intrest, the billing system has whatsaap integration which sends the bill accoroading to their whatsaap number respectively and has function to save pdf and print the bill for the chnages as directed by the customer or client side
+         visitors can track their expenses efficiently and can see the expenses accoroading to their id's no. & prices, there are 3 options to veiw and add the expenses and monthly the visitor can see.
         </p>
       </div>
 
@@ -192,9 +187,9 @@ const SesWebsitePage = () => {
                 alt={page.title}
                 style={{
                   width: "100%",
-                  height: "200px",
+                  height: "550px",
                   objectFit: "cover",
-                  borderRadius: "8px",
+                  borderRadius: "8  px",
                   marginBottom: "0.8rem",
                 }}
               />
@@ -309,49 +304,12 @@ const SesWebsitePage = () => {
     <tbody>
       <tr>
         <td style={{ padding: "1rem", textAlign: "center" }}>
-          <FaHtml5 style={{   }} /> HTML
+          <SiExpo  style={{   }} /> React Native Expo
         </td>
         <td style={{ padding: "1rem", textAlign: "center" }}>
           Structure & page layout
         </td>
       </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          <FaCss3Alt style={{   }} /> CSS
-        </td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Styling & responsiveness
-        </td>
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          <FaJs style={{   }} /> JavaScript
-        </td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Dynamic interactions & UI behavior
-        </td>
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          <FaPhp style={{  }} /> PHP
-        </td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Backend logic & billing system
-        </td>
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          <FaDatabase style={{   }} /> MySQL
-        </td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Data storage & billing records
-        </td>
-      </tr>
-
       <tr>
         <td style={{ padding: "1rem", textAlign: "center" }}>
           <FaPalette style={{ }} /> Canva
@@ -378,7 +336,7 @@ const SesWebsitePage = () => {
       fontWeight: "700",
     }}
   >
-    Day-Wise Website Timeline
+    Day-Wise App Timeline
   </h2>
 
   <table
@@ -394,7 +352,7 @@ const SesWebsitePage = () => {
       <tr style={{ background: "#FF3B3B", color: "#fff" }}>
         <th style={{ padding: "1rem", textAlign: "center" }}>Day</th>
         <th style={{ padding: "1rem", textAlign: "center" }}>
-          Website Development
+        App Development
         </th>
       </tr>
     </thead>
@@ -419,7 +377,7 @@ const SesWebsitePage = () => {
       <tr>
         <td style={{ padding: "1rem", textAlign: "center" }}>Day 3</td>
         <td style={{ padding: "1rem", textAlign: "center" }}>
-          About & Services Page Development
+          Home & Welcome Page Development
         </td>
         
       </tr>
@@ -435,23 +393,31 @@ const SesWebsitePage = () => {
       <tr>
         <td style={{ padding: "1rem", textAlign: "center" }}>Day 5</td>
         <td style={{ padding: "1rem", textAlign: "center" }}>
-          Partners & Contact Page Completion
+          Login & Signup Page Completion
+        </td>
+        
+      </tr>
+
+       <tr>
+        <td style={{ padding: "1rem", textAlign: "center" }}>Day 6</td>
+        <td style={{ padding: "1rem", textAlign: "center" }}>
+          Add , Summary & tracker page completion
         </td>
         
       </tr>
 
       <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 6</td>
+        <td style={{ padding: "1rem", textAlign: "center" }}>Day 7</td>
         <td style={{ padding: "1rem", textAlign: "center" }}>
-          Content Polishing & SEO Improvements
+          Content Polishing
         </td>
       
       </tr>
 
       <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 7</td>
+        <td style={{ padding: "1rem", textAlign: "center" }}>Day 8</td>
         <td style={{ padding: "1rem", textAlign: "center" }}>
-          Final Review & Deployment on Vercel
+          Final Review & Deployment on Expo
         </td>
         
       </tr>
@@ -459,96 +425,6 @@ const SesWebsitePage = () => {
   </table>
 </div>
 
-<div style={{ maxWidth: "900px", margin: "0 auto 3rem" }}>
-  <h2
-    style={{
-      color: "#FF3B3B",
-      textAlign: "center",
-      marginBottom: "1rem",
-      fontSize: "1.9rem",
-      fontWeight: "700",
-    }}
-  >
-    Day-Wise Billing System Timeline
-  </h2>
-
-  <table
-    style={{
-      width: "100%",
-      borderCollapse: "collapse",
-      background: "#2b2b2b",
-      borderRadius: "12px",
-      overflow: "hidden",
-    }}
-  >
-    <thead>
-      <tr style={{ background: "#FF3B3B", color: "#fff" }}>
-        <th style={{ padding: "1rem", textAlign: "center" }}>Day</th>
-       
-        <th style={{ padding: "1rem", textAlign: "center" }}>
-          Billing System Development
-        </th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 1</td>
-       
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Database Design & Structure Planning
-        </td>
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 2</td>
-       
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          PHP Project Setup & Configurations
-        </td>
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 3</td>
-       
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Billing Form UI & Input Handling
-        </td>
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 4</td>
-      
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          CRUD Operations & DB Integration
-        </td>
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 5</td>
-       
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          WhatsApp Bill Sharing Integration
-        </td>
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 6</td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          PDF Export & Print Functionality
-        </td>
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 7</td>
-       
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Testing, Debugging & Client Review
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
 
 
 
@@ -562,7 +438,7 @@ const SesWebsitePage = () => {
 >
   <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Deployment of Website</h2>
   <p style={{ lineHeight: "1.8", marginBottom: "1.5rem", color: "#ccc" }}>
-    Hosted on <strong>Infinity Free</strong> with continuous deployment from
+    Hosted on <strong>Expo Builds</strong> with continuous deployment from
     GitHub for faster updates and scalability.
   </p>
 
@@ -570,7 +446,7 @@ const SesWebsitePage = () => {
   <div
     style={{
       display: "grid",
-      gridTemplateColumns: "repeat(2, 1fr)", // 2 per row
+      gridTemplateColumns: "repeat(1, 1fr)", // 2 per row
       gap: "1rem",
       justifyContent: "center",
       alignItems: "center",
@@ -579,15 +455,11 @@ const SesWebsitePage = () => {
     }}
   >
     {[
+      
       {
-        href: "https://github.com/Vibhav11Krishna/style-n-shine-website",
-        icon: <FaGithub />,
-        label: "GitHub",
-      },
-      {
-        href: "https://style-n-shine.great-site.net/?i=1",
+        href: "https://expo.dev/accounts/pulkitkrishna11/projects/ExpenseTracker/builds/ea6a56cd-2721-4b9e-9328-ae2ddc098f1a",
         icon: <FaGlobe />,
-        label: "Website",
+        label: "Link",
       },
     ].map((link, idx) => (
       <a
@@ -611,66 +483,7 @@ const SesWebsitePage = () => {
   </div>
 </div>
 
-  {/* Deployment */}
-<div
-  style={{
-    maxWidth: "900px",
-    margin: "0 auto 3rem",
-    textAlign: "center",
-  }}
->
-  <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Deployment of Billing System</h2>
-  <p style={{ lineHeight: "1.8", marginBottom: "1.5rem", color: "#ccc" }}>
-    Hosted on <strong>Infinity Free</strong> with continuous deployment from
-    GitHub for faster updates and scalability.
-  </p>
-
-  {/* Responsive 2x2 Social Links Grid */}
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(2, 1fr)", // 2 per row
-      gap: "1rem",
-      justifyContent: "center",
-      alignItems: "center",
-      maxWidth: "500px",
-      margin: "0 auto",
-    }}
-  >
-    {[
-      {
-        href: "https://github.com/Vibhav11Krishna/StyleNShine-Billing",
-        icon: <FaGithub />,
-        label: "GitHub",
-      },
-      {
-        href: "https://billingapp.great-site.net/",
-        icon: <FaGlobe />,
-        label: "Website",
-      },
-    
-    ].map((link, idx) => (
-      <a
-        key={idx}
-        href={link.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          ...linkStyle,
-          width: "100%",
-          justifyContent: "center",
-          fontSize: "0.95rem",
-          textAlign: "center",
-        }}
-        onMouseEnter={(e) => handleGlow(e, true)}
-        onMouseLeave={(e) => handleGlow(e, false)}
-      >
-        {link.icon} {link.label}
-      </a>
-    ))}
-  </div>
-</div>
-
+  
 
       {/* Summary */}
       <div style={{ maxWidth: "900px", margin: "0 auto 4rem" }}>
@@ -686,8 +499,8 @@ const SesWebsitePage = () => {
             marginBottom: "1rem",
           }}
         >
-          Developing this Parlour website & Billing System was a complete end-to-end
-          experience that combined design thinking, full-stack development, and
+          Developing this App  was a complete end-to-end
+          experience that combined design thinking, full-stack App development, and
           deployment.
         </p>
         <ul
@@ -709,4 +522,4 @@ const SesWebsitePage = () => {
   );
 };
 
-export default SesWebsitePage;
+export default ExpenseTrackerPage;

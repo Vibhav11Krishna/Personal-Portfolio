@@ -1,12 +1,14 @@
 import React, { useEffect, useState, useRef } from "react";
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNode } from "react-icons/fa";
 import { SiPhp, SiMysql, SiMongodb, SiPostgresql } from "react-icons/si";
+import { SiExpo } from "react-icons/si";
 import { Link } from "react-router-dom";
 
 import internshipImg from "../assets/sss.png";
 import hackathonImg from "../assets/creativex.jpg";
 import fatherWebsiteImg from "../assets/logoshreepati.png";
 import ClientImg from "../assets/style.jpg";
+import tracker from "../assets/tracker.png";
 
 const blogPosts = [
   {
@@ -75,6 +77,20 @@ const blogPosts = [
       { icon: <SiMysql />, color: "#00758F" },
     ],
     link: "/snswebsite",
+  }, 
+
+   {
+    title: "Built my first app using React Native Expo",
+    company: "Expense Tracker",
+    month: "October",
+    year: 2025,
+    description:
+      "An App for tracking their expenses regularly and saving their expenses",
+    img: tracker,
+    tech: [
+     { icon: <SiExpo />, color: "#000000ff" },
+    ],
+    link: "/expensepage",
   }, 
 ];
 
