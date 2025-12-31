@@ -585,7 +585,7 @@ const SesWebsitePage = () => {
         label: "GitHub",
       },
       {
-        href: "https://style-n-shine.great-site.net/?i=1",
+        href: "https://stylenshine.great-site.net/?i=1",
         icon: <FaGlobe />,
         label: "Website",
       },

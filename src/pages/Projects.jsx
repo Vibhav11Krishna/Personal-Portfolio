@@ -71,7 +71,7 @@ const websiteProjects = [
       { icon: <SiMysql />, color: "#00758F" },
     ],
     link:
-      "https://style-n-shine.great-site.net/?i=2",
+      "https://stylenshine.great-site.net/?i=1",
       github:
       "https://github.com/Vibhav11Krishna/style-n-shine-website",
   },
