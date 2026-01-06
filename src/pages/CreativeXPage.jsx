@@ -1,5 +1,5 @@
 import React from "react";
-import { FaReact, FaNode, FaGithub, FaInstagram, FaYoutube } from "react-icons/fa";
+import { FaReact, FaNode, FaGithub, FaInstagram, FaYoutube, FaGlobe } from "react-icons/fa";
 import { SiMongodb, SiMysql, SiHtml5, SiCss3, SiJavascript } from "react-icons/si";
 
 import hackathonLogo from "../assets/creativex.jpg";
@@ -402,9 +402,10 @@ const CreativeXPage = () => {
 
       {/* Links */}
       <div style={{ display: "flex", justifyContent: "center", gap: "1.2rem", flexWrap: "wrap", marginBottom: "3rem" }}>
-        <a href="https://github.com/Vibhav11Krishna/" target="_blank" rel="noopener noreferrer" style={linkStyle}><FaGithub /> GitHub</a>
+        <a href="https://github.com/Vibhav11Krishna/Creativex" target="_blank" rel="noopener noreferrer" style={linkStyle}><FaGithub /> GitHub</a>
         <a href="https://www.instagram.com/cr8ivex?igsh=Nmc1cHV5bWNqYXMy" target="_blank" rel="noopener noreferrer" style={linkStyle}><FaInstagram /> Instagram</a>
         <a href="	https://youtu.be/WKM8eaw5ifI?si=P0hMu9QFBtyXzRfZ" target="_blank" rel="noopener noreferrer" style={linkStyle}><FaYoutube /> YouTube</a>
+        <a href="https://creativex-bh5i5g3fd-pulkit-krishnas-projects-b41fc977.vercel.app/	" target="_blank" rel="noopener noreferrer" style={linkStyle}><FaGlobe /> Website</a>
       </div>
       {/* Project PPT Button */}
 <div style={{ textAlign: "center", marginBottom: "4rem" }}>

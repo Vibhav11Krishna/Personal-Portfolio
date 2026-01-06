@@ -121,8 +121,8 @@ const websiteProjects = [
       { icon: <SiMongodb />, color: "#47A248" },
       { icon: <SiMysql />, color: "#00758F" },
     ],
-    link: "#",
-    github: "https://github.com/yourusername/creative-x",
+    link: "https://creativex-bh5i5g3fd-pulkit-krishnas-projects-b41fc977.vercel.app/",
+    github: "https://github.com/Vibhav11Krishna/Creativex",
   },
 ];
 
