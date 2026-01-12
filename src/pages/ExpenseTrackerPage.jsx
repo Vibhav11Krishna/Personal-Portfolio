@@ -16,7 +16,7 @@ import {
   FaMobileAlt,
   FaGlobe,
   FaUsers,
-} from "react-icons/fa";
+} from "react-icons/fa";      
 import {
   FaHtml5,
   FaCss3Alt,

@@ -18,6 +18,7 @@ import {
   SiMongodb,
   SiCplusplus,
 } from "react-icons/si";
+import { SiExpo } from "react-icons/si";
 
 import frontendImg from "../assets/internshipwala.jpg";
 import jsMasteryImg from "../assets/sssinternship.jpg";
@@ -27,6 +28,7 @@ import ciscoImg from "../assets/cisco.jpg";
 import logoImg from "../assets/creativex.jpg";
 import ciscoImg2 from "../assets/cisco2.jpg";
 import aiImg from "../assets/skillsindia.png";
+import mobile from "../assets/mobile.png";
 
 const certificates = [
   {
@@ -113,6 +115,16 @@ const certificates = [
       "Successfully completed the SOAR: AI To Acquire program by Skills India in collaboration with Microsoft, focused on developing AI literacy, responsible use of AI, and practical applications of machine learning.",
     img: aiImg,
     tech: [{ icon: <FaRobot />, color: "#0078D4" }],
+  },
+  {
+    title: "React Native & Expo",
+    issuer: "Tutedude",
+    year: 2026,
+    month: "January",
+    description:
+      "Successfully completed the course of react native and completed the projects and assignment as directed and made project.",
+    img: mobile,
+    tech: [{ icon: <SiExpo/> }],
   },
 ];
 
