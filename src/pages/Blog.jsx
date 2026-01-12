@@ -88,7 +88,7 @@ const blogPosts = [
       "An App for tracking their expenses regularly and saving their expenses",
     img: tracker,
     tech: [
-     { icon: <SiExpo />, color: "#000000ff" },
+     { icon: <SiExpo />, color: "rgb(255, 238, 238)" },
     ],
     link: "/expensepage",
   }, 

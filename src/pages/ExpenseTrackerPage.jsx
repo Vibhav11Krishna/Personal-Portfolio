@@ -32,6 +32,7 @@ import homepageImg from "../assets/tracker1.jpg";
 import aboutImg from "../assets/tracker2.jpg";
 import serviceImg from "../assets/tracker3.jpg";
 import bookingImg from "../assets/tracker4.jpg";
+import certificate from "../assets/mobile.png";
 
 // Cloudinary Imports
 import { Cloudinary } from "@cloudinary/url-gen";
@@ -483,7 +484,23 @@ const ExpenseTrackerPage = () => {
   </div>
 </div>
 
-  
+        {/* Certificate */}
+<div style={{ maxWidth: "900px", margin: "0 auto 4rem", textAlign: "center" }}>
+  <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Certificate</h2>
+  <img
+    src={certificate}
+    alt="Certificate"
+    style={{
+      width: "130%",
+      maxWidth: "600px",
+      height: "450px",
+      borderRadius: "12px",
+      objectFit: "cover",
+    }}
+    className="certificate-img"
+  />
+</div>
+
 
       {/* Summary */}
       <div style={{ maxWidth: "900px", margin: "0 auto 4rem" }}>

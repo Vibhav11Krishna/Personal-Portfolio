@@ -21,9 +21,14 @@ import { SiTailwindcss, SiExpress, SiPostgresql } from "react-icons/si";
 import websiteImg from "../assets/logoshreepati.png";
 import homepageImg from "../assets/home.png";
 import aboutImg from "../assets/about.png";
-import coursesImg from "../assets/services.png";
-import contactImg from "../assets/partners.png";
+import serviceImg from "../assets/services.png";
+import partnerImg from "../assets/partner.png";
 import founderImg from "../assets/founder.jpg";
+import footerImg from "../assets/footer.png";
+import insightImg from "../assets/insight.png";
+import projectImg from "../assets/project.png";
+import contactImg from "../assets/contact.png";
+
 
 // --- Styles ---
 const tableStyle = {
@@ -60,8 +65,12 @@ const handleGlow = (e, isHover) => {
 const projectOverview = [
   { img: homepageImg, title: "Home Page", desc: "Landing section introducing the consultancy with services and mission." },
   { img: aboutImg, title: "About Page", desc: "Explains the consultancy’s history, goals, and guidance philosophy." },
-  { img: coursesImg, title: "Services Page", desc: "Displays available educational and admission guidance services." },
-  { img: contactImg, title: "Partners Page", desc: "Collaboration of partners for upliftement of the company." },
+  { img: serviceImg, title: "Services Page", desc: "Displays available educational and admission guidance services." },
+  { img: partnerImg, title: "Partners Page", desc: "Collaboration of partners for upliftement of the company." },
+  { img: projectImg, title: "Project Page", desc: "Projects showcases by shreepati educational services" },
+  { img: insightImg, title: "Knowledge & Insight page", desc: "Company insight videos done by shreepati" },
+  { img: contactImg, title: "Contact Page", desc: "Contact page having phone number and respect address of the office" },
+  { img: footerImg, title: "Footer", desc: "Footer page having social links where users can talk with the owner" },
 ];
 
 const SesWebsitePage = () => {
