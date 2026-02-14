@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNode } from "react-icons/fa";
 import { SiPhp, SiMysql, SiMongodb, SiPostgresql } from "react-icons/si";
 import { SiExpo } from "react-icons/si";
+import { FaAngular } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import internshipImg from "../assets/sss.png";
@@ -9,6 +10,8 @@ import hackathonImg from "../assets/creativex.jpg";
 import fatherWebsiteImg from "../assets/logoshreepati.png";
 import ClientImg from "../assets/style.jpg";
 import tracker from "../assets/tracker.png";
+import CMA from "../assets/CMA.jpg";
+import Tender from "../assets/TenderPlus.webp"
 
 const blogPosts = [
   {
@@ -92,6 +95,41 @@ const blogPosts = [
     ],
     link: "/expensepage",
   }, 
+
+  {
+    title: "Startup Internship",
+    company: "Tender Plus",
+    month: "January - March",
+    year: 2026,
+    description:
+      "An Startup Tender Company For getting a tender for clients",
+    img: Tender,
+    tech: [
+      { icon: <FaAngular />, color: "#e32626" },
+     
+    ],
+    link: "/expensepage",
+  }, 
+
+   {
+    title: "Building Webiste & Dashboard system for client (accounting firm)",
+    company: "Karunesh Kumar & Associates",
+    month: "Feburary",
+    year: 2026,
+    description:
+      "An Accounting Firm Website having full fledged information webiste & Dashboard system",
+    img: CMA,
+    tech: [
+      { icon: <FaHtml5 />, color: "#E34F26" },
+      { icon: <FaCss3Alt />, color: "#264DE4" },
+      { icon: <FaJsSquare />, color: "#F7DF1E" },
+      { icon: <SiPhp />, color: "#8892BE" },
+      { icon: <SiMysql />, color: "#00758F" },
+    ],
+    link: "/expensepage",
+  }, 
+ 
+
 ];
 
 const Blog = () => {

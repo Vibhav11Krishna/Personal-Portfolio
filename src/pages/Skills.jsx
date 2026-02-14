@@ -17,6 +17,7 @@ import {
   SiCplusplus,
 } from "react-icons/si";
 import { SiExpo } from "react-icons/si";
+import { SiCanva } from "react-icons/si";
 const skills = [
   { name: "HTML5", icon: <FaHtml5 />, description: "HTML5 is the standard markup language for creating structured and semantic web pages.", color: "#E34F26", progress: 95 },
   { name: "CSS", icon: <FaCss3Alt />, description: "CSS is used to style web pages and make them visually appealing.", color: "#264DE4", progress: 90 },
@@ -32,6 +33,7 @@ const skills = [
   { name: "C++", icon: <SiCplusplus />, description: "C++ is an extension of C for object-oriented programming.", color: "#00599C", progress: 65 },
   { name: "React native (Expo)", icon: <SiExpo />, description: "powerful framework that lets you build React Native apps without any native setup.", color: "#9c0000ff", progress: 70 },
   { name: "React native (Cli)", icon: <SiExpo />, description: "It gives full control for building apps with direct access to native Android and iOS code.", color: "#9c008cff", progress: 40 },
+  { name: "Canva", icon: <SiCanva />, description: "It is a design tool mainly for designing purpose for every social platform.", color: "rgb(33, 176, 224)", progress: 85 },
 ];
 
 const SkillCard = ({ skill }) => {

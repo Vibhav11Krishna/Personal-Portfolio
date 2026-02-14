@@ -88,7 +88,7 @@ const projectOverview = [
    
 ];
 
-const SesWebsitePage = () => {
+const SnsWebsitePage = () => {
    // ---------- CLOUDINARY VIDEO CONFIG ----------
   const cld = new Cloudinary({
     cloud: {
@@ -709,4 +709,4 @@ const SesWebsitePage = () => {
   );
 };
 
-export default SesWebsitePage;
+export default SnsWebsitePage;

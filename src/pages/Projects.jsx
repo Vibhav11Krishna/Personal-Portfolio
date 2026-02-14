@@ -22,6 +22,7 @@ import Green from "../assets/office1.png";
 import ParlourLogo from "../assets/parlour.png";
 import tracker from "../assets/tracker.png";
 import billing from "../assets/billing.png";
+import  KKA from "../assets/KKA.png";
 
 /* --------------------- PROJECT CATEGORIES --------------------- */
 
@@ -123,6 +124,23 @@ const websiteProjects = [
     ],
     link: "https://creativex-bh5i5g3fd-pulkit-krishnas-projects-b41fc977.vercel.app/",
     github: "https://github.com/Vibhav11Krishna/Creativex",
+  },
+
+  {
+    id: 7,
+    title: "Karunesh Kumar & Associates",
+    description:
+      "A accounting firm webiste having a full fledged knowledge webiste with dashbaord system",
+    image: KKA,
+    tech: [
+     { icon: <FaHtml5 />, color: "#FF6600" },
+      { icon: <FaCss3Alt />, color: "#264de4" },
+      { icon: <FaJsSquare />, color: "#f7df1e" },
+      { icon: <SiPhp />, color: "#bc17e1ff" },
+      { icon: <SiMysql />, color: "#00758F" },
+    ],
+    link: "https://kkassociates.great-site.net/",
+    github: "https://github.com/Vibhav11Krishna/Account-Website",
   },
 ];
 
