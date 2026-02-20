@@ -120,21 +120,28 @@ const About = () => {
       >
         <img src={Leader} alt="Pulkit Krishna" />
         <h2>About Me</h2>
-        <p>
-          Hi, I'm <span style={{ color: "#ff0000ff" }}>Pulkit Krishna</span>, a
-          passionate <strong>Full Stack Developer</strong> and{" "}
-          <strong>AI/ML enthusiast</strong> from India. I love building
-          intelligent, user-focused web applications that are fast, responsive,
-          and aesthetically pleasing. My goal is to merge creative design with
-          powerful backend logic to deliver seamless digital experiences.
-          <br />
-          <br />I enjoy exploring new technologies, solving real-world problems
-          through code, and constantly improving my technical and creative
-          abilities. When I’m not coding, I love participating in hackathons,
-          working on open-source projects, and collaborating with like-minded
-          developers.
-        </p>
-      </div>
+       <p>
+  Hi, I'm <span style={{ color: "#ff0000ff" }}>Pulkit Krishna</span>, a
+  passionate <strong>Full Stack Developer</strong>, aspiring{" "}
+  <strong>AI/ML Engineer</strong>, and <strong>Cybersecurity Enthusiast</strong> from India.
+  I love building intelligent, user-focused web applications that are fast,
+  responsive, secure, and aesthetically pleasing. My goal is to merge creative
+  design with powerful backend logic, artificial intelligence, and strong
+  security practices to deliver seamless and secure digital experiences.
+  <br />
+  <br />
+  I enjoy exploring emerging technologies, solving real-world problems through
+  code, and continuously improving my technical and creative abilities in
+  Full Stack Development, AI/ML, and Cybersecurity. In the future, I aspire to
+  pursue <strong>M.Tech</strong> followed by a <strong>Ph.D.</strong> in AI/ML or
+  Cybersecurity and move into the teaching and research field to mentor
+  students and contribute to innovation.
+  <br />
+  <br />
+  When I’m not coding, I love participating in hackathons, working on
+  open-source projects, and collaborating with like-minded developers.
+</p>
+</div>
 
       {/* Extras */}
       <div

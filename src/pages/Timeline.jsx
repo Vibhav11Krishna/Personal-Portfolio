@@ -17,8 +17,9 @@ import sssLogo from "../assets/sss.png";
 import sihLogo from "../assets/sih.jpg";
 import teamPhoto from "../assets/group.jpg";
 import style from "../assets/style.jpg";
-import CMA from "../assets/CMA.jpg"
-import Tender from "../assets/TenderPlus.webp"
+import CMA from "../assets/CMA.jpg";
+import Tender from "../assets/TenderPlus.webp";
+import shreepati from "../assets/logoshreepati.png";
 
 const Timeline = () => {
   useEffect(() => {
@@ -40,33 +41,143 @@ const Timeline = () => {
   const iconStyle = { marginBottom: "8px", transition: "transform 0.3s ease" };
 
   const milestones = [
-    { year: "2005–2010", image: <FaBirthdayCake size={40} />, label: "Born in Patna, Bihar", description: "Started my journey in Patna. Loved exploring new things." },
-    { year: "2010–2015", image: <img src={dpsIcon} alt="DPS" style={imgStyle} />, label: "Prep to 5th - Delhi Public School (DPS)", description: "Learned basics of reading, writing, and math." },
-    { year: "2015–2018", image: <img src={dpsIcon} alt="DPS" style={imgStyle} />, label: "6th to 8th - Delhi Public School, Patna", description: "Developed interest in science and computers." },
-    { year: "2019–2020", image: <img src={dpsIcon} alt="DPS" style={imgStyle} />, label: "9th & 10th - Delhi Public School (CBSE Board)", description: "Focused on academics and CS basics." },
-    { year: "2021–2023", image: <img src={doosIcon} alt="Doon" style={imgStyle} />, label: "11th & 12th - Doon Public School", description: "Developed advanced programming skills." },
-    { year: "2023–2024", image: <img src={rpLogo} alt="RP Sharma" style={imgStyle} />, label: "Admission - RP Sharma Institute of Technology", description: "Started B.Tech in CSE." },
-    { year: "2024–2025", image: <img src={rpLogo} alt="RP Sharma" style={imgStyle} />, label: "Completed 1st Year B.Tech CSE", description: "Gained strong foundations in HTML, CSS, and JavaScript.", skills: [<FaHtml5 size={35} color="#E34F26" style={iconStyle} />, <FaCss3Alt size={35} color="#1572B6" style={iconStyle} />, <FaJs size={35} color="#F7DF1E" style={iconStyle} />] },
-    { year: "2025", image: <img src={sssLogo} alt="SSS" style={imgStyle} />, label: "Internship - Software Services & Solutions", description: "Worked on real-world projects using PHP and MySQL.", skills: [<FaPhp size={35} color="#777BB4" style={iconStyle} />, <SiMysql size={35} color="#00618A" style={iconStyle} />] },
-    { year: "2025", image: <img src={sihLogo} alt="SIH" style={imgStyle} />, label: "SIH Hackathon Winner - Creative X", description: "Developed full-stack apps using React, Node.js, and MongoDB with my team.", skills: [<FaReact size={35} color="#61DBFB" style={iconStyle} />, <FaNodeJs size={35} color="#3C873A" style={iconStyle} />, <SiMongodb size={35} color="#3C873A" style={iconStyle} />], extraBox: { srcs: [teamPhoto], alt: "Team & Logo", desc: "Team Creativex presenting SIH solution and SIH logo" } },
-    { year: "2025", image: <img src={style} alt="SNS" style={imgStyle} />, label: "Client Project : Style N Shine", description: "Made an website & billing system for client parlour.", skills: [<FaPhp size={35} color="#777BB4" style={iconStyle} />, <SiMysql size={35} color="#00618A" style={iconStyle} />,<FaHtml5 size={35} color="#E34F26" style={iconStyle} />, <FaCss3Alt size={35} color="#1572B6" style={iconStyle} />, <FaJs size={35} color="#F7DF1E" style={iconStyle} />],  },
-    { year: "2026", image: <img src={CMA} alt="KKA" style={imgStyle} />, label: "Client Project : Karunesh Kumar & Associates", description: "Made an website & Dashboard System for accounting firm.", skills: [<FaPhp size={35} color="#777BB4" style={iconStyle} />, <SiMysql size={35} color="#00618A" style={iconStyle} />,<FaHtml5 size={35} color="#E34F26" style={iconStyle} />, <FaCss3Alt size={35} color="#1572B6" style={iconStyle} />, <FaJs size={35} color="#F7DF1E" style={iconStyle} />],  },
-     { year: "2026", image: <img src={Tender} alt="TP" style={imgStyle} />, label: "Internship - Tender Plus", description: "A startup company where worked on developing the webiste of the firm and gave suggestions",skills:[<FaAngular size={35} color="#f12b2b" style={iconStyle} />]   },
-
-  ]; 
+    {
+      year: "2005–2010",
+      image: <FaBirthdayCake size={40} />,
+      label: "Born in Patna, Bihar",
+      description: "Started my journey in Patna. Loved exploring new things.",
+    },
+    {
+      year: "2010–2015",
+      image: <img src={dpsIcon} alt="DPS" style={imgStyle} />,
+      label: "Prep to 5th - Delhi Public School (DPS)",
+      description: "Learned basics of reading, writing, and math.",
+    },
+    {
+      year: "2015–2018",
+      image: <img src={dpsIcon} alt="DPS" style={imgStyle} />,
+      label: "6th to 8th - Delhi Public School, Patna",
+      description: "Developed interest in science and computers.",
+    },
+    {
+      year: "2019–2020",
+      image: <img src={dpsIcon} alt="DPS" style={imgStyle} />,
+      label: "9th & 10th - Delhi Public School (CBSE Board)",
+      description: "Focused on academics and CS basics.",
+    },
+    {
+      year: "2021–2023",
+      image: <img src={doosIcon} alt="Doon" style={imgStyle} />,
+      label: "11th & 12th - Doon Public School",
+      description: "Developed advanced programming skills.",
+    },
+    {
+      year: "2023–2024",
+      image: <img src={rpLogo} alt="RP Sharma" style={imgStyle} />,
+      label: "Admission - RP Sharma Institute of Technology",
+      description: "Started B.Tech in CSE.",
+    },
+    {
+      year: "2024–2025",
+      image: <img src={rpLogo} alt="RP Sharma" style={imgStyle} />,
+      label: "Completed 1st Year B.Tech CSE",
+      description: "Gained strong foundations in HTML, CSS, and JavaScript.",
+      skills: [
+        <FaHtml5 size={35} color="#E34F26" style={iconStyle} />,
+        <FaCss3Alt size={35} color="#1572B6" style={iconStyle} />,
+        <FaJs size={35} color="#F7DF1E" style={iconStyle} />,
+      ],
+    },
+    {
+      year: "2025",
+      image: <img src={sssLogo} alt="SSS" style={imgStyle} />,
+      label: "Internship - Software Services & Solutions",
+      description: "Worked on real-world projects using PHP and MySQL.",
+      skills: [
+        <FaPhp size={35} color="#777BB4" style={iconStyle} />,
+        <SiMysql size={35} color="#00618A" style={iconStyle} />,
+      ],
+    },
+    {
+      year: "2025",
+      image: <img src={sihLogo} alt="SIH" style={imgStyle} />,
+      label: "SIH Hackathon Winner - Creative X",
+      description:
+        "Developed full-stack apps using React, Node.js, and MongoDB with my team.",
+      skills: [
+        <FaReact size={35} color="#61DBFB" style={iconStyle} />,
+        <FaNodeJs size={35} color="#3C873A" style={iconStyle} />,
+        <SiMongodb size={35} color="#3C873A" style={iconStyle} />,
+      ],
+      extraBox: {
+        srcs: [teamPhoto],
+        alt: "Team & Logo",
+        desc: "Team Creativex presenting SIH solution and SIH logo",
+      },
+    },
+    {
+      year: "2025",
+      image: <img src={style} alt="SNS" style={imgStyle} />,
+      label: "Client Project : Style N Shine",
+      description: "Made an website & billing system for client parlour.",
+      skills: [
+        <FaPhp size={35} color="#777BB4" style={iconStyle} />,
+        <SiMysql size={35} color="#00618A" style={iconStyle} />,
+        <FaHtml5 size={35} color="#E34F26" style={iconStyle} />,
+        <FaCss3Alt size={35} color="#1572B6" style={iconStyle} />,
+        <FaJs size={35} color="#F7DF1E" style={iconStyle} />,
+      ],
+    },
+    {
+      year: "2025",
+      image: <img src={shreepati} alt="SES" style={imgStyle} />,
+      label: "Father Website : Shreepati Educational Services",
+      description:
+        "Made an informative website for shreepati to enhance their services .",
+      skills: [
+         <FaReact size={35} color="#61DBFB" style={iconStyle} />,
+        <FaNodeJs size={35} color="#3C873A" style={iconStyle} />,
+      ],
+    },
+    {
+      year: "2026",
+      image: <img src={CMA} alt="KKA" style={imgStyle} />,
+      label: "Client Project : Karunesh Kumar & Associates",
+      description: "Made an website & Dashboard System for accounting firm.",
+      skills: [
+        <FaPhp size={35} color="#777BB4" style={iconStyle} />,
+        <SiMysql size={35} color="#00618A" style={iconStyle} />,
+        <FaHtml5 size={35} color="#E34F26" style={iconStyle} />,
+        <FaCss3Alt size={35} color="#1572B6" style={iconStyle} />,
+        <FaJs size={35} color="#F7DF1E" style={iconStyle} />,
+      ],
+    },
+    {
+      year: "2026",
+      image: <img src={Tender} alt="TP" style={imgStyle} />,
+      label: "Internship - Tender Plus",
+      description:
+        "A startup company where worked on developing the webiste of the firm and gave suggestions",
+      skills: [<FaAngular size={35} color="#f12b2b" style={iconStyle} />],
+    },
+  ];
   return (
     <section className="timeline-section">
       <h2 className="timeline-title">My Journey</h2>
       <div className="timeline-wrapper">
         {milestones.map((item, idx) => (
-          <div key={idx} className={`timeline-item ${idx % 2 === 0 ? "left" : "right"}`}>
+          <div
+            key={idx}
+            className={`timeline-item ${idx % 2 === 0 ? "left" : "right"}`}
+          >
             <div className="timeline-dot"></div>
             <div className="timeline-card">
               <div className="timeline-card-header">
                 <div className="timeline-image">{item.image}</div>
                 <div className="timeline-info">
                   <p className="timeline-label">
-                    <span className="timeline-year-inline">{item.year}</span> — {item.label}
+                    <span className="timeline-year-inline">{item.year}</span> —{" "}
+                    {item.label}
                   </p>
                   <p className="timeline-desc">{item.description}</p>
                 </div>
@@ -83,7 +194,12 @@ const Timeline = () => {
               {item.extraBox && (
                 <div className="timeline-extra-box">
                   {item.extraBox.srcs.map((src, i) => (
-                    <img key={i} src={src} alt={item.extraBox.alt} className="extra-img" />
+                    <img
+                      key={i}
+                      src={src}
+                      alt={item.extraBox.alt}
+                      className="extra-img"
+                    />
                   ))}
                   <p className="extra-desc">{item.extraBox.desc}</p>
                 </div>

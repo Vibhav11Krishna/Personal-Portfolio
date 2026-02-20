@@ -19,6 +19,7 @@ import {
   SiCplusplus,
 } from "react-icons/si";
 import { SiExpo } from "react-icons/si";
+import { FaNetworkWired, FaMicrochip, FaWifi } from "react-icons/fa";
 
 import frontendImg from "../assets/internshipwala.jpg";
 import jsMasteryImg from "../assets/sssinternship.jpg";
@@ -29,6 +30,7 @@ import logoImg from "../assets/creativex.jpg";
 import ciscoImg2 from "../assets/cisco2.jpg";
 import aiImg from "../assets/skillsindia.png";
 import mobile from "../assets/mobile.png";
+import course from "../assets/nptel.jpg";
 
 const certificates = [
   {
@@ -94,7 +96,7 @@ const certificates = [
     description:
       "Gained proficiency in Python programming, focusing on functions, arrays, and basic algorithms to solve real-world programming challenges efficiently.",
     img: fullstackImg,
-    tech: [{ icon: <SiPython />, color: "#16f95a" }],
+    tech: [{ icon: <SiPython />, color: "#e2f916" }],
   },
   {
     title: "C++ Essentials",
@@ -126,6 +128,30 @@ const certificates = [
     img: mobile,
     tech: [{ icon: <SiExpo/> }],
   },
+  {
+    title: "python For Data Science",
+    issuer: "Nptel",
+    year: 2026,
+    month: "Feburary",
+    description:
+      "On going Certificate on python for data science in nptel to enhnace in my skills on libraries of python",
+    img:course ,
+    tech: [{ icon: <SiPython />, color: "#e2f916" }],
+  },
+   {
+  title: "Introduction To Internet of Things",
+  issuer: "NPTEL",
+  year: 2026,
+  month: "February",
+  description:
+    "Ongoing certification on Internet of Things through NPTEL to understand IoT architecture, sensors, embedded systems, and computer networks.",
+  img: course,
+  tech: [
+    { icon: <FaWifi />, color: "#00E5FF" },
+    { icon: <FaMicrochip />, color: "#4CAF50" },
+    { icon: <FaNetworkWired />, color: "#FF9800" }
+  ],
+},
 ];
 
 const Certificates = () => {

@@ -96,38 +96,7 @@ const blogPosts = [
     link: "/expensepage",
   }, 
 
-  {
-    title: "Startup Internship",
-    company: "Tender Plus",
-    month: "January - March",
-    year: 2026,
-    description:
-      "An Startup Tender Company For getting a tender for clients",
-    img: Tender,
-    tech: [
-      { icon: <FaAngular />, color: "#e32626" },
-     
-    ],
-    link: "/expensepage",
-  }, 
-
-   {
-    title: "Building Webiste & Dashboard system for client (accounting firm)",
-    company: "Karunesh Kumar & Associates",
-    month: "Feburary",
-    year: 2026,
-    description:
-      "An Accounting Firm Website having full fledged information webiste & Dashboard system",
-    img: CMA,
-    tech: [
-      { icon: <FaHtml5 />, color: "#E34F26" },
-      { icon: <FaCss3Alt />, color: "#264DE4" },
-      { icon: <FaJsSquare />, color: "#F7DF1E" },
-      { icon: <SiPhp />, color: "#8892BE" },
-      { icon: <SiMysql />, color: "#00758F" },
-    ],
-    link: "/expensepage",
-  }, 
+  
  
 
 ];
