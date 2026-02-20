@@ -131,9 +131,9 @@ const About = () => {
   <br />
   <br />
   I enjoy exploring emerging technologies, solving real-world problems through
-  code, and continuously improving my technical and creative abilities in
-  Full Stack Development, AI/ML, and Cybersecurity. In the future, I aspire to
-  pursue <strong>M.Tech</strong> followed by a <strong>Ph.D.</strong> in AI/ML or
+  code, and continuously improving my technical and creative abilities through
+  Full Stack Development, AI/ML, and Cybersecurity. I Aspire to
+  pursue <strong>M.Tech</strong> followed by <strong>Ph.D</strong> in AI/ML &
   Cybersecurity and move into the teaching and research field to mentor
   students and contribute to innovation.
   <br />

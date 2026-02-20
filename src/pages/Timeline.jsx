@@ -131,7 +131,7 @@ const Timeline = () => {
     {
       year: "2025",
       image: <img src={shreepati} alt="SES" style={imgStyle} />,
-      label: "Father Website : Shreepati Educational Services",
+      label: "Client Project : Shreepati Educational Services",
       description:
         "Made an informative website for shreepati to enhance their services .",
       skills: [
