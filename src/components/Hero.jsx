@@ -9,7 +9,7 @@ import { SiGithub } from "react-icons/si";
 import Leader from "../assets/leader.png";
 import Resume from "../assets/Resume.pdf"; 
 
-const roles = ["Full-Stack Developer", "App Developer", "React Enthusiast"];
+const roles = ["Full-Stack Developer", "App Developer", "AI/ML & Cybersecurity Expert"];
 const quotes = [
   "Coding is poetry in motion.",
   "Design your dreams, build your reality.",
