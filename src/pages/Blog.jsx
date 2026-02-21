@@ -95,7 +95,36 @@ const blogPosts = [
     ],
     link: "/expensepage",
   }, 
-
+{
+    title: "Built an informative website & dashboard for accounting firm",
+    company: "Karunesh Kumar & Associates",
+    month: "Feburary",
+    year: 2026,
+    description:
+      "An client project where i made an informative webiste and dashboard system",
+    img: CMA,
+    tech: [
+    { icon: <FaHtml5 />, color: "#E34F26" },
+      { icon: <FaCss3Alt />, color: "#264DE4" },
+      { icon: <FaJsSquare />, color: "#F7DF1E" },
+      { icon: <SiPhp />, color: "#8892BE" },
+      { icon: <SiMysql />, color: "#00758F" },
+    ],
+    link: "/accountingpage",
+  }, 
+  {
+    title: "Startup Internship",
+    company: "Tender Plus",
+    month: "jan - march",
+    year: 2026,
+    description:
+      "Got an internship from a startup and worked to improve the whole website and worked on it",
+    img: Tender,
+    tech: [
+     { icon: <FaAngular />, color: "rgb(255, 17, 17)" },
+    ],
+    link: "/tenderpluspage",
+  }, 
   
  
 

@@ -15,6 +15,8 @@ import CreativeXPage from "./pages/CreativeXPage";
 import SesWebsitePage from "./pages/SesWebsitePage"; 
 import SnsWebsitePage from "./pages/SnsWebsitePage";
 import ExpenseTrackerPage from "./pages/ExpenseTrackerPage";
+import AccountingPage from "./pages/AccountingPage";
+import TenderPlusPage from "./pages/TenderPlusPage";
 
 function App() {
   return (
@@ -38,6 +40,8 @@ function App() {
               <Route path="/seswebsite" element={<SesWebsitePage />} /> 
               <Route path="/snswebsite" element={<SnsWebsitePage />} />
                <Route path="/expensepage" element={<ExpenseTrackerPage />} />
+               <Route path="/accountingpage" element={<AccountingPage />} />
+               <Route path="/tenderpluspage" element={<TenderPlusPage />} />
               <Route path="/timeline" element={<Timeline />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
