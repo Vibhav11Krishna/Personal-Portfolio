@@ -498,7 +498,7 @@ const AccountingPage = () => {
               label: "GitHub",
             },
             {
-              href: "https://kkassociates.great-site.net/",
+              href: "https://www.cmakkassociates.com/",
               icon: <FaGlobe />,
               label: "Website",
             },

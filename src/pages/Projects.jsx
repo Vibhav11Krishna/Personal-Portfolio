@@ -139,7 +139,7 @@ const websiteProjects = [
       { icon: <SiPhp />, color: "#bc17e1ff" },
       { icon: <SiMysql />, color: "#00758F" },
     ],
-    link: "https://kkassociates.great-site.net/",
+    link: "https://www.cmakkassociates.com/",
     github: "https://github.com/Vibhav11Krishna/Account-Website",
   },
 ];
