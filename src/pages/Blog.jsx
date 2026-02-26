@@ -112,19 +112,7 @@ const blogPosts = [
     ],
     link: "/accountingpage",
   }, 
-  {
-    title: "Startup Internship",
-    company: "Tender Plus",
-    month: "jan - march",
-    year: 2026,
-    description:
-      "Got an internship from a startup and worked to improve the whole website and worked on it",
-    img: Tender,
-    tech: [
-     { icon: <FaAngular />, color: "rgb(255, 17, 17)" },
-    ],
-    link: "/tenderpluspage",
-  }, 
+ 
   
  
 
