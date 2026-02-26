@@ -4,14 +4,14 @@ This is my **Personal Portfolio** built with **React.js (Vite)**. It showcases m
 
 ---
 
-## 🌐 Online Portfolio
+##  Online Portfolio
 
 My portfolio is live at:  
 [Personal Portfolio on Vercel](https://personal-portfolio-nr1k.vercel.app/)
 
 ---
 
-## 🚀 About Me
+##  About Me
 
 Hi! I’m **Pulkit Krishna**, a passionate **Full-Stack Developer** and **Creative Technologist**.  
 I enjoy building modern web applications, solving complex problems, and exploring the latest in web technologies.  
@@ -19,7 +19,7 @@ I continuously learn to enhance my skills in **front-end & back-end development*
 
 ---
 
-## 💻 Features & Sections
+##  Features & Sections
 
 ### 1. Hero Section
 - Interactive typing animation for roles.
@@ -93,7 +93,7 @@ I continuously learn to enhance my skills in **front-end & back-end development*
 
 ---
 
-## 🛠️ Skills
+##  Skills
 
 - **Frontend:** HTML5, CSS3, JavaScript, React.js, Bootstrap  
 - **Backend:** Node.js, PHP, MySQL, MongoDB  
