@@ -98,7 +98,7 @@ I continuously learn to enhance my skills in **front-end & back-end development*
 - **Frontend:** HTML5, CSS3, JavaScript, React.js, Bootstrap  
 - **Backend:** Node.js, PHP, MySQL, MongoDB  
 - **Tools & Design:** Figma, Canva, VS Code, Git & GitHub  
-- **Other:** UI/UX Design, Motion Graphics, Video Editing
+- **Other:** UI/UX Design, Motion Graphics, 
 
 ---
 
