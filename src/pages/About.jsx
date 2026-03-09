@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { FaLightbulb, FaRocket, FaHeart, FaFileDownload } from "react-icons/fa";
+import { FaLightbulb, FaRocket, FaHeart, FaFileDownload, FaGithub } from "react-icons/fa";
 import Leader from "../assets/leader.png";
 import dpsLogo from "../assets/dps.png";
 import doonLogo from "../assets/doon.png";
@@ -259,8 +259,69 @@ const About = () => {
           </a>
         </div>
       </div>
+{/* GitHub Professional Showcase */}
+<div
+  ref={sectionRefs.extras} 
+  className={`github-full-section ${visibleSections.extras ? "animate-fade-up" : "hidden"}`}
+  style={{ 
+    textAlign: "center", 
+    marginTop: "8rem", 
+    marginBottom: "6rem",
+    padding: "0 1.5rem" 
+  }}
+>
+  <h3 className="subheading" style={{ marginBottom: "3.5rem" }}>Coding Journey</h3>
+
+  {/* Row 1: Streak Stats (Focus on Consistency) */}
+  <div className="github-streak-container" style={{ marginBottom: "4rem" }}>
+    <h4 style={{ color: "#888", marginBottom: "1.5rem", fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "1px" }}>
+      Contribution Streak
+    </h4>
+    <img 
+      src="https://github-readme-streak-stats.herokuapp.com/?user=Vibhav11Krishna&theme=tokyonight&background=00000000&hide_border=true&ring=ff260a&fire=ff260a&currStreakNum=ffffff&sideNums=ffffff&sideLabels=888888&dates=888888" 
+      alt="GitHub Streak" 
+      style={{ width: "100%", maxWidth: "500px", borderRadius: "10px" }}
+    />
+  </div>
+
+  {/* Row 2: Activity Graph (The Wave Trend) */}
+  <div className="github-graph-container" style={{ marginBottom: "3rem" }}>
+    <h4 style={{ color: "#888", marginBottom: "1.5rem", fontSize: "0.9rem", textTransform: "uppercase", letterSpacing: "1px" }}>
+      Activity Trends
+    </h4>
+    <img 
+      src="https://github-readme-activity-graph.vercel.app/graph?username=Vibhav11Krishna&bg_color=00000000&color=ff260a&line=ff260a&point=ffffff&hide_border=true" 
+      alt="GitHub Activity Graph" 
+      style={{ width: "100%", maxWidth: "900px", borderRadius: "15px" }}
+    />
+  </div>
+
+  {/* Action Button */}
+  <div style={{ marginTop: "4rem" }}>
+    <a 
+      href="https://github.com/Vibhav11Krishna" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="resume-btn"
+      style={{ 
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "10px",
+        background: "transparent", 
+        border: "2px solid #ff260a", 
+        padding: "1rem 2rem",
+        color: "#fff",
+        textDecoration: "none",
+        fontWeight: "bold"
+      }}
+    >
+      <FaGithub size={22} /> Explore My Repositories
+    </a>
+  </div>
+</div>
 
       <style>{`
+   
         .hidden { opacity: 0; transform: translateY(40px); }
 
         /* Scroll Animations */
