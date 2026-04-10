@@ -34,7 +34,7 @@ import aiImg from "../assets/skillsindia.png";
 import mobile from "../assets/mobile.png";
 import course from "../assets/nptel.jpg";
 import TenderPlus from "../Certificates/TenderPlus.pdf";
-import Python from "../Certificates/Swayam.jpg";
+import Python from "../Certificates/swayam.jpg";
 import Software from "../Certificates/sssinternship.jpg";
 import Wala from "../Certificates/internshipwala.jpg";
 import Ui from "../Certificates/uiux.jpg";
