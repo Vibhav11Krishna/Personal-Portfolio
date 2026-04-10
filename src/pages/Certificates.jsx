@@ -20,8 +20,10 @@ import {
 } from "react-icons/si";
 import { SiExpo } from "react-icons/si";
 import { FaNetworkWired, FaMicrochip, FaWifi } from "react-icons/fa";
+import { FaAngular } from "react-icons/fa";
 
 import frontendImg from "../assets/internshipwala.jpg";
+import Plus from "../assets/Plus.png";
 import jsMasteryImg from "../assets/sssinternship.jpg";
 import fullstackImg from "../assets/swayam.jpg";
 import uiuxImg from "../assets/uiux.jpg";
@@ -31,6 +33,15 @@ import ciscoImg2 from "../assets/cisco2.jpg";
 import aiImg from "../assets/skillsindia.png";
 import mobile from "../assets/mobile.png";
 import course from "../assets/nptel.jpg";
+import TenderPlus from "../Certificates/TenderPlus.pdf";
+import Python from "../Certificates/Swayam.jpg";
+import Software from "../Certificates/sssinternship.jpg";
+import Wala from "../Certificates/internshipwala.jpg";
+import Ui from "../Certificates/uiux.jpg";
+import Script from "../Certificates/cisco.jpg";
+import Essential from "../Certificates/cisco2.jpg";
+import Native from "../Certificates/mobile.png";
+import Skills from "../Certificates/skillsindia.png";
 
 const certificates = [
   {
@@ -41,6 +52,7 @@ const certificates = [
     description:
       "Mastered modern HTML, CSS, and responsive layouts. Gained practical experience in web page design, UI best practices, and real-world project implementation.",
     img: frontendImg,
+    link: Wala,
     tech: [
       { icon: <FaHtml5 />, color: "#E34F26" },
       { icon: <FaCss3Alt />, color: "#264DE4" },
@@ -56,13 +68,13 @@ const certificates = [
     description:
       "Learned back-end PHP & MySQL integration, built dynamic websites, and enhanced skills in full-stack web development including front-end & back-end synchronization.",
     img: jsMasteryImg,
+    link: Software,
     tech: [
       { icon: <SiMysql />, color: "#1ea0d0ff" },
       { icon: <SiPhp />, color: "#bc17e1ff" },
       { icon: <FaHtml5 />, color: "#E34F26" },
       { icon: <FaCss3Alt />, color: "#264DE4" },
       { icon: <FaJsSquare />, color: "#F7DF1E" },
-   
     ],
   },
   {
@@ -73,6 +85,7 @@ const certificates = [
     description:
       "Mastered core JavaScript concepts including ES6 syntax, DOM manipulation, events, and basic programming logic for real-world web applications.",
     img: ciscoImg,
+    link: Script,
     tech: [{ icon: <FaJsSquare />, color: "#F7DF1E" }],
   },
   {
@@ -83,6 +96,7 @@ const certificates = [
     description:
       "Learned interface design, color theory, user experience principles, and prototyping tools like Figma and Canva to create professional and engaging designs.",
     img: uiuxImg,
+    link: Ui,
     tech: [
       { icon: <SiFigma />, color: "#A259FF" },
       { icon: <SiCanva />, color: "#00C4CC" },
@@ -96,6 +110,7 @@ const certificates = [
     description:
       "Gained proficiency in Python programming, focusing on functions, arrays, and basic algorithms to solve real-world programming challenges efficiently.",
     img: fullstackImg,
+    link: Python,
     tech: [{ icon: <SiPython />, color: "#e2f916" }],
   },
   {
@@ -106,6 +121,7 @@ const certificates = [
     description:
       "Learned C++ programming, including core concepts, object-oriented programming, and basic algorithms, with hands-on coding experience.",
     img: ciscoImg2,
+    link: Essential,
     tech: [{ icon: <SiCplusplus />, color: "#00599C" }],
   },
   {
@@ -116,6 +132,7 @@ const certificates = [
     description:
       "Successfully completed the SOAR: AI To Acquire program by Skills India in collaboration with Microsoft, focused on developing AI literacy, responsible use of AI, and practical applications of machine learning.",
     img: aiImg,
+    link: Skills,
     tech: [{ icon: <FaRobot />, color: "#0078D4" }],
   },
   {
@@ -126,7 +143,20 @@ const certificates = [
     description:
       "Successfully completed the course of react native and completed the projects and assignment as directed and made project.",
     img: mobile,
-    tech: [{ icon: <SiExpo/> }],
+    link: Native,
+    tech: [{ icon: <SiExpo /> }],
+  },
+
+  {
+    title: "Internship Certificate (Startup)",
+    issuer: "Tender Plus",
+    year: 2026,
+    month: "April",
+    description:
+      "Learned how a startup company is managed and negotiated some work on the website and suggested some modifications and managed to understand work enviournment in a company",
+    img: Plus,
+    link: TenderPlus,
+    tech: [{ icon: <FaAngular /> , color: "#f91616"}],
   },
   {
     title: "python For Data Science",
@@ -135,23 +165,24 @@ const certificates = [
     month: "Feburary",
     description:
       "On going Certificate on python for data science in nptel to enhnace in my skills on libraries of python",
-    img:course ,
+    img: course,
+
     tech: [{ icon: <SiPython />, color: "#e2f916" }],
   },
-   {
-  title: "Introduction To Internet of Things",
-  issuer: "NPTEL",
-  year: 2026,
-  month: "February",
-  description:
-    "Ongoing certification on Internet of Things through NPTEL to understand IoT architecture, sensors, embedded systems, and computer networks.",
-  img: course,
-  tech: [
-    { icon: <FaWifi />, color: "#00E5FF" },
-    { icon: <FaMicrochip />, color: "#4CAF50" },
-    { icon: <FaNetworkWired />, color: "#FF9800" }
-  ],
-},
+  {
+    title: "Introduction To Internet of Things",
+    issuer: "NPTEL",
+    year: 2026,
+    month: "February",
+    description:
+      "Ongoing certification on Internet of Things through NPTEL to understand IoT architecture, sensors, embedded systems, and computer networks.",
+    img: course,
+    tech: [
+      { icon: <FaWifi />, color: "#00E5FF" },
+      { icon: <FaMicrochip />, color: "#4CAF50" },
+      { icon: <FaNetworkWired />, color: "#FF9800" },
+    ],
+  },
 ];
 
 const Certificates = () => {
@@ -202,16 +233,24 @@ const Certificates = () => {
                   </h3>
                   <p className="issuer">{cert.issuer}</p>
                   <p className="desc">{cert.description}</p>
-                  <div className="tech-icons">
-                    {cert.tech.map((t, i) => (
-                      <div
-                        key={i}
-                        className="tech-icon"
-                        style={{ color: t.color }}
-                      >
-                        {t.icon}
-                      </div>
-                    ))}
+                  
+                  {/* Container for Icons and Button side-by-side */}
+                  <div className="cert-footer">
+                    <div className="tech-icons">
+                      {cert.tech.map((t, i) => (
+                        <div
+                          key={i}
+                          className="tech-icon"
+                          style={{ color: t.color }}
+                        >
+                          {t.icon}
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <a href={cert.link} target="_blank" rel="noreferrer" className="view-btn">
+                      View Certificate
+                    </a>
                   </div>
                 </div>
               </div>
@@ -220,6 +259,45 @@ const Certificates = () => {
       </div>
 
       <style>{`
+      .cert-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1rem;
+        gap: 1rem;
+      }
+
+      .view-btn {
+        background: transparent;
+        color: #FF3B3B;
+        border: 2px solid #FF3B3B;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 0.8rem;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+      }
+
+      .view-btn:hover {
+        background: #FF3B3B;
+        color: #fff;
+        box-shadow: 0 0 15px rgba(255, 59, 59, 0.4);
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 480px) {
+        .cert-footer {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .view-btn {
+          width: 100%;
+          text-align: center;
+        }
+      }
         .cert-wrapper { position: relative; max-width: 1200px; margin: 0 auto; }
         .cert-wrapper::before {
           content:"";
@@ -278,7 +356,6 @@ const Certificates = () => {
         .issuer { color: #ccc; font-weight: 600; margin-bottom: 0.5rem; }
         .desc { color: #aaa; font-size: 0.95rem; margin-bottom: 1rem; }
 
-        /* 🔥 Bigger and Hoverable Icons */
         .tech-icons {
           display: flex;
           gap: 1rem;
