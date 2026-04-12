@@ -1,633 +1,427 @@
-
 import React from "react";
-import {
-  FaReact,
-  FaGithub,
-  FaNode,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-  FaLaptopCode,
-  FaServer,
-  FaPaintBrush,
-  FaCloud,
-  FaChartLine,
-  FaUserTie,
-  FaMobileAlt,
-  FaGlobe,
-  FaUsers,
-} from "react-icons/fa";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaPhp,
-  FaDatabase,
-  FaPalette
-} from "react-icons/fa";
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNode, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { SiPhp, SiMysql, SiFigma } from "react-icons/si";
 
-import { SiTailwindcss, SiExpress, SiPostgresql } from "react-icons/si";
-import websiteImg from "../assets/style.jpg";
-import homepageImg from "../assets/parlour.png";
-import aboutImg from "../assets/parlour1.png";
-import serviceImg from "../assets/parlour2.png";
-import bookingImg from "../assets/parlour3.png";
-import contactImg from "../assets/parlour5.png";
-import billingImg from "../assets/parlour6.png";
-import veiwImg from "../assets/parlour7.png";
-import invoiceImg from "../assets/parlour8.png";
+import companyImg from "../assets/sss.png"
+import homeImg from "../assets/HRManagement.png";
+import registrationImg from "../assets/Register.png";
+import adminDashImg from "../assets/Admin_Dashboard.png";
+import empDashImg from "../assets/Employee_Dashboard.png";
+import dbImg from "../assets/Database.png";
+import mentorImg from "../assets/mentor.jpg";
+import ownerImg from "../assets/owner.jpg";
+import certificateImg from "../assets/sssinternship.jpg";
+
+import insight1 from "../assets/insight1.jpg";
+import insight2 from "../assets/insight2.jpg";
+import insight3 from "../assets/insight3.jpg";
+import { AiOutlineFilePdf } from "react-icons/ai";
+import reportPDF from "../assets/Report.pdf";
 
 
 
-
-// --- Styles ---
-const tableStyle = {
-  width: "100%",
-  borderCollapse: "collapse",
-  background: "#2b2b2b",
-  borderRadius: "10px",
-};
-const tableHeader = { padding: "0.8rem", textAlign: "left", fontWeight: "bold" };
-const tableCell = { padding: "0.8rem", borderBottom: "1px solid #333" };
-
-const linkStyle = {
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  gap: "0.5rem",
-  padding: "0.6rem 1.2rem",
-  background: "#FF3B3B",
-  color: "#fff",
-  borderRadius: "8px",
-  fontWeight: "600",
-  textDecoration: "none",
-  transition: "all 0.3s ease",
-  fontSize: "1rem",
-};
-
-// --- Glow Function ---
-const handleGlow = (e, isHover) => {
-  e.currentTarget.style.transform = isHover ? "scale(1.05)" : "scale(1)";
-  e.currentTarget.style.boxShadow = isHover ? "0 0 15px #FF3B3B" : "none";
-};
-
-// --- Project Overview Data ---
 const projectOverview = [
-  { img: homepageImg, title: "Home Page", desc: "Landing section introducing the parlour with photos and phone numbers." },
-  { img: aboutImg, title: "About Page", desc: "Explains the parlours goals, experts introduction & the owner." },
-  { img: serviceImg, title: "Services Page", desc: "Displays available services regarding the parlour." },
-  { img: bookingImg, title: "Booking Page", desc: "Booking page is done by whatsaap integration using api " },
-  { img: contactImg, title: "Contact Page", desc: "Contact page having address & phone numbers to contact and has map to locate the parlour" },
-  { img: billingImg, title: "Billing Page", desc: "Billing page has inputs having name, phone numbers & address and what the customer has done in the parlour with the services listed with the headings" },
-  { img: veiwImg, title: "Veiw Bills Page", desc: "Client can veiw bills accoroading to their date time and id's of invoice " },
-  { img: invoiceImg, title: "Invoice Page", desc: "Invoice page having all the required inputs of the customer name,phone number and the services which he/she opted for in the parlour." },
-   
+  { img: homeImg, title: "Home Page", desc: "Landing page with navigation, welcome section, and quick links." },
+  { img: registrationImg, title: "Registration Page", desc: "Employee registration form with validation and database integration." },
+  { img: adminDashImg, title: "Admin Dashboard", desc: "Admin can manage employees, view reports, and handle salaries." },
+  { img: empDashImg, title: "Employee Dashboard", desc: "Employee can view tasks, submit reports, and track performance." },
+ 
+];
+
+const techStack = [
+  { category: "Frontend", name: "HTML", icon: <FaHtml5 /> },
+  { category: "Frontend", name: "CSS", icon: <FaCss3Alt /> },
+  { category: "Frontend", name: "JavaScript", icon: <FaJsSquare /> },
+  { category: "Backend", name: "PHP", icon: <SiPhp /> },
+  { category: "Database", name: "MySQL", icon: <SiMysql /> },
+  { category: "Design", name: "Figma", icon: <SiFigma /> },
+  { category: "Hosting", name: "InfinityFree", icon: <FaExternalLinkAlt /> },
+];
+
+const weeklyRoutine = [
+  { week: "Week 1", tasks: "Orientation, setup, learning HTML & CSS." },
+  { week: "Week 2", tasks: "Home page & registration page development." },
+  { week: "Week 3", tasks: "Backend integration with PHP & MySQL." },
+  { week: "Week 4", tasks: "Admin dashboard development & employee dashboard." },
+  { week: "Week 5", tasks: "Testing, bug fixing, responsiveness, deployment." },
+  { week: "Week 6", tasks: "Documentation, certificate, project completion." },
 ];
 
 const TenderPlusPage = () => {
-  
   return (
-    <section
-      style={{
-        background: "#1E1E1E",
-        color: "#E0E0E0",
-        padding: "4rem 2rem",
-      }}
-    >
-      {/* Header */}
-      <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-        <img
-          src={websiteImg}
-          alt="Shreepati Educational Services"
-          style={{
-            width: "310px",
-            height: "280px",
-            objectFit: "cover",
-            borderRadius: "12px",
-            marginBottom: "1rem",
-          }}
-        />
-        <h1
-          style={{
-            color: "#FF3B3B",
-            fontSize: "2.5rem",
-            marginBottom: "1rem",
-          }}
-        >
-          Style N Shine Website & Billing System
-        </h1>
-        <p
-          style={{
-            fontSize: "1rem",
-            color: "#ccc",
-            maxWidth: "800px",
-            margin: "0 auto",
-          }}
-        >
-          A professional Parlour website built for{" "}
-          <strong>Style N Shine</strong>, and made a billing system for the client, it was my first client project , made with the techonological stack having javascript, Php & MySQL with frontend skill set having Html and Css.
-        </p>
-      </div>
+    <section style={{ background: "#1E1E1E", color: "#E0E0E0", padding: "4rem 2rem" }}>
+      {/* Title */}
+      <h1 style={{ textAlign: "center", fontSize: "3rem", color: "#FF3B3B", fontFamily: "'Orbitron', sans-serif'", marginBottom: "3rem",  }}>
+        Internship
+      </h1>
 
-      {/* Project Overview */}
-      <div style={{ maxWidth: "900px", margin: "0 auto 3rem" }}>
-        <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>
-          Project Overview
-        </h2>
-        <p style={{ lineHeight: "1.8", marginBottom: "1rem" }}>
-          This project was a personal milestone creating a professional
-          Parlour website for the client business. It represents both a
-          technical learning experience and a meaningful contribution to his
-          parlour business.
-        </p>
-        <p style={{ lineHeight: "1.8" }}>
-          The goal was to design a responsive and dynamic platform where
-         visitors can book their slots efficiently and can see the services accoroading to their intrest, the billing system has whatsaap integration which sends the bill accoroading to their whatsaap number respectively and has function to save pdf and print the bill for the chnages as directed by the customer or client side
-        </p>
-      </div>
 
-      {/* Website Pages */}
-      <div style={{ maxWidth: "900px", margin: "0 auto 3rem" }}>
-        <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>
-          Website & Billing System Pages
-        </h2>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "1.5rem",
-          }}
-        >
-          {projectOverview.map((page, idx) => (
-            <div
-              key={idx}
-              style={{
-                background: "#2b2b2b",
-                borderRadius: "12px",
-                padding: "1rem",
-                transition: "transform 0.3s ease, box-shadow 0.3s ease",
-              }}
-              onMouseOver={(e) =>
-                (e.currentTarget.style.transform = "translateY(-6px) scale(1.02)")
-              }
-              onMouseOut={(e) => (e.currentTarget.style.transform = "none")}
-            >
-              <img
-                src={page.img}
-                alt={page.title}
-                style={{
-                  width: "100%",
-                  height: "200px",
-                  objectFit: "cover",
-                  borderRadius: "8px",
-                  marginBottom: "0.8rem",
-                }}
-              />
-              <h3 style={{ color: "#FF3B3B", marginBottom: "0.5rem" }}>
-                {page.title}
-              </h3>
-              <p style={{ fontSize: "0.95rem", color: "#ccc" }}>{page.desc}</p>
-            </div>
+{/* About Company */}
+<div style={{ maxWidth: "900px", margin: "0 auto 3rem", textAlign: "center" }} className="about-company">
+  <img 
+    src={companyImg} 
+    alt="Owner" 
+    style={{ width: "200px", height: "290px",  objectFit: "cover", borderRadius: "10px", marginBottom: "1rem" }} 
+  />
+  <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>About the Company</h2>
+  
+  <div className="company-info-grid">
+    <p>
+      <strong>Software Services & Solution</strong> is a leading full-stack development company providing secure, scalable, and user-centric web applications. During my internship, I closely observed project planning, database design, and client requirement analysis.
+    </p>
+    <p>
+      The company fosters a collaborative work environment with modern tools and best practices, giving interns a real-world experience of the software development lifecycle. I learned to handle front-end development, backend logic, database management, and responsive UI designs.
+    </p>
+    <div className="company-website-box">
+      <a href="https://www.ssspatna.com/" target="_blank" rel="noopener noreferrer">
+        Visit Company Website
+      </a>
+    </div>
+  </div>
+
+  <style>{`
+    .company-info-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      text-align: left;
+    }
+
+    .company-info-grid p {
+      color: #E0E0E0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .company-website-box {
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .company-website-box a {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: #FF3B3B;
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .company-website-box a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 59, 59, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .company-info-grid {
+        text-align: center;
+      }
+    }
+  `}</style>
+</div>
+
+      {/* Company Insights */}
+      <div style={{ maxWidth: "1000px", margin: "0 auto 3rem" }}>
+        <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Company Insights</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1.5rem" }}>
+          {[insight1, insight2, insight3].map((img, idx) => (
+            <img key={idx} src={img} alt={`Insight ${idx + 1}`} style={{ width: "100%", height: "180px", objectFit: "cover", borderRadius: "12px", cursor: "pointer", transition: "0.3s" }} className="insight-img" />
           ))}
         </div>
       </div>
 
 
-       
+<div style={{ margin: "30px" }}>  </div>
+ {/* Project Information */}
+<div style={{ maxWidth: "900px", margin: "0 auto 3rem", textAlign: "center" }} className="project-info">
+  <h1 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Project - HR Management System</h1>
+  
+  <div className="project-info-grid">
+    <p>
+      The <strong>HR Management System</strong> is a full-stack web application designed to manage employees, attendance, payroll, and reports efficiently. 
+      Admins can manage the system, while employees can view their profiles and salary details. The project provides a secure, responsive, and user-friendly experience.
+    </p>
+    <p>
+      During development, I gained experience with front-end design, back-end logic, database integration using MySQL, and responsive UI implementation. 
+      The system ensures real-time updates, role-based access, and seamless workflow for HR operations.
+    </p>
 
-     <div style={{ maxWidth: "850px", margin: "0 auto 3rem" }}>
-  <h2
-    style={{
-      color: "#FF3B3B",
-      textAlign: "center",
-      marginBottom: "1rem",
-      fontSize: "1.9rem",
-      fontWeight: "700",
-      letterSpacing: "0.5px",
-    }}
-  >
-    Technological Stack
-  </h2>
+    <div className="project-features">
+      <h3 style={{ color: "#FF3B3B", marginBottom: "0.5rem" }}>Features</h3>
+      <ul style={{ textAlign: "left", color: "#E0E0E0", fontSize: "0.95rem", lineHeight: "1.6" }}>
+        <li><strong>Admin Dashboard:</strong> Manage employees, attendance, payroll, generate reports, and monitor HR operations.</li>
+        <li><strong>Employee Dashboard:</strong> View profile, attendance, salary details, and notifications.</li>
+        <li>Secure login with role-based access.</li>
+        <li>Responsive UI for desktop and mobile.</li>
+        <li>Database integration using MySQL for employee records.</li>
+      </ul>
+    </div>
 
-  <table
-    style={{
-      width: "100%",
-      borderCollapse: "collapse",
-      background: "#2b2b2b",
-      borderRadius: "12px",
-      overflow: "hidden",
-    }}
-  >
-    <thead>
-      <tr style={{ background: "#FF3B3B", color: "#fff" }}>
-        <th style={{ padding: "1rem", textAlign: "center", fontWeight: "700" }}>
-          Technology
-        </th>
-        <th style={{ padding: "1rem", textAlign: "center", fontWeight: "700" }}>
-          Purpose
-        </th>
-      </tr>
-    </thead>
+    <div className="project-links">
+      <a href="https://github.com/Vibhav11Krishna/HR-Management-System" target="_blank" rel="noopener noreferrer">
+        <FaGithub /> View GitHub
+      </a>
+      <a href="https://hr-management-dashboard.great-site.net" target="_blank" rel="noopener noreferrer">
+        <FaExternalLinkAlt /> View Website
+      </a>
+    </div>
+  </div>
 
-    <tbody>
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          <FaHtml5 style={{   }} /> HTML
-        </td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Structure & page layout
-        </td>
-      </tr>
+  <style>{`
+    .project-info-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      text-align: left;
+    }
 
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          <FaCss3Alt style={{   }} /> CSS
-        </td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Styling & responsiveness
-        </td>
-      </tr>
+    .project-info-grid p {
+      color: #E0E0E0;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
 
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          <FaJs style={{   }} /> JavaScript
-        </td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Dynamic interactions & UI behavior
-        </td>
-      </tr>
+    .project-features ul {
+      padding-left: 1rem;
+    }
 
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          <FaPhp style={{  }} /> PHP
-        </td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Backend logic & billing system
-        </td>
-      </tr>
+    .project-links {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
 
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          <FaDatabase style={{   }} /> MySQL
-        </td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Data storage & billing records
-        </td>
-      </tr>
+    .project-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      background: #FF3B3B;
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          <FaPalette style={{ }} /> Canva
-        </td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Graphics & branding design
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    .project-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 59, 59, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .project-info-grid {
+        text-align: center;
+      }
+
+      .project-features ul {
+        padding-left: 0;
+      }
+    }
+  `}</style>
 </div>
 
 
-
-      
-
-    <div style={{ maxWidth: "900px", margin: "0 auto 3rem" }}>
-  <h2
-    style={{
-      color: "#FF3B3B",
-      textAlign: "center",
-      marginBottom: "1rem",
-      fontSize: "1.9rem",
-      fontWeight: "700",
-    }}
-  >
-    Day-Wise Website Timeline
-  </h2>
-
-  <table
-    style={{
-      width: "100%",
-      borderCollapse: "collapse",
-      background: "#2b2b2b",
-      borderRadius: "12px",
-      overflow: "hidden",
-    }}
-  >
-    <thead>
-      <tr style={{ background: "#FF3B3B", color: "#fff" }}>
-        <th style={{ padding: "1rem", textAlign: "center" }}>Day</th>
-        <th style={{ padding: "1rem", textAlign: "center" }}>
-          Website Development
-        </th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 1</td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Requirement Analysis & Project Planning
-        </td>
-        
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 2</td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Homepage Layout & Content Wireframing
-        </td>
-        
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 3</td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          About & Services Page Development
-        </td>
-        
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 4</td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Responsive UI & Mobile Optimization
-        </td>
-       
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 5</td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Partners & Contact Page Completion
-        </td>
-        
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 6</td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Content Polishing & SEO Improvements
-        </td>
-      
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 7</td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Final Review & Deployment on Vercel
-        </td>
-        
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-<div style={{ maxWidth: "900px", margin: "0 auto 3rem" }}>
-  <h2
-    style={{
-      color: "#FF3B3B",
-      textAlign: "center",
-      marginBottom: "1rem",
-      fontSize: "1.9rem",
-      fontWeight: "700",
-    }}
-  >
-    Day-Wise Billing System Timeline
-  </h2>
-
-  <table
-    style={{
-      width: "100%",
-      borderCollapse: "collapse",
-      background: "#2b2b2b",
-      borderRadius: "12px",
-      overflow: "hidden",
-    }}
-  >
-    <thead>
-      <tr style={{ background: "#FF3B3B", color: "#fff" }}>
-        <th style={{ padding: "1rem", textAlign: "center" }}>Day</th>
-       
-        <th style={{ padding: "1rem", textAlign: "center" }}>
-          Billing System Development
-        </th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 1</td>
-       
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Database Design & Structure Planning
-        </td>
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 2</td>
-       
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          PHP Project Setup & Configurations
-        </td>
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 3</td>
-       
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Billing Form UI & Input Handling
-        </td>
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 4</td>
-      
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          CRUD Operations & DB Integration
-        </td>
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 5</td>
-       
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          WhatsApp Bill Sharing Integration
-        </td>
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 6</td>
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          PDF Export & Print Functionality
-        </td>
-      </tr>
-
-      <tr>
-        <td style={{ padding: "1rem", textAlign: "center" }}>Day 7</td>
-       
-        <td style={{ padding: "1rem", textAlign: "center" }}>
-          Testing, Debugging & Client Review
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-
-
-      {/* Deployment */}
-<div
-  style={{
-    maxWidth: "900px",
-    margin: "0 auto 3rem",
-    textAlign: "center",
-  }}
->
-  <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Deployment of Website</h2>
-  <p style={{ lineHeight: "1.8", marginBottom: "1.5rem", color: "#ccc" }}>
-    Hosted on <strong>Infinity Free</strong> with continuous deployment from
-    GitHub for faster updates and scalability.
-  </p>
-
-  {/* Responsive 2x2 Social Links Grid */}
+    {/* Project Overview */}
+<div style={{ maxWidth: "1000px", margin: "0 auto 3rem" }}>
+  <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Project Overview</h2>
   <div
+    className="project-grid"
     style={{
       display: "grid",
-      gridTemplateColumns: "repeat(2, 1fr)", // 2 per row
-      gap: "1rem",
-      justifyContent: "center",
-      alignItems: "center",
-      maxWidth: "500px",
-      margin: "0 auto",
+      gridTemplateColumns: "repeat(2, 2fr)",
+      gap: "1.9rem",
     }}
   >
-    {[
-      {
-        href: "https://github.com/Vibhav11Krishna/style-n-shine-website",
-        icon: <FaGithub />,
-        label: "GitHub",
-      },
-      {
-        href: "https://stylenshine.great-site.net/?i=1",
-        icon: <FaGlobe />,
-        label: "Website",
-      },
-    ].map((link, idx) => (
-      <a
-        key={idx}
-        href={link.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          ...linkStyle,
-          width: "100%",
-          justifyContent: "center",
-          fontSize: "0.95rem",
-          textAlign: "center",
-        }}
-        onMouseEnter={(e) => handleGlow(e, true)}
-        onMouseLeave={(e) => handleGlow(e, false)}
-      >
-        {link.icon} {link.label}
-      </a>
-    ))}
+    {projectOverview.map((proj, idx) => {
+      const isLastFullWidth = idx === projectOverview.length - 1 && projectOverview.length % 2 !== 0;
+      return (
+        <div
+          key={idx}
+          style={{
+            background: "#2b2b2b",
+            padding: "0.8rem",
+            borderRadius: "12px",
+            cursor: "pointer",
+            transition: "transform 0.3s",
+            gridColumn: isLastFullWidth ? "span 2" : "span 1",
+            height: "auto",
+          }}
+          className="project-card"
+        >
+          <img
+            src={proj.img}
+            alt={proj.title}
+            style={{
+              width: "100%",
+              height: "220px", // increased height
+              objectFit: "cover",
+              borderRadius: "12px",
+              marginBottom: "0.5rem",
+            }}
+          />
+          <h3 style={{ color: "#FF3B3B", fontSize: "1.2rem" }}>{proj.title}</h3>
+          <p style={{ fontSize: "0.9rem", color: "#ccc", marginBottom: "0.5rem" }}>{proj.desc}</p>
+        </div>
+      );
+    })}
   </div>
 </div>
 
-  {/* Deployment */}
-<div
-  style={{
-    maxWidth: "900px",
-    margin: "0 auto 3rem",
-    textAlign: "center",
-  }}
->
-  <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Deployment of Billing System</h2>
-  <p style={{ lineHeight: "1.8", marginBottom: "1.5rem", color: "#ccc" }}>
-    Hosted on <strong>Infinity Free</strong> with continuous deployment from
-    GitHub for faster updates and scalability.
-  </p>
-
-  {/* Responsive 2x2 Social Links Grid */}
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(2, 1fr)", // 2 per row
-      gap: "1rem",
-      justifyContent: "center",
-      alignItems: "center",
-      maxWidth: "500px",
-      margin: "0 auto",
-    }}
-  >
-    {[
-      {
-        href: "https://github.com/Vibhav11Krishna/StyleNShine-Billing",
-        icon: <FaGithub />,
-        label: "GitHub",
-      },
-      {
-        href: "https://billingapp.great-site.net/",
-        icon: <FaGlobe />,
-        label: "Website",
-      },
-    
-    ].map((link, idx) => (
-      <a
-        key={idx}
-        href={link.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{
-          ...linkStyle,
-          width: "100%",
-          justifyContent: "center",
-          fontSize: "0.95rem",
-          textAlign: "center",
-        }}
-        onMouseEnter={(e) => handleGlow(e, true)}
-        onMouseLeave={(e) => handleGlow(e, false)}
-      >
-        {link.icon} {link.label}
-      </a>
-    ))}
-  </div>
-</div>
+<style>{`
+  @media (max-width: 900px) {
+    .project-grid {
+      grid-template-columns: 1fr !important; /* stack items on mobile */
+    }
+    .project-card {
+      grid-column: span 1 !important; /* reset full width logic on mobile */
+    }
+  }
+`}</style>
 
 
-      {/* Summary */}
-      <div style={{ maxWidth: "900px", margin: "0 auto 4rem" }}>
-        <h2
-          style={{ color: "#FF3B3B", marginBottom: "1rem", textAlign: "center" }}
-        >
-          Summary & Key Learnings
-        </h2>
-        <p
-          style={{
-            lineHeight: "1.8",
-            color: "#E0E0E0",
-            marginBottom: "1rem",
-          }}
-        >
-          Developing this Parlour website & Billing System was a complete end-to-end
-          experience that combined design thinking, full-stack development, and
-          deployment.
-        </p>
-        <ul
-          style={{
-            lineHeight: "1.8",
-            color: "#ccc",
-            listStyle: "none",
-            padding: 0,
-          }}
-        >
-          <li>⚡ Learned how to structure a full stack project efficiently.</li>
-          <li>⚡ Improved backend API setup and database design skills.</li>
-          <li>⚡ Gained experience with responsive UI and accessibility.</li>
-          <li>⚡ Understood client communication and project deployment.</li>
-          <li>⚡ Learned to manage version control and collaboration via GitHub.</li>
-        </ul>
+
+      {/* Technology Stack */}
+      <div style={{ maxWidth: "900px", margin: "0 auto 3rem" }}>
+        <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Technology Stack</h2>
+        <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "center" }}>
+          <thead>
+            <tr>
+              <th style={{ borderBottom: "2px solid #FF3B3B", padding: "0.8rem" }}>Category</th>
+              <th style={{ borderBottom: "2px solid #FF3B3B", padding: "0.8rem" }}>Technology</th>
+              <th style={{ borderBottom: "2px solid #FF3B3B", padding: "0.8rem" }}>Icon</th>
+            </tr>
+          </thead>
+          <tbody>
+            {techStack.map((tech, idx) => (
+              <tr key={idx} style={{ background: idx % 2 === 0 ? "#2b2b2b" : "#262626", transition: "0.3s" }}>
+                <td style={{ padding: "0.8rem" }}>{tech.category}</td>
+                <td style={{ padding: "0.8rem" }}>{tech.name}</td>
+                <td style={{ padding: "0.8rem", fontSize: "1.2rem" }}>{tech.icon}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
+
+     
+
+<style>{`
+  .link-box:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 24px rgba(255,59,59,0.5);
+  }
+`}</style>
+
+
+      {/* Weekly Routine */}
+      <div style={{ maxWidth: "900px", margin: "0 auto 3rem" }}>
+        <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Weekly Internship Routine</h2>
+        <table style={{ width: "100%", borderCollapse: "collapse" }}>
+          <thead>
+            <tr>
+              <th style={{ borderBottom: "2px solid #FF3B3B", padding: "0.8rem", textAlign: "left" }}>Week</th>
+              <th style={{ borderBottom: "2px solid #FF3B3B", padding: "0.8rem", textAlign: "left" }}>Tasks & Learning</th>
+            </tr>
+          </thead>
+          <tbody>
+            {weeklyRoutine.map((week, idx) => (
+              <tr key={idx} style={{ background: idx % 2 === 0 ? "#2b2b2b" : "#262626" }}>
+                <td style={{ padding: "0.8rem" }}>{week.week}</td>
+                <td style={{ padding: "0.8rem" }}>{week.tasks}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Mentor & Owner */}
+      <div style={{ maxWidth: "1000px", margin: "0 auto 3rem", display: "flex", gap: "2rem", justifyContent: "center", flexWrap: "wrap" }}>
+        {[{img: mentorImg, name: "Mr.Danish ", role: "Mentor"}, {img: ownerImg, name: "Mr.Aamir Junaid Ahmed", role: "CEO"}].map((person, idx) => (
+          <div key={idx} style={{ width: "300px", textAlign: "center", cursor: "pointer" }} className="person-card">
+            <img src={person.img} alt={person.name} style={{ width: "200px", height: "200px", objectFit: "cover", borderRadius: "8px", marginBottom: "0.5rem", transition: "0.3s" }} />
+            <p>{person.role}: {person.name}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Certificate */}
+<div style={{ maxWidth: "900px", margin: "0 auto 4rem", textAlign: "center" }}>
+  <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Certificate</h2>
+  <img
+    src={certificateImg}
+    alt="Certificate"
+    style={{
+      width: "130%",
+      maxWidth: "600px",
+      height: "450px",
+      borderRadius: "12px",
+      objectFit: "cover",
+    }}
+    className="certificate-img"
+  />
+</div>
+
+{/* Internship Report Button */}
+<div style={{ textAlign: "center", marginBottom: "4rem" }}>
+  <a
+    href={reportPDF}
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      display: "inline-flex",
+      alignItems: "center",
+      gap: "8px",
+      padding: "0.8rem 1.6rem",
+      background: "#FF3B3B",
+      color: "#fff",
+      fontWeight: "600",
+      borderRadius: "8px",
+      textDecoration: "none",
+      transition: "transform 0.2s, box-shadow 0.2s",
+    }}
+    onMouseEnter={(e) => {
+      e.target.style.transform = "translateY(-3px)";
+      e.target.style.boxShadow = "0 5px 15px rgba(255,59,59,0.4)";
+    }}
+    onMouseLeave={(e) => {
+      e.target.style.transform = "none";
+      e.target.style.boxShadow = "none";
+    }}
+  >
+    <AiOutlineFilePdf size={22} />
+    View Internship Report
+  </a>
+</div>
+
+<style>{`
+  @media (max-width: 768px) {
+    .certificate-img {
+      width: 100% !important; /* fit mobile width */
+      max-width: 100% !important;
+      height: auto !important; /* maintain aspect ratio */
+    }
+  }
+`}</style>
+
+
+      {/* Experience & Learnings */}
+      <div style={{ maxWidth: "900px", margin: "0 auto 4rem" }}>
+        <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>My Experience & Learnings</h2>
+        <p>I gained hands-on experience building a full-stack HR Management Dashboard. Learned to integrate frontend with backend, handle databases, and work collaboratively in a professional environment. Improved coding practices, problem-solving skills, and real-world project management. This internship strengthened my knowledge in HTML, CSS, JavaScript, PHP, MySQL, and responsive design, as well as deployment using free hosting.</p>
+        <p>Working under the guidance of my mentor and owner helped me understand project lifecycle, client requirements, and teamwork dynamics. I also explored debugging, optimization, and UI/UX improvements throughout the project.</p>
+      </div>
+
+      <style>{`
+        .project-card:hover { transform: scale(1.05); }
+        .insight-img:hover { transform: scale(1.05); }
+        .person-card img:hover { transform: scale(1.05); }
+        table tbody tr:hover { background: #FF3B3B33; }
+      `}</style>
     </section>
   );
 };

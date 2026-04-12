@@ -27,7 +27,7 @@ import {
   SiPhp,
   SiMysql,
 } from "react-icons/si";
-import CMA from "../assets/CMA.jpg";
+import CMA from "../assets/Cma.png";
 import home from "../assets/accounting1.png";
 import about from "../assets/accounting2.png";
 import choose from "../assets/accounting3.png";

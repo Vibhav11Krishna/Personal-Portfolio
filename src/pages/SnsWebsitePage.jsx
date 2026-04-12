@@ -27,7 +27,7 @@ import {
 } from "react-icons/fa";
 
 import { SiTailwindcss, SiExpress, SiPostgresql } from "react-icons/si";
-import websiteImg from "../assets/style.jpg";
+import websiteImg from "../assets/Style.png";
 import homepageImg from "../assets/parlour.png";
 import aboutImg from "../assets/parlour1.png";
 import serviceImg from "../assets/parlour2.png";

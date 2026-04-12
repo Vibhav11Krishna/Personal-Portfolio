@@ -8,10 +8,10 @@ import { Link } from "react-router-dom";
 import internshipImg from "../assets/sss.png";
 import hackathonImg from "../assets/creativex.jpg";
 import fatherWebsiteImg from "../assets/logoshreepati.png";
-import ClientImg from "../assets/style.jpg";
+import ClientImg from "../assets/Style.png";
 import tracker from "../assets/tracker.png";
-import CMA from "../assets/CMA.jpg";
-import Tender from "../assets/TenderPlus.webp"
+import CMA from "../assets/Cma.png";
+import Tender from "../assets/TenderPlus.png"
 
 const blogPosts = [
   {
@@ -112,7 +112,20 @@ const blogPosts = [
     ],
     link: "/accountingpage",
   }, 
- 
+ {
+    title: "Startup Internship",
+    company: "Tender Plus",
+    month: "January",
+    year: 2026,
+    description:
+    "Got an internship at a startup company and got the chance to get the real life experience ",
+    img: Tender,
+    tech: [
+    { icon: <FaAngular />, color: "#E34F26" },
+     
+    ],
+    link: "",
+  }, 
   
  
 
