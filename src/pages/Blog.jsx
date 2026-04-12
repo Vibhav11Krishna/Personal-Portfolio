@@ -11,7 +11,7 @@ import fatherWebsiteImg from "../assets/logoshreepati.png";
 import ClientImg from "../assets/Style.png";
 import tracker from "../assets/tracker.png";
 import CMA from "../assets/CMA.png";
-import Tender from "../assets/TenderPlus.png"
+import Tender from "../assets/Tenderplus.png"
 
 const blogPosts = [
   {
