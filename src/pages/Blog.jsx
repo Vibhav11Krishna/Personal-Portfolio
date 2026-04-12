@@ -10,7 +10,7 @@ import hackathonImg from "../assets/creativex.jpg";
 import fatherWebsiteImg from "../assets/logoshreepati.png";
 import ClientImg from "../assets/Style.png";
 import tracker from "../assets/tracker.png";
-import CMA from "../assets/Cma.png";
+import CMA from "../assets/CMA.png";
 import Tender from "../assets/TenderPlus.png"
 
 const blogPosts = [

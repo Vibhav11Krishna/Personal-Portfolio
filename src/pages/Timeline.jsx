@@ -17,7 +17,7 @@ import sssLogo from "../assets/sss.png";
 import sihLogo from "../assets/sih.jpg";
 import teamPhoto from "../assets/group.jpg";
 import style from "../assets/Style.png";
-import CMA from "../assets/Cma.png";
+import CMA from "../assets/CMA.png";
 import Tender from "../assets/TenderPlus.png";
 import shreepati from "../assets/logoshreepati.png";
 
