@@ -212,7 +212,7 @@ const About = () => {
           />
         </div>
 
-        {/* deleted the activity graph of github*/}
+        
 
         <div style={{ marginTop: "3rem" }}>
           <a 
