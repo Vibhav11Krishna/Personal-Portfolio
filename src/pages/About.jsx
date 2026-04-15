@@ -212,15 +212,7 @@ const About = () => {
           />
         </div>
 
-        {/* Row 2: Activity Graph */}
-        <div className="github-graph-container" style={{ marginBottom: "3rem" }}>
-          <h4 className="github-label">Activity Trends</h4>
-          <img 
-            src="https://github-readme-activity-graph.vercel.app/graph?username=Vibhav11Krishna&bg_color=00000000&color=ff260a&line=ff260a&point=ffffff&hide_border=true" 
-            alt="GitHub Activity Graph" 
-            className="github-img-graph"
-          />
-        </div>
+        {/* deleted the activity graph of github*/}
 
         <div style={{ marginTop: "3rem" }}>
           <a 
