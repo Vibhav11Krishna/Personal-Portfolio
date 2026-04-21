@@ -19,6 +19,7 @@ import {
   SiCplusplus,
 } from "react-icons/si";
 import { SiExpo } from "react-icons/si";
+import { SiAnthropic } from "react-icons/si";
 import { FaNetworkWired, FaMicrochip, FaWifi } from "react-icons/fa";
 import { FaAngular } from "react-icons/fa";
 
@@ -33,6 +34,7 @@ import ciscoImg2 from "../assets/cisco2.jpg";
 import aiImg from "../assets/skillsindia.png";
 import mobile from "../assets/mobile.png";
 import course from "../assets/nptel.jpg";
+import Anthropic from "../assets/Anthropic.jpeg";
 import TenderPlus from "../Certificates/TenderPlus.pdf";
 import Python from "../Certificates/swayam.jpg";
 import Software from "../Certificates/sssinternship.jpg";
@@ -42,6 +44,7 @@ import Script from "../Certificates/cisco.jpg";
 import Essential from "../Certificates/cisco2.jpg";
 import Native from "../Certificates/mobile.png";
 import Skills from "../Certificates/skillsindia.png";
+import Claude from  "../Certificates/Claude.pdf";
 
 const certificates = [
   {
@@ -181,6 +184,19 @@ const certificates = [
       { icon: <FaWifi />, color: "#00E5FF" },
       { icon: <FaMicrochip />, color: "#4CAF50" },
       { icon: <FaNetworkWired />, color: "#FF9800" },
+    ],
+  },
+   {
+    title: "Claude Code In Action",
+    issuer: "Anthropic",
+    year: 2026,
+    month: "April",
+    description:
+      "This certification focused on mastering Claude’s CLI tool for terminal-based refactoring and agentic coding.",
+    img: Anthropic,
+    link: Claude,
+    tech: [
+      { icon: <SiAnthropic />, color: "#FFFFFF" },
     ],
   },
 ];
