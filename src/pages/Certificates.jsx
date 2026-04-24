@@ -35,6 +35,7 @@ import aiImg from "../assets/skillsindia.png";
 import mobile from "../assets/mobile.png";
 import course from "../assets/nptel.jpg";
 import Anthropic from "../assets/Anthropic.jpeg";
+import Data from "../assets/Data.png";
 import TenderPlus from "../Certificates/TenderPlus.pdf";
 import Python from "../Certificates/swayam.jpg";
 import Software from "../Certificates/sssinternship.jpg";
@@ -45,6 +46,7 @@ import Essential from "../Certificates/cisco2.jpg";
 import Native from "../Certificates/mobile.png";
 import Skills from "../Certificates/skillsindia.png";
 import Claude from  "../Certificates/Claude.pdf";
+import Nptel from "../Certificates/Nptel.pdf";
 
 const certificates = [
   {
@@ -167,8 +169,9 @@ const certificates = [
     year: 2026,
     month: "Feburary",
     description:
-      "On going Certificate on python for data science in nptel to enhnace in my skills on libraries of python",
-    img: course,
+      "Certificate on python for data science in nptel to enhnace in my skills on libraries of python and have consolidate score of 60%",
+    img: Data,
+    link:Nptel,
 
     tech: [{ icon: <SiPython />, color: "#e2f916" }],
   },
