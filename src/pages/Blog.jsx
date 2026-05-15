@@ -124,7 +124,7 @@ const blogPosts = [
     { icon: <FaAngular />, color: "#E34F26" },
      
     ],
-    link: "",
+    link: "/Tenderpluspage",
   }, 
   
  

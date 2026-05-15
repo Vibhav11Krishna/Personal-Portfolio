@@ -2,7 +2,7 @@ import React from "react";
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNode, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { SiPhp, SiMysql, SiFigma } from "react-icons/si";
 
-import companyImg from "../assets/sss.png"
+import companyImg from "../assets/Tenderplus.png"
 import homeImg from "../assets/HRManagement.png";
 import registrationImg from "../assets/Register.png";
 import adminDashImg from "../assets/Admin_Dashboard.png";
@@ -52,7 +52,7 @@ const TenderPlusPage = () => {
     <section style={{ background: "#1E1E1E", color: "#E0E0E0", padding: "4rem 2rem" }}>
       {/* Title */}
       <h1 style={{ textAlign: "center", fontSize: "3rem", color: "#FF3B3B", fontFamily: "'Orbitron', sans-serif'", marginBottom: "3rem",  }}>
-        Internship
+         Startup Internship
       </h1>
 
 
@@ -61,16 +61,23 @@ const TenderPlusPage = () => {
   <img 
     src={companyImg} 
     alt="Owner" 
-    style={{ width: "200px", height: "290px",  objectFit: "cover", borderRadius: "10px", marginBottom: "1rem" }} 
+    style={{ width: "290px", height: "170px",  objectFit: "cover", borderRadius: "10px", marginBottom: "1rem" }} 
   />
   <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>About the Company</h2>
   
   <div className="company-info-grid">
     <p>
-      <strong>Software Services & Solution</strong> is a leading full-stack development company providing secure, scalable, and user-centric web applications. During my internship, I closely observed project planning, database design, and client requirement analysis.
+      <strong>Tender Plus</strong> is a premier brand owned by Tender plus Business Consulting 
+Private Limited, dedicated to bridging the gap between businesses and 
+government procurement opportunities. Combining over 15 years of industry 
+expertise, the company provides 
+comprehensive, end-to-end solutions for the evolving digital tender landscape. 
     </p>
     <p>
-      The company fosters a collaborative work environment with modern tools and best practices, giving interns a real-world experience of the software development lifecycle. I learned to handle front-end development, backend logic, database management, and responsive UI designs.
+     Founded on the principles of reliability and technical excellence, Tenders Plus 
+specializes in navigating the complexities of Government E-procurement.Tenders Plus is committed to transparency and client success. To allow new 
+partners to experience our high standards of service, we offer an initial 
+service worth ₹1,999 free of cost.
     </p>
     <div className="company-website-box">
       <a href="https://www.ssspatna.com/" target="_blank" rel="noopener noreferrer">

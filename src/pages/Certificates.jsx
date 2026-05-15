@@ -47,6 +47,8 @@ import Native from "../Certificates/mobile.png";
 import Skills from "../Certificates/skillsindia.png";
 import Claude from  "../Certificates/Claude.pdf";
 import Nptel from "../Certificates/Nptel.pdf";
+import Nptel1 from "../Certificates/Nptel1.pdf";
+import Things from "../assets/Things.png";
 
 const certificates = [
   {
@@ -181,8 +183,9 @@ const certificates = [
     year: 2026,
     month: "February",
     description:
-      "Ongoing certification on Internet of Things through NPTEL to understand IoT architecture, sensors, embedded systems, and computer networks.",
-    img: course,
+      " Certificate on Internet Of Things in nptel to enhnace in my skills on IoT architecture, sensors, embedded systems, and computer networks and have consolidate score of 70%.",
+    img: Things,
+    link:Nptel1, 
     tech: [
       { icon: <FaWifi />, color: "#00E5FF" },
       { icon: <FaMicrochip />, color: "#4CAF50" },
