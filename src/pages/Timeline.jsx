@@ -20,6 +20,7 @@ import style from "../assets/Style.png";
 import CMA from "../assets/CMA.png";
 import Tender from "../assets/Tenderplus.png";
 import shreepati from "../assets/logoshreepati.png";
+import NIT from "../assets/NIT.jpg";
 
 const Timeline = () => {
   useEffect(() => {
@@ -159,6 +160,14 @@ const Timeline = () => {
       description:
         "A startup company where worked on developing the webiste of the firm and gave suggestions",
       skills: [<FaAngular size={35} color="#f12b2b" style={iconStyle} />],
+    },
+    {
+      year: "2026",
+      image: <img src={NIT} alt="TP" style={imgStyle} />,
+      label: "Internship - National Institute Of Technology , Patna",
+      description:
+        "Internship Ongoing in the field of Data Analytics with python , ML , Image Processing",
+      
     },
   ];
   return (

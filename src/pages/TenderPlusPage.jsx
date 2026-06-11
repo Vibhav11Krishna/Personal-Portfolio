@@ -80,7 +80,7 @@ partners to experience our high standards of service, we offer an initial
 service worth ₹1,999 free of cost.
     </p>
     <div className="company-website-box">
-      <a href="https://www.ssspatna.com/" target="_blank" rel="noopener noreferrer">
+      <a href="https://tendersplus.com/" target="_blank" rel="noopener noreferrer">
         Visit Company Website
       </a>
     </div>
@@ -129,21 +129,12 @@ service worth ₹1,999 free of cost.
   `}</style>
 </div>
 
-      {/* Company Insights */}
-      <div style={{ maxWidth: "1000px", margin: "0 auto 3rem" }}>
-        <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Company Insights</h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1.5rem" }}>
-          {[insight1, insight2, insight3].map((img, idx) => (
-            <img key={idx} src={img} alt={`Insight ${idx + 1}`} style={{ width: "100%", height: "180px", objectFit: "cover", borderRadius: "12px", cursor: "pointer", transition: "0.3s" }} className="insight-img" />
-          ))}
-        </div>
-      </div>
 
 
 <div style={{ margin: "30px" }}>  </div>
  {/* Project Information */}
 <div style={{ maxWidth: "900px", margin: "0 auto 3rem", textAlign: "center" }} className="project-info">
-  <h1 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Project - HR Management System</h1>
+  <h1 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Project</h1>
   
   <div className="project-info-grid">
     <p>
