@@ -142,7 +142,7 @@ const blogPosts = [
      { icon: <SiJupyter />, color: "#F37626" },
      
     ],
-    link: "/Tenderpluspage",
+    link: "#",
   }, 
   
  
