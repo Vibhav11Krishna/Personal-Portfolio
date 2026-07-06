@@ -10,6 +10,8 @@ import {
 } from "react-icons/fa";
 import { FaAngular } from "react-icons/fa";
 import { SiMongodb, SiMysql } from "react-icons/si";
+import { SiScikitlearn } from "react-icons/si";
+import { SiJupyter } from "react-icons/si";
 import dpsIcon from "../assets/dps.png";
 import doosIcon from "../assets/doon.png";
 import rpLogo from "../assets/rps.png";
@@ -20,7 +22,7 @@ import style from "../assets/Style.png";
 import CMA from "../assets/CMA.png";
 import Tender from "../assets/Tenderplus.png";
 import shreepati from "../assets/logoshreepati.png";
-import NIT from "../assets/NIT.jpg";
+import NIT from "../assets/NIT.png";
 
 const Timeline = () => {
   useEffect(() => {
@@ -156,9 +158,9 @@ const Timeline = () => {
     {
       year: "2026",
       image: <img src={Tender} alt="TP" style={imgStyle} />,
-      label: "Internship - Tender Plus",
+      label: "Internship - Tender Plus Business Consulting Private Limited",
       description:
-        "A startup company where worked on developing the webiste of the firm and gave suggestions",
+        "A startup company where worked on developing the webiste of the firm  and learned about Google Developer Tools",
       skills: [<FaAngular size={35} color="#f12b2b" style={iconStyle} />],
     },
     {
@@ -167,6 +169,10 @@ const Timeline = () => {
       label: "Internship - National Institute Of Technology , Patna",
       description:
         "Internship Ongoing in the field of Data Analytics with python , ML , Image Processing",
+      skills: [
+        <SiScikitlearn size={35} color="#29ABE2" style={iconStyle} />,
+        <SiJupyter size={35} color="#F37626" style={iconStyle} />,
+      ],
       
     },
   ];

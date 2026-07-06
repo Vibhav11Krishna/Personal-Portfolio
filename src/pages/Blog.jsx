@@ -4,7 +4,8 @@ import { SiPhp, SiMysql, SiMongodb, SiPostgresql } from "react-icons/si";
 import { SiExpo } from "react-icons/si";
 import { FaAngular } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
+import { SiScikitlearn } from "react-icons/si";
+import { SiJupyter } from "react-icons/si";
 import internshipImg from "../assets/sss.png";
 import hackathonImg from "../assets/creativex.jpg";
 import fatherWebsiteImg from "../assets/logoshreepati.png";
@@ -12,6 +13,7 @@ import ClientImg from "../assets/Style.png";
 import tracker from "../assets/tracker.png";
 import CMA from "../assets/CMA.png";
 import Tender from "../assets/Tenderplus.png"
+import NIT from "../assets/NIT_PATNA.jpg";
 
 const blogPosts = [
   {
@@ -122,6 +124,22 @@ const blogPosts = [
     img: Tender,
     tech: [
     { icon: <FaAngular />, color: "#E34F26" },
+    
+     
+    ],
+    link: "/Tenderpluspage",
+  }, 
+  {
+    title: "Departemental Internship",
+    company: "National Institute of Technology, Patna",
+    month: "June",
+    year: 2026,
+    description:
+    "Got an departemental Internship at NIT Patna and got the chance to Work on Research Paper",
+    img: NIT,
+    tech: [
+    { icon: <SiScikitlearn />, color: "#29ABE2" },
+     { icon: <SiJupyter />, color: "#F37626" },
      
     ],
     link: "/Tenderpluspage",
