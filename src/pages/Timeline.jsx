@@ -23,6 +23,7 @@ import CMA from "../assets/CMA.png";
 import Tender from "../assets/Tenderplus.png";
 import shreepati from "../assets/logoshreepati.png";
 import NIT from "../assets/NIT.png";
+import amiee from "../assets/amiee.jpg";
 
 const Timeline = () => {
   useEffect(() => {
@@ -104,7 +105,7 @@ const Timeline = () => {
     {
       year: "2025",
       image: <img src={sihLogo} alt="SIH" style={imgStyle} />,
-      label: "SIH Hackathon Winner - Creative X",
+      label: "SIH Hackathon - Creative X",
       description:
         "Developed full-stack apps using React, Node.js, and MongoDB with my team.",
       skills: [
@@ -115,7 +116,7 @@ const Timeline = () => {
       extraBox: {
         srcs: [teamPhoto],
         alt: "Team & Logo",
-        desc: "Team Creativex presenting SIH solution and SIH logo",
+        desc: "Team Creativex presenting to judges in college internal hackathon",
       },
     },
     {
@@ -173,6 +174,15 @@ const Timeline = () => {
         <SiScikitlearn size={35} color="#29ABE2" style={iconStyle} />,
         <SiJupyter size={35} color="#F37626" style={iconStyle} />,
       ],
+      
+    },
+    {
+      year: "2026",
+      image: <img src={amiee} alt="TP" style={imgStyle} />,
+      label: "Hackathon - National Innovation Hackathon 2026 , AMIEE",
+      description:
+        "Ongoing hackathon participation with AMIEE association",
+      
       
     },
   ];
