@@ -23,7 +23,7 @@ import CMA from "../assets/CMA.png";
 import Tender from "../assets/Tenderplus.png";
 import shreepati from "../assets/logoshreepati.png";
 import NIT from "../assets/NIT.png";
-import amiee from "../assets/amiee.jpg";
+import amiee from "../assets/AMIEE.jpg";
 
 const Timeline = () => {
   useEffect(() => {
