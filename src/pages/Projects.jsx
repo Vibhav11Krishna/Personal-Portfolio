@@ -28,7 +28,7 @@ import billing from "../assets/billing.png";
 import  KKA from "../assets/KKA.png";
 import metro from "../assets/Metro.jpeg";
 import brain from "../assets/Brain.jpg";
-import wound from "../assets/Wound.jpg";
+import wound from "../assets/wound.jpg";
 
 /* --------------------- PROJECT CATEGORIES --------------------- */
 
