@@ -26,7 +26,7 @@ import ParlourLogo from "../assets/parlour.png";
 import tracker from "../assets/tracker.png";
 import billing from "../assets/billing.png";
 import  KKA from "../assets/KKA.png";
-import metro from "../assets/metro.jpeg";
+import metro from "../assets/Metro.jpeg";
 import brain from "../assets/brain.jpg";
 import wound from "../assets/wound.jpg";
 
