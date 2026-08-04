@@ -8,6 +8,7 @@ import {
   FaReact,
   FaNodeJs,
 } from "react-icons/fa";
+import {RiNextjsFill} from "react-icons/ri";
 import { FaAngular } from "react-icons/fa";
 import { SiMongodb, SiMysql } from "react-icons/si";
 import { SiScikitlearn } from "react-icons/si";
@@ -24,6 +25,7 @@ import Tender from "../assets/Tenderplus.png";
 import shreepati from "../assets/logoshreepati.png";
 import NIT from "../assets/NIT.png";
 import amiee from "../assets/AMIEE.jpg";
+import algonauts from "../assets/Algonauts.jpeg";
 
 const Timeline = () => {
   useEffect(() => {
@@ -178,12 +180,19 @@ const Timeline = () => {
     },
     {
       year: "2026",
-      image: <img src={amiee} alt="TP" style={imgStyle} />,
-      label: "Hackathon - National Innovation Hackathon 2026 , AMIEE",
+      image: <img src={amiee} alt="SIH" style={imgStyle} />,
+      label: "National Innovation Hackathon - Alg0Nauts",
       description:
-        "Ongoing hackathon participation with AMIEE association",
-      
-      
+        "Our team built Metro Mitra, an AI platform for Bihar Metro to optimize operations and safety.",
+    skills: [
+        <SiScikitlearn size={35} color="#29ABE2" style={iconStyle} />,
+        <SiJupyter size={35} color="#F37626" style={iconStyle} />,
+        <RiNextjsFill size={35} color="#fffdfd" style={iconStyle} />,
+      ],
+      extraBox: {
+        srcs: [algonauts],
+        alt: "Team & Logo",
+      },
     },
   ];
   return (

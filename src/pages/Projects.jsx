@@ -11,6 +11,9 @@ import {
 } from "react-icons/fa";
 import { SiFigma, SiCanva, SiMysql, SiMongodb, SiPhp } from "react-icons/si";
 import { SiExpo } from "react-icons/si";
+import { SiScikitlearn } from "react-icons/si";
+import { SiJupyter } from "react-icons/si";
+import {RiNextjsFill} from "react-icons/ri";
 import HRImg from "../assets/HRManagement.png";
 import ShreepatiImg from "../assets/EducationalWebsite.png";
 import PortfolioImg from "../assets/PortfolioWebsite.png";
@@ -23,6 +26,9 @@ import ParlourLogo from "../assets/parlour.png";
 import tracker from "../assets/tracker.png";
 import billing from "../assets/billing.png";
 import  KKA from "../assets/KKA.png";
+import metro from "../assets/metro.jpeg";
+import brain from "../assets/brain.jpg";
+import wound from "../assets/wound.jpg";
 
 /* --------------------- PROJECT CATEGORIES --------------------- */
 
@@ -141,6 +147,44 @@ const websiteProjects = [
     ],
     link: "https://www.cmakkassociates.com/",
     github: "https://github.com/Vibhav11Krishna/Account-Website",
+  },
+  {
+    id: 8,
+    title: "Metro-Mitra ",
+    description:
+      "Our team built Metro Mitra, an AI platform for Bihar Metro to optimize operations and safety.",
+    image: metro,
+    tech: [
+     { icon: <SiScikitlearn />, color: "#29ABE2" },
+      { icon: <SiJupyter />, color: "#F37626" },
+      { icon: <RiNextjsFill />, color: "#fffdfd" },
+    ],
+    link: "https://metro-mitra-rose.vercel.app/",
+    github: "https://github.com/Vibhav11Krishna/Metro-Mitra",
+  },
+  {
+    id: 9,
+    title: "Brain Tumor Detection",
+    description:
+      "A accounting firm webiste having a full fledged knowledge webiste with dashbaord system",
+    image: brain,
+    tech: [
+    { icon: <SiScikitlearn />, color: "#29ABE2" },
+      { icon: <SiJupyter />, color: "#F37626" },
+    ],
+    github: "https://github.com/Vibhav11Krishna/brain-tumour-detection",
+  },
+  {
+    id: 10,
+    title: "Wound Segmentation Analysis",
+    description:
+      "A accounting firm webiste having a full fledged knowledge webiste with dashbaord system",
+    image: wound,
+    tech: [
+    { icon: <SiScikitlearn />, color: "#29ABE2" },
+      { icon: <SiJupyter />, color: "#F37626" },
+    ],
+    github: "https://github.com/Vibhav11Krishna/Wound-area-analysis",
   },
 ];
 

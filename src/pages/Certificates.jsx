@@ -22,7 +22,9 @@ import { SiExpo } from "react-icons/si";
 import { SiAnthropic } from "react-icons/si";
 import { FaNetworkWired, FaMicrochip, FaWifi } from "react-icons/fa";
 import { FaAngular } from "react-icons/fa";
-
+import { SiScikitlearn } from "react-icons/si";
+import { SiJupyter } from "react-icons/si";
+import {RiNextjsFill} from "react-icons/ri";
 import frontendImg from "../assets/internshipwala.jpg";
 import Plus from "../assets/Plus.png";
 import jsMasteryImg from "../assets/sssinternship.jpg";
@@ -49,6 +51,11 @@ import Claude from  "../Certificates/Claude.pdf";
 import Nptel from "../Certificates/Nptel.pdf";
 import Nptel1 from "../Certificates/Nptel1.pdf";
 import Things from "../assets/Things.png";
+import Hackathon from "../assets/Hackathon.jpeg";
+import National from "../assets/Nit-Certificate.jpeg";
+import Technology from "../Certificates/Nit-Certificate.jpeg";
+
+
 
 const certificates = [
   {
@@ -203,6 +210,35 @@ const certificates = [
     link: Claude,
     tech: [
       { icon: <SiAnthropic />, color: "#FFFFFF" },
+    ],
+  },
+  {
+    title: "Research Internship",
+    issuer: "National Institute of Technology, Patna",
+    year: 2026,
+    month: "July",
+    description:
+      "Research internship at the National Institute of Technology (NIT) Patna",
+    img: National,
+    link: Technology,
+    tech: [
+       { icon: <SiScikitlearn />, color: "#29ABE2" },
+      { icon: <SiJupyter />, color: "#F37626" },
+    ],
+  },
+  {
+    title: "National Innovation Hackathon",
+    issuer: "AMIEE , Heritage Institute of Technology",
+    year: 2026,
+    month: "July",
+    description:
+      "participated in the National Innovation Hackathon 2026, organized by the AMIEE Association and CMAOI Association in collaboration with the Heritage Institute of Technology, Kolkata.",
+    img: Hackathon,
+    link: Claude,
+    tech: [
+      { icon: <SiScikitlearn />, color: "#29ABE2" },
+      { icon: <SiJupyter />, color: "#F37626" },
+      { icon: <RiNextjsFill />, color: "#fffdfd" },
     ],
   },
 ];

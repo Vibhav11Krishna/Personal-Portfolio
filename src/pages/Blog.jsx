@@ -6,6 +6,7 @@ import { FaAngular } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { SiScikitlearn } from "react-icons/si";
 import { SiJupyter } from "react-icons/si";
+import {RiNextjsFill} from "react-icons/ri";
 import internshipImg from "../assets/sss.png";
 import hackathonImg from "../assets/creativex.jpg";
 import fatherWebsiteImg from "../assets/logoshreepati.png";
@@ -14,6 +15,7 @@ import tracker from "../assets/tracker.png";
 import CMA from "../assets/CMA.png";
 import Tender from "../assets/Tenderplus.png"
 import NIT from "../assets/NIT_PATNA.jpg";
+import amiee from "../assets/AMIEE.jpg";
 
 const blogPosts = [
   {
@@ -140,6 +142,22 @@ const blogPosts = [
     tech: [
     { icon: <SiScikitlearn />, color: "#29ABE2" },
      { icon: <SiJupyter />, color: "#F37626" },
+     
+    ],
+    link: "#",
+  }, 
+  {
+    title: "National Innovation Hackathon",
+    company: "AMIEE , Heritage Institute of Technology",
+    month: "July",
+    year: 2026,
+    description:
+    "participated in the National Innovation Hackathon 2026, organized by the AMIEE Association and CMAOI Association in collaboration with the Heritage Institute of Technology, Kolkata.",
+    img: amiee,
+    tech: [
+    { icon: <SiScikitlearn />, color: "#29ABE2" },
+     { icon: <SiJupyter />, color: "#F37626" },
+     { icon: <RiNextjsFill />, color: "#fffdfd" },
      
     ],
     link: "#",
