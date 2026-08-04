@@ -54,6 +54,7 @@ import Things from "../assets/Things.png";
 import Hackathon from "../assets/Hackathon.jpeg";
 import National from "../assets/Nit-Certificate.jpeg";
 import Technology from "../Certificates/Nit-Certificate.jpeg";
+import Algonauts from "../Certificates/Hackathon.jpeg";
 
 
 
@@ -234,7 +235,7 @@ const certificates = [
     description:
       "participated in the National Innovation Hackathon 2026, organized by the AMIEE Association and CMAOI Association in collaboration with the Heritage Institute of Technology, Kolkata.",
     img: Hackathon,
-    link: Claude,
+    link: Algonauts,
     tech: [
       { icon: <SiScikitlearn />, color: "#29ABE2" },
       { icon: <SiJupyter />, color: "#F37626" },
