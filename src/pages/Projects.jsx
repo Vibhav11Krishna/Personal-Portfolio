@@ -27,8 +27,8 @@ import tracker from "../assets/tracker.png";
 import billing from "../assets/billing.png";
 import  KKA from "../assets/KKA.png";
 import metro from "../assets/Metro.jpeg";
-import brain from "../assets/brain.jpg";
-import wound from "../assets/wound.jpg";
+import brain from "../assets/Brain.jpg";
+import wound from "../assets/Wound.jpg";
 
 /* --------------------- PROJECT CATEGORIES --------------------- */
 
