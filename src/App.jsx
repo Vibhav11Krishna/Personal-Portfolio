@@ -17,6 +17,9 @@ import SnsWebsitePage from "./pages/SnsWebsitePage";
 import ExpenseTrackerPage from "./pages/ExpenseTrackerPage";
 import AccountingPage from "./pages/AccountingPage";
 import TenderPlusPage from "./pages/TenderPlusPage";
+import National from "./pages/National";
+import Wound from "./pages/Wound";
+import MetroMitraPage from "./pages/MetroMitraPage";
 
 function App() {
   return (
@@ -44,6 +47,9 @@ function App() {
                <Route path="/tenderpluspage" element={<TenderPlusPage />} />
               <Route path="/timeline" element={<Timeline />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/national" element={<National />} />
+              <Route path="/wound" element={<Wound />} />
+              <Route path="/metromitrapage" element={<MetroMitraPage />} />
             </Routes>
           </div>
         </main>

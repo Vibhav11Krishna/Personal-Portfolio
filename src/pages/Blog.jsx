@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNode } from "react-icons/fa";
 import { SiPhp, SiMysql, SiMongodb, SiPostgresql } from "react-icons/si";
+import { SiPython, SiNumpy, SiOpencv, SiPandas,SiLinux, SiChartdotjs } from "react-icons/si";
 import { SiExpo } from "react-icons/si";
 import { FaAngular } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -131,18 +132,41 @@ const blogPosts = [
     ],
     link: "/Tenderpluspage",
   }, 
+ {
+    title: "Departmental Internship",
+    company: "National Institute of Technology, Patna",
+    month: "June",
+    year: 2026,
+    description:
+      "Got a departmental Internship at NIT Patna and got the chance to work on a Research Paper on Medical Image Segmentation Using Machine Learning (Brain Tumor Classification)",
+    img: NIT,
+    tech: [
+      { icon: <SiPython />, color: "#3776AB" },
+      { icon: <SiNumpy />, color: "#013243" },
+      { icon: <SiOpencv />, color: "#5C3EE8" },
+      { icon: <SiPandas />, color: "#150458" },
+      { icon: <SiScikitlearn />, color: "#29ABE2" },
+      { icon: <SiJupyter />, color: "#F37626" },
+      { icon: <SiChartdotjs />, color: "#FF6384" },
+    ],
+    link: "/National",
+  },
   {
     title: "Departemental Internship",
     company: "National Institute of Technology, Patna",
     month: "June",
     year: 2026,
     description:
-    "Got an departemental Internship at NIT Patna and got the chance to Work on Research Paper",
+    "Got an departemental Internship at NIT Patna and got the chance to Work on Research Paper On Medical Image Segmentation Using Deep Learning (Chronic Wound Analysis)",
     img: NIT,
-    tech: [
-    { icon: <SiScikitlearn />, color: "#29ABE2" },
-     { icon: <SiJupyter />, color: "#F37626" },
-     
+   tech: [
+      { icon: <SiPython />, color: "#3776AB" },
+      { icon: <SiNumpy />, color: "#013243" },
+      { icon: <SiOpencv />, color: "#5C3EE8" },
+      { icon: <SiPandas />, color: "#150458" },
+      { icon: <SiScikitlearn />, color: "#29ABE2" },
+      { icon: <SiJupyter />, color: "#F37626" },
+      { icon: <SiChartdotjs />, color: "#FF6384" },
     ],
     link: "#",
   }, 
@@ -162,9 +186,6 @@ const blogPosts = [
     ],
     link: "#",
   }, 
-  
- 
-
 ];
 
 const Blog = () => {

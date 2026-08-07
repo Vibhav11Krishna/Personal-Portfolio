@@ -166,7 +166,7 @@ const websiteProjects = [
     id: 9,
     title: "Brain Tumor Detection",
     description:
-      "A accounting firm webiste having a full fledged knowledge webiste with dashbaord system",
+      "This project implements a robust machine learning classification pipeline designed to identify and categorize brain tumour types from medical MRI scans",
     image: brain,
     tech: [
     { icon: <SiScikitlearn />, color: "#29ABE2" },
@@ -178,7 +178,7 @@ const websiteProjects = [
     id: 10,
     title: "Wound Segmentation Analysis",
     description:
-      "A accounting firm webiste having a full fledged knowledge webiste with dashbaord system",
+      "This project implements an advanced semantic segmentation pipeline designed to identify and isolate wound areas from medical images",
     image: wound,
     tech: [
     { icon: <SiScikitlearn />, color: "#29ABE2" },
