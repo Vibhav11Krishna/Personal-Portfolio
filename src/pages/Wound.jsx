@@ -18,7 +18,7 @@ import { AiOutlineFilePdf } from "react-icons/ai";
 import reportPDF from "../assets/Report.pdf";
 import NitCertificatePdf from "../Certificates/Nit-Certificate.pdf";
 import MedicalReportPdf from "../assets/Medical-Report.pdf";
-import PptFile from "../assets/PpT-Report.pdf";
+import PptFile from "../assets/Ppt-Report.pdf";
 
 
 const projectOverview = [
