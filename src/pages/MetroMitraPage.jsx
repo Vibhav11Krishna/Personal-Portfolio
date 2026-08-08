@@ -6,6 +6,8 @@ import {
   FaInstagram,
   FaYoutube,
   FaGlobe,
+  FaChartLine,
+  FaFolderOpen,
 } from "react-icons/fa";
 import {
   SiMongodb,
@@ -14,95 +16,102 @@ import {
   SiCss3,
   SiJavascript,
 } from "react-icons/si";
-
-import hackathonLogo from "../assets/creativex.jpg";
-import hackathonImg1 from "../assets/group.jpg";
-import hackathonImg2 from "../assets/group1.jpg";
-import hackathonImg3 from "../assets/group3.jpg";
-import problemImg from "../assets/sih.jpg";
+import { 
+  SiNextdotjs, 
+  SiNumpy, 
+  SiOpencv, 
+  SiPandas, 
+  SiScikitlearn, 
+  SiVercel,
+} from 'react-icons/si';
+import { 
+  FaPython, 
+} from 'react-icons/fa';
+import { SiPostgresql } from 'react-icons/si';
+import hackathonLogo from "../assets/Mitra.png";
+import problemImg from "../assets/Algonauts.jpeg";
 import pptImg from "../assets/creativex.jpg";
 import pulkitImg from "../assets/leader.png";
-import kritikaImg from "../assets/Kritika.png";
-import sidImg from "../assets/Siddhart.png";
-import praveenImg from "../assets/Praveen.png";
-import aniketImg from "../assets/Aniket.png";
-import rituImg from "../assets/Ritu.png";
-import temp from "../assets/temp.png";
-import project1 from "../assets/project1.png";
-import project2 from "../assets/project2.png";
-import project3 from "../assets/project3.png";
-import project4 from "../assets/project4.png";
-import project5 from "../assets/project5.png";
+import alokImg from "../assets/Alok.jpeg";
+import khushiImg from "../assets/Khushi.jpeg";
+import shadiqueImg from "../assets/shadiq.jpeg";
+import nazisImg from "../assets/Nazis.jpeg";
+import Metro1 from "../assets/Metro1.jpeg";
+import Metro2 from "../assets/Metro2.jpeg";
+import Metro3 from "../assets/Metro3.jpeg";
+import Metro4 from "../assets/Metro4.jpeg";
+import Metro5 from "../assets/Metro5.jpeg";
+import Metro6 from "../assets/Metro6.jpeg";
 import { AiOutlineFilePdf } from "react-icons/ai";
-import pptFile from "../assets/ppt.pdf"; // <-- your PPT PDF file
+import pptFile from "../assets/MetroMitra.pdf"; // <-- your PPT PDF file
+import certificateImg from "../Certificates/Hackathon.jpeg";
 
 const projectOverview = [
   {
-    img: temp,
+    img: Metro1,
     title: "Home Page",
-    desc: "Landing page with navigation, welcome section, and quick links.",
+    desc: "The Home Page serves as the main entry point for users, providing an overview of the Bihar Metro project and quick access to key features.",
   },
   {
-    img: project1,
-    title: "E-Learning Page",
-    desc: "E learning page where students acc to their intrest topic can practice their questions",
+    img: Metro2,
+    title: "About Page",
+    desc: "Provides information about the Bihar Metro project, its objectives, and team details.",
   },
   {
-    img: project2,
-    title: "Progrss Page",
-    desc: "Students & Teacher can see their Progress",
+    img: Metro3,
+    title: "Station Operational Page",
+    desc: "Displays real-time operational status of metro stations, including crowd density, train schedules, and alerts for commuters.",
   },
   {
-    img: project3,
-    title: "Pionnear Platform Page",
-    desc: "Students & Teachers can see their internships and jobs acc to their subject choosen",
+    img: Metro4,
+    title: "Admin Page",
+    desc: "Allows metro authorities to manage operations, monitor commuter flow, and handle complaints efficiently through a centralized dashboard.",
   },
   {
-    img: project4,
-    title: "Roadmap Page",
-    desc: " Both can see their roadmaps in which direction you should got to become expert in their feild of intrest",
+    img: Metro5,
+    title: "Client Page",
+    desc: " Provides commuters with personalized assistance, route planning, and real-time updates on metro services, enhancing their travel experience.",
   },
   {
-    img: project5,
-    title: "Insights Page",
-    desc: "Both can see their insight (news) and gather information",
+    img: Metro6,
+    title: "Complaint Page",
+    desc: "Enables users to register complaints, track their status, and receive updates on resolution, ensuring transparency and accountability in metro services.",
   },
 ];
 const teamMembers = [
-  { img: pulkitImg, name: "Pulkit Krishna", role: "Backend Developer" },
-  { img: kritikaImg, name: "Kritika Singh", role: "UI/UX Designer" },
-  { img: sidImg, name: "Siddhart", role: "Frontend Developer" },
-  { img: praveenImg, name: "Praveen Kumar", role: "Database Enginnear" },
-  { img: aniketImg, name: "Aniket", role: "Frontend Developer" },
-  { img: rituImg, name: "Ritu", role: "Tester" },
+  { img: pulkitImg, name: "Pulkit Krishna", role: "Tech Lead" },
+  { img: shadiqueImg, name: "Shadique Rahman", role: "Project Coordination & Idea Finalization" },
+  { img: khushiImg, name: "Khushi Kumari", role: "Presentation & Visual Design Lead" },
+  { img: alokImg, name: "Alok Kumar", role: "Feature Ideation &  Support" },
+  { img: nazisImg, name: "Mohammad Nazish Alam", role: "Concept & Presentation Support" },
 ];
 
 const weeklyRoutine = [
   {
     week: "Week 1",
     tasks:
-      "Ideation, understanding SIH problem statement, and planning solution architecture.",
+      "Ideation, understanding the Bihar Metro requirements, and planning the Metro Mitra architecture.",
   },
   {
     week: "Week 2",
-    tasks: "Frontend prototype with React.js, layout, and routing.",
+    tasks: "Frontend prototype with Next.js & Tailwind CSS, layout, and commuter/authority dashboards.",
   },
   {
     week: "Week 3",
     tasks:
-      "Backend setup with Node.js & Express, database integration using MySQL and MongoDB.",
+      "Backend setup with Node.js, API integration, and database management using MongoDB.",
   },
   {
     week: "Week 4",
-    tasks: "Integration, authentication, testing, and optimization.",
+    tasks: "Integrating AI commuter assistant, predictive crowd management modules, IoT simulation, and real-time transit testing.",
   },
   {
     week: "Week 5",
-    tasks: "Final debugging, PPT preparation, and project submission.",
+    tasks: "Final debugging, presentation preparation, and project deployment on Vercel.",
   },
 ];
 
-const galleryImages = [hackathonImg1, hackathonImg2, hackathonImg3];
+
 
 const MetroMitraPage = () => {
   return (
@@ -115,7 +124,7 @@ const MetroMitraPage = () => {
           src={hackathonLogo}
           alt="CreativeX Logo"
           style={{
-            width: "310px",
+            width: "510px",
             height: "190px",
             objectFit: "cover",
             borderRadius: "12px",
@@ -125,7 +134,7 @@ const MetroMitraPage = () => {
         <h1
           style={{ color: "#FF3B3B", fontSize: "2.5rem", marginBottom: "1rem" }}
         >
-          CreativeX Hackathon - SIH Level Project
+          Metro Mitra  - National Innovation Hackathon
         </h1>
         <p
           style={{
@@ -135,11 +144,9 @@ const MetroMitraPage = () => {
             margin: "0 auto",
           }}
         >
-          Participated in the <strong>CreativeX Hackathon</strong> inspired by
-          Smart India Hackathon (SIH), from September to October. Our team built
-          a MERN Stack Path Generator for students that solved a real-world
-          government problem and was recognized for innovation and
-          functionality.
+          Participated in the <strong>National Innovation Hackathon</strong> Association With
+          AMIEE Association , Heritage Institute of Technology, CMAOI Association from July to August. Our team built
+          a smart solution for the upcoming Bihar Metro focused on improving commuter services through AI and modern web technologies.
         </p>
       </div>
 
@@ -167,14 +174,7 @@ const MetroMitraPage = () => {
             }}
           />
           <p style={{ flex: "1", color: "#E0E0E0", lineHeight: "1.6" }}>
-            The SIH challenge was to create a digital solution for "AI-Powered
-            Personalized Learning Path Generator" uses artificial intelligence
-            to create customized learning paths for students based on their
-            knowledge, learning style, and performance. It dynamically updates
-            modules, identifies skill gaps, and recommends resources to make
-            learning efficient and engaging. The system also provides teachers
-            with actionable insights, enabling personalized guidance and
-            improved academic outcomes.
+            The NIH challenge was to create a solution on theme "AI For Society". With the rapid urbanization of major cities in Bihar, the development of the upcoming Bihar Metro is a crucial step toward modernizing public mass transit. However, large-scale transit networks frequently face major operational and commuter-centric hurdles, including severe station congestion during peak hours, inefficient crowd management, unexpected infrastructure downtime, ticketing bottlenecks, and a lack of real-time, localized, and accessible guidance for a diverse commuter base (including first-time metro users and differently-abled individuals).
           </p>
         </div>
 
@@ -188,36 +188,20 @@ const MetroMitraPage = () => {
           style={{ color: "#E0E0E0", lineHeight: "1.6", paddingLeft: "1.2rem" }}
         >
           <li>
-            Our solution leverages artificial intelligence to create customized
-            learning paths for students based on their current knowledge,
-            learning style, preferences, and career goals.
+           Our solution leverages artificial intelligence to build Metro Mitra—an AI-powered smart metro management and commuter assistance platform tailored specifically for the upcoming Bihar Metro.
           </li>
           <li>
-            The system analyzes performance data, identifies skill gaps, and
-            dynamically updates learning modules to maximize efficiency and
-            engagement.
+            The system analyzes real-time footfall data, crowd density, and transit schedules to optimize passenger flow, reduce platform congestion, and dynamically update travel options to maximize efficiency and commuting convenience.
           </li>
           <li>
-            Recommendations for resources, quizzes, and timelines Supports both
-            students and teachers with actionable insights Impact
+            Separate, role-based dashboards for Commuters and Metro Authorities/Operations to track real-time crowd movement, operational status, routing assistance, and ticketing records.
           </li>
+          <li>Our solution leverages artificial intelligence to build an intelligent, automated Complaint Categorization & Priority Prediction System designed to streamline grievance redressal for civic bodies, public utilities, and municipal authorities (such as those managing urban infrastructure in Bihar).</li>
           <li>
-            This solution empowers students to learn smarter, stay motivated,
-            and achieve academic goals, while enabling teachers to provide
-            targeted support, making education more effective and personalized.
+            Uses Natural Language Processing (NLP) to parse user queries in regional languages, offering real-time guidance on routes, fares, and multi-modal transit connectivity.
           </li>
-          <li>
-            Optimized UI/UX with React.js and Figma prototypes for a smooth
-            experience.
-          </li>
-          <li>
-            Responsive layout for all devices and secure hosting with Vercel.
-          </li>
-          <li>
-            Teachers & Students have seperate Dashboards to access and see their
-            progrees and Jobs oppurtunities.
-          </li>
-          <li> Uses NLP for analyzing resumes & skills.</li>
+          
+          <li>Built with optimized front-end performance using Next.js (backed by Figma prototypes), ensuring a smooth and responsive layout across all mobile and station kiosk devices with secure hosting on Vercel.</li>
         </ul>
       </div>
 
@@ -227,15 +211,12 @@ const MetroMitraPage = () => {
         <ul
           style={{ color: "#E0E0E0", lineHeight: "1.8", paddingLeft: "1.2rem" }}
         >
-          <li>Skill gap analysis</li>
-          <li>Adaptive learning plan</li>
-          <li>Progress tracking and feedback</li>
-          <li>Integration with existing learning platforms</li>
-          <li>
-            Integrates AI/ML + EdTech + Employability Solutions in one ecosystem
-          </li>
-          <li> Real-time roadmap modulation using ML predictions.</li>
-          <li>Gamification + mentor network for engagement.</li>
+          <li>Dual Dashboards</li>
+          <li>AI Commuter Assistant & NLP Support</li>
+          <li>Modern UI/UX & Architecture</li>
+          <li>Actionable Insights</li>
+          <li>Smart Complaint Registration & Tracking</li>
+          <li>AI-based Complaint Categorization & Priority Prediction</li>
         </ul>
       </div>
 
@@ -349,45 +330,69 @@ const MetroMitraPage = () => {
           <tbody>
             <tr>
               <td style={tableCell}>
-                <SiHtml5 /> HTML
-              </td>
-              <td style={tableCell}>Structure & content</td>
-            </tr>
-            <tr>
-              <td style={tableCell}>
-                <SiCss3 /> CSS
-              </td>
-              <td style={tableCell}>Styling & responsiveness</td>
-            </tr>
-            <tr>
-              <td style={tableCell}>
-                <SiJavascript /> JavaScript
-              </td>
-              <td style={tableCell}>Logic & interactivity</td>
-            </tr>
-            <tr>
-              <td style={tableCell}>
-                <FaReact /> React.js
+                <SiNextdotjs /> Next.js
               </td>
               <td style={tableCell}>Frontend framework</td>
             </tr>
             <tr>
               <td style={tableCell}>
+                <FaPython /> Python
+              </td>
+              <td style={tableCell}>Core scripting & data handling</td>
+            </tr>
+            <tr>
+              <td style={tableCell}>
+                <SiNumpy /> NumPy
+              </td>
+              <td style={tableCell}>Numerical data processing</td>
+            </tr>
+            <tr>
+              <td style={tableCell}>
+                <SiOpencv /> OpenCV
+              </td>
+              <td style={tableCell}>Image processing & computer vision</td>
+            </tr>
+            <tr>
+              <td style={tableCell}>
+                <SiPandas /> Pandas
+              </td>
+              <td style={tableCell}>Data management & analysis</td>
+            </tr>
+            <tr>
+              <td style={tableCell}>
+                <SiScikitlearn /> Scikit-Learn
+              </td>
+              <td style={tableCell}>Machine learning modeling</td>
+            </tr>
+            <tr>
+              <td style={tableCell}>
+                <FaFolderOpen /> File Management & OS
+              </td>
+              <td style={tableCell}>System utility & file handling</td>
+            </tr>
+            <tr>
+              <td style={tableCell}>
+                <FaChartLine /> Matplotlib
+              </td>
+              <td style={tableCell}>Data visualization & plotting</td>
+            </tr>
+            <tr>
+              <td style={tableCell}>
                 <FaNode /> Node.js
               </td>
-              <td style={tableCell}>Backend & API handling</td>
+              <td style={tableCell}>Backend runtime & API handling</td>
             </tr>
             <tr>
               <td style={tableCell}>
-                <SiMysql /> MySQL
+                <SiPostgresql /> PostgreSQL
               </td>
-              <td style={tableCell}>Relational database</td>
+              <td style={tableCell}>Relational database management</td>
             </tr>
             <tr>
               <td style={tableCell}>
-                <SiMongodb /> MongoDB
+                <SiVercel /> Vercel
               </td>
-              <td style={tableCell}>NoSQL data management</td>
+              <td style={tableCell}>Cloud hosting & deployment</td>
             </tr>
           </tbody>
         </table>
@@ -419,7 +424,7 @@ const MetroMitraPage = () => {
         </table>
       </div>
 
-      {/* Team Members */}
+  {/* Team Members */}
       <div style={{ maxWidth: "1000px", margin: "0 auto 3rem" }}>
         <h2
           style={{
@@ -434,151 +439,138 @@ const MetroMitraPage = () => {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)", // 3 per row on desktop
+            gridTemplateColumns: "repeat(6, 1fr)", // 6 columns grid to layout 5 items symmetrically
             gap: "2rem",
             justifyItems: "center",
+            maxWidth: "900px",
+            margin: "0 auto",
           }}
         >
-          {teamMembers.map((member, idx) => (
-            <div
-              key={idx}
-              style={{
-                textAlign: "center",
-                transition: "transform 0.3s ease, box-shadow 0.3s ease",
-              }}
-              className="team-card"
-            >
-              <img
-                src={member.img}
-                alt={member.name}
-                style={{
-                  width: "160px",
-                  height: "160px",
-                  borderRadius: "50%",
-                  objectFit: "cover",
-                  border: "3px solid #FF3B3B",
-                  marginBottom: "0.8rem",
-                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                }}
-                onMouseOver={(e) => {
-                  e.currentTarget.style.transform = "scale(1.1)";
-                  e.currentTarget.style.boxShadow =
-                    "0 4px 20px rgba(255, 59, 59, 0.6)";
-                }}
-                onMouseOut={(e) => {
-                  e.currentTarget.style.transform = "scale(1)";
-                  e.currentTarget.style.boxShadow = "none";
-                }}
-              />
+          {teamMembers.map((member, idx) => {
+            // Row 1: 2 members (1st spans cols 1-3, 2nd spans cols 4-6)
+            // Row 2: 3 members (each spans 2 columns: cols 1-2, 3-4, 5-6)
+            let gridColumn = "span 2";
+            if (idx === 0) {
+              gridColumn = "1 / span 3"; // Top row, left side
+            } else if (idx === 1) {
+              gridColumn = "4 / span 3"; // Top row, right side
+            } else if (idx === 2) {
+              gridColumn = "1 / span 2"; // Second row, 1st item
+            } else if (idx === 3) {
+              gridColumn = "3 / span 2"; // Second row, 2nd item
+            } else if (idx === 4) {
+              gridColumn = "5 / span 2"; // Second row, 3rd item
+            }
 
-              {/* Member Name */}
-              <p
-                style={{
-                  fontWeight: "600",
-                  color: "#fff",
-                  fontSize: "1.1rem",
-                  marginBottom: "0.5rem",
-                }}
-              >
-                {member.name}
-              </p>
-
-              {/* Role in Glowing Box */}
+            return (
               <div
+                key={idx}
                 style={{
-                  background: "rgba(255, 59, 59, 0.15)",
-                  border: "1px solid #FF3B3B",
-                  color: "#FFB6B6",
-                  fontSize: "0.9rem",
-                  borderRadius: "10px",
-                  padding: "0.4rem 0.8rem",
-                  display: "inline-block",
-                  boxShadow: "0 0 10px rgba(255, 59, 59, 0.3)",
+                  gridColumn: gridColumn,
+                  textAlign: "center",
+                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                  width: "100%",
                 }}
+                className="team-card"
               >
-                {member.role}
+                <img
+                  src={member.img}
+                  alt={member.name}
+                  style={{
+                    width: "160px",
+                    height: "160px",
+                    borderRadius: "50%",
+                    objectFit: "cover",
+                    border: "3px solid #FF3B3B",
+                    marginBottom: "0.8rem",
+                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                    display: "inline-block",
+                  }}
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = "scale(1.1)";
+                    e.currentTarget.style.boxShadow =
+                      "0 4px 20px rgba(255, 59, 59, 0.6)";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                    e.currentTarget.style.boxShadow = "none";
+                  }}
+                />
+
+                {/* Member Name */}
+                <p
+                  style={{
+                    fontWeight: "600",
+                    color: "#fff",
+                    fontSize: "1.1rem",
+                    marginBottom: "0.5rem",
+                  }}
+                >
+                  {member.name}
+                </p>
+
+                {/* Role in Glowing Box */}
+                <div
+                  style={{
+                    background: "rgba(255, 59, 59, 0.15)",
+                    border: "1px solid #FF3B3B",
+                    color: "#FFB6B6",
+                    fontSize: "0.9rem",
+                    borderRadius: "10px",
+                    padding: "0.4rem 0.8rem",
+                    display: "inline-block",
+                    boxShadow: "0 0 10px rgba(255, 59, 59, 0.3)",
+                  }}
+                >
+                  {member.role}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Responsive Styling */}
+       {/* Responsive Styling */}
         <style>{`
     @media (max-width: 768px) {
       .team-card img {
         width: 120px !important;
         height: 120px !important;
       }
-      div[style*="grid-template-columns: repeat(3"] {
+      div[style*="grid-template-columns: repeat(6"] {
         grid-template-columns: repeat(2, 1fr) !important; /* 2 per row on tablet */
+      }
+      div[style*="grid-column"] {
+        grid-column: span 1 !important;
       }
     }
 
     @media (max-width: 480px) {
-      div[style*="grid-template-columns: repeat(3"] {
+      div[style*="grid-template-columns: repeat(6"] {
         grid-template-columns: 1fr !important; /* 1 per row on mobile */
+      }
+      div[style*="grid-column"] {
+        grid-column: span 1 !important;
       }
     }
   `}</style>
       </div>
 
-      {/* Gallery */}
-      <div
-        style={{ maxWidth: "1000px", margin: "0 auto 3rem", padding: "0 1rem" }}
-      >
-        <h2
-          style={{
-            color: "#FF3B3B",
-            marginBottom: "1rem",
-            textAlign: "center",
-          }}
-        >
-          Gallery
-        </h2>
-
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", // ✅ slightly larger min width
-            gap: "2rem",
-            justifyItems: "center", // ✅ centers each image properly
-          }}
-        >
-          {galleryImages.map((img, idx) => (
-            <div
-              key={idx}
-              style={{
-                width: "100%",
-                maxWidth: "360px", // ✅ consistent and centered width
-                overflow: "hidden",
-                borderRadius: "12px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <img
-                src={img}
-                alt={`Gallery ${idx + 1}`}
-                style={{
-                  width: "100%",
-                  height: "auto", // ✅ keeps aspect ratio, no cropping
-                  borderRadius: "12px",
-                  objectFit: "cover",
-                  transition: "transform 0.3s ease",
-                }}
-                onMouseOver={(e) =>
-                  (e.currentTarget.style.transform = "scale(1.05)")
-                }
-                onMouseOut={(e) =>
-                  (e.currentTarget.style.transform = "scale(1)")
-                }
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-
+       {/* Certificate */}
+<div style={{ maxWidth: "900px", margin: "0 auto 4rem", textAlign: "center" }}>
+  <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Certificate</h2>
+  <img
+    src={certificateImg}
+    alt="Certificate"
+    style={{
+      width: "130%",
+      maxWidth: "660px",
+      height: "450px",
+      borderRadius: "12px",
+      objectFit: "cover",
+    }}
+    className="certificate-img"
+  />
+</div>
       {/* Links */}
       <div
         style={{
@@ -590,31 +582,16 @@ const MetroMitraPage = () => {
         }}
       >
         <a
-          href="https://github.com/Vibhav11Krishna/Creativex"
+          href="https://github.com/Vibhav11Krishna/Metro-Mitra"
           target="_blank"
           rel="noopener noreferrer"
           style={linkStyle}
         >
           <FaGithub /> GitHub
         </a>
+        
         <a
-          href="https://www.instagram.com/cr8ivex?igsh=Nmc1cHV5bWNqYXMy"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={linkStyle}
-        >
-          <FaInstagram /> Instagram
-        </a>
-        <a
-          href="	https://youtu.be/WKM8eaw5ifI?si=P0hMu9QFBtyXzRfZ"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={linkStyle}
-        >
-          <FaYoutube /> YouTube
-        </a>
-        <a
-          href="https://creativex-bh5i5g3fd-pulkit-krishnas-projects-b41fc977.vercel.app/	"
+          href="https://metro-mitra-rose.vercel.app/"
           target="_blank"
           rel="noopener noreferrer"
           style={linkStyle}
@@ -673,7 +650,7 @@ const MetroMitraPage = () => {
             marginBottom: "1rem",
           }}
         >
-          Participating in the <strong>Hackathon</strong> gave me an experience
+          Participating in the <strong>National Innovation Hackathon 2026</strong> gave me an experience
           very similar to the
           <strong> Smart India Hackathon (SIH)</strong>. It was an intense yet
           exciting challenge where our team worked passionately to design,
@@ -712,8 +689,8 @@ const MetroMitraPage = () => {
           impactful digital solutions.
         </p>
         <p style={{ color: "#E0E0E0", lineHeight: "1.8", fontSize: "1rem" }}>
-          Overall, CreativeX strengthened my technical foundation in{" "}
-          <strong>React.js, Node.js, and MongoDB</strong>, and refined my
+          Overall, the <strong>National Innovation Hackathon 2026</strong> strengthened my technical foundation in{" "}
+          <strong>Machine Learning & Deep Learning & frameworks of frontend and backend</strong>, and refined my
           mindset as a problem solver. It helped me realize that innovation
           thrives under collaboration, time management, and the willingness to
           learn continuously.

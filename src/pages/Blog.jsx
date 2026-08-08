@@ -168,7 +168,7 @@ const blogPosts = [
       { icon: <SiJupyter />, color: "#F37626" },
       { icon: <SiChartdotjs />, color: "#FF6384" },
     ],
-    link: "#",
+    link: "/Wound",
   }, 
   {
     title: "National Innovation Hackathon",
@@ -184,7 +184,7 @@ const blogPosts = [
      { icon: <RiNextjsFill />, color: "#fffdfd" },
      
     ],
-    link: "#",
+    link: "/MetroMitraPage",
   }, 
 ];
 

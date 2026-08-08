@@ -3,15 +3,14 @@ import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNode, FaGithub, FaExternalLi
 import { SiPhp, SiMysql, SiFigma } from "react-icons/si";
 import { SiPython, SiNumpy, SiOpencv, SiPandas, SiScikitlearn, SiLinux, SiChartdotjs } from "react-icons/si";
 
-import TrainingImg from "../assets/Training.jpg";
-import ConfusionImg from "../assets/Confusion.jpg";
-import AnalyticalImg from "../assets/Analytical.jpg";
-import ValueImg from "../assets/Value.jpg";
-import ClassificationImg from "../assets/Classification.jpg";
-import GilomaImg from "../assets/Giloma.jpg";
-import MengomaniaImg from "../assets/Mengomania.jpg";
-import PitutaryImg from "../assets/Pitutary.jpg";
-import NoTumorImg from "../assets/NoTumor.jpg";
+import Wound1Img from "../assets/Wound1.jpg";
+import Wound2Img from "../assets/Wound2.jpg";
+import Wound3Img from "../assets/Wound3.jpg";
+import Wound4Img from "../assets/Wound4.jpg";
+import UNetImg from "../assets/UNetModel.png";
+import ResNetImg from "../assets/ResNet.png";
+import Model1Img from "../assets/Model1.jpg";
+import Model2Img from "../assets/Model2.jpg";
 import certificateImg from "../assets/Nit-Certificate.jpeg";
 import NIT from "../assets/NIT.png";
 import { AiOutlineFilePdf } from "react-icons/ai";
@@ -21,11 +20,12 @@ import MedicalReportPdf from "../assets/Medical-Report.pdf";
 import PptFile from "../assets/Ppt-Report.pdf";
 
 
+
 const projectOverview = [
-  { img: TrainingImg, title: "Training V/s Testing Graph", desc: "Difference Of the value in testing and training datasets" },
-  { img: ConfusionImg, title: "Confusion Matrix Graph", desc: "Graph Shows Predicting values to different Tumor in brain" },
-  { img: AnalyticalImg, title: "Analytical Graph", desc: "Graph Shows analytically to distinguish between tumors" },
-  { img: ValueImg, title: "Precison / Recall Graph", desc: "Graph shows Values of precision and recall of tumor identification" },
+  { img: Wound1Img, title: "Training V/s Testing Graph", desc: "Difference Of the value in testing and training datasets" },
+  { img: Wound2Img, title: "Confusion Matrix Graph", desc: "Graph Shows Predicting values to different Tumor in brain" },
+  { img: Wound3Img, title: "Analytical Graph", desc: "Graph Shows analytically to distinguish between tumors" },
+  { img: Wound4Img, title: "Precison / Recall Graph", desc: "Graph shows Values of precision and recall of tumor identification" },
  
 ];
 
@@ -129,14 +129,14 @@ const Wound = () => {
 <div style={{ margin: "30px" }}>  </div>
  {/* Project Information */}
 <div style={{ maxWidth: "900px", margin: "0 auto 3rem", textAlign: "center" }} className="project-info">
-  <h1 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Project - Brain Tumor Classification Using Machine Learning</h1>
+  <h1 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Project - Chronic Wound Analysis Using Deep Learning</h1>
   
   <div className="project-info-grid">
     <p>
-      I implement a Random Forest model to accurately identify tumour boundaries in MRI scans & CT scans. This approach focuses on efficient feature extraction to achieve high precision, specifically optimized for smaller, curated datasets.
+      I utilize a deep learning model U-Net (Encoder + Decoder) structure & Rest 50 Net to segment the wounded region. These segmented masks are used to quantitatively analyse the wound area and track healing progress, providing a comprehensive diagnostic tool.
     </p>
     <p>
-     Through the development, debugging, and deployment of both traditional machine learning and deep learning pipelines, I have acquired a comprehensive set of technical competencies
+     Through the development, debugging, and deployment of both traditional deep learning and pipelines, I have acquired a comprehensive set of technical competencies
     </p>
 
     <div className="project-features">
@@ -152,15 +152,15 @@ const Wound = () => {
  <div className="project-features">
       <h3 style={{ color: "#FF3B3B", marginBottom: "0.5rem" }}>Methodology</h3>
       <ul style={{ textAlign: "left", color: "#E0E0E0", fontSize: "0.95rem", lineHeight: "1.6" }}>
-        <li><strong>Data Acquisition and Pre-processing:</strong> The dataset was sourced from the Brain Tumour MRI Dataset (Masoud Nicaraven, Kaggle), consisting of clinical MRI images categorized into four classes: 'nontumor', 'glioma', 'meningioma', and 'pituitary'.</li>
-        <li><strong>Noise Reduction and Feature Engineering:</strong>To enhance the clarity of diagnostic features, a median blur filter was applied to each image</li>
-        <li><strong>Data Mapping and Partitioning:</strong>A key-value mapping dictionary was implemented to convert categorical labels into discrete integer targets for mathematical modelling.</li>
-        <li><strong>Ensemble Model Configuration: </strong>A Random Forest Classifier was selected as the predictive engine for its robustness in handling high-dimensional image data.</li>
-        <li><strong>Performance Evaluation:</strong>The diagnostic efficacy of the model was quantified using a classification report. This framework generated Precision, Recall, and F1-Scores for each tumour type, providing a rigorous assessment of the model’s classification accuracy and its ability to distinguish between different brain tumour pathologies</li>
+        <li><strong>Dataset Collection:</strong> The wound image segmentation dataset consists of wound images and their corresponding ground truth masks. The dataset was collected from a publicly available source and used to train and evaluate the deep learning models for wound segmentation. </li>
+        <li><strong>Data Pre-processing:</strong> Before training, the dataset was pre-processed to improve model performance. All images and masks were resized to 256 × 256 pixels and normalized to the range of 0–1. Data augmentation techniques were applied to increase the diversity of the training data and improve the model's generalization ability. Finally, the dataset was split into training and testing sets for model training and evaluation. </li>
+        <li><strong>U-Net Model:</strong>The U-Net model was implemented for wound image segmentation. The architecture consists of an encoder that extracts image features and a decoder that reconstructs the segmentation mask. Skip connections were used to preserve spatial information and improve segmentation accuracy. The model was trained using the Adam optimizer with a batch size of 1 for 20 epochs. </li>
+        <li><strong> ResNet50 Model: </strong>The ResNet50 U-Net model was implemented by replacing the standard U-Net encoder with the ResNet50 backbone. The 13 extracted features were passed to the U-Net decoder to generate the final segmentation mask. The model was trained using the same pre-processing steps, optimizer, batch size, and number of epochs to ensure a fair comparison with the U-Net model. </li>
+        <li><strong>Model Evaluation: </strong>The performance of both models was evaluated using training accuracy, validation accuracy, training loss, and validation loss. The predicted segmentation masks were visually compared with the corresponding ground truth masks. The evaluation metrics and segmentation results were used to compare the performance of the U-Net and ResNet50 U-Net models. </li>
       </ul>
     </div>
     <div className="project-links">
-      <a href="https://github.com/Vibhav11Krishna/brain-tumour-detection" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/Vibhav11Krishna/Wound-area-analysis" target="_blank" rel="noopener noreferrer">
         <FaGithub /> View GitHub
       </a>
     </div>
@@ -255,7 +255,7 @@ const Wound = () => {
             alt={proj.title}
             style={{
               width: "100%",
-              height: "360px", // increased height
+              height: "400px", // increased height
               objectFit: "cover",
               borderRadius: "2px",
               marginBottom: "0.5rem",
@@ -282,13 +282,30 @@ const Wound = () => {
 
  {/* Certificate */}
 <div style={{ maxWidth: "900px", margin: "0 auto 4rem", textAlign: "center" }}>
-  <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Classification Report</h2>
+  <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Classification Report For U-Net Model</h2>
   <img
-    src={ClassificationImg}
+    src={UNetImg}
     alt="Certificate"
     style={{
       width: "100%",
-      maxWidth: "590px",
+      maxWidth: "750px",
+      height: "290px",
+      borderRadius: "12px",
+      objectFit: "cover",
+    }}
+    className="certificate-img"
+  />
+</div>
+
+{/* Certificate */}
+<div style={{ maxWidth: "900px", margin: "0 auto 4rem", textAlign: "center" }}>
+  <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Classification Report For ResNet50 Model</h2>
+  <img
+    src={ResNetImg}
+    alt="Certificate"
+    style={{
+      width: "100%",
+      maxWidth: "750px",
       height: "290px",
       borderRadius: "12px",
       objectFit: "cover",
@@ -351,23 +368,40 @@ const Wound = () => {
         </table>
       </div>
 
-      {/* Mentor & Owner */}
-      <div style={{ maxWidth: "1000px", margin: "0 auto 3rem", display: "flex", gap: "2rem", justifyContent: "center", flexWrap: "wrap" }}>
-        {[{img: GilomaImg, name: "Glioma ", role: "Predicted : 87 %"}, {img: MengomaniaImg , name: "Mengomania ", role: "Predicted : 76 %"}].map((person, idx) => (
-          <div key={idx} style={{ width: "300px", textAlign: "center", cursor: "pointer" }} className="person-card">
-            <img src={person.img} alt={person.name} style={{ width: "200px", height: "200px", objectFit: "cover", borderRadius: "8px", marginBottom: "0.5rem", transition: "0.3s" }} />
-            <p>{person.role}: {person.name}</p>
-          </div>
-        ))}
-      </div>
-       <div style={{ maxWidth: "1000px", margin: "0 auto 3rem", display: "flex", gap: "2rem", justifyContent: "center", flexWrap: "wrap" }}>
-        {[{img: PitutaryImg, name: "Pitutary ", role: "Predicted : 95 %"}, {img: NoTumorImg , name: "No Tumor ", role: "Predicted : 99 %"}].map((person, idx) => (
-          <div key={idx} style={{ width: "300px", textAlign: "center", cursor: "pointer" }} className="person-card">
-            <img src={person.img} alt={person.name} style={{ width: "200px", height: "200px", objectFit: "cover", borderRadius: "8px", marginBottom: "0.5rem", transition: "0.3s" }} />
-            <p>{person.role}: {person.name}</p>
-          </div>
-        ))}
-      </div>
+      
+   {/* Certificate */}
+<div style={{ maxWidth: "900px", margin: "0 auto 4rem", textAlign: "center" }}>
+  <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Result From U-Net Model</h2>
+  <img
+    src={Model1Img}
+    alt="Certificate"
+    style={{
+      width: "100%",
+      maxWidth: "750px",
+      height: "360px",
+      borderRadius: "12px",
+      objectFit: "cover",
+    }}
+    className="certificate-img"
+  />
+</div>
+
+{/* Certificate */}
+<div style={{ maxWidth: "900px", margin: "0 auto 4rem", textAlign: "center" }}>
+  <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Result From ResNet50 Model</h2>
+  <img
+    src={Model2Img}
+    alt="Certificate"
+    style={{
+      width: "100%",
+      maxWidth: "750px",
+      height: "320px",
+      borderRadius: "12px",
+      objectFit: "cover",
+    }}
+    className="certificate-img"
+  />
+</div>
      
 
   {/* Classification Report PDF Viewer */}
@@ -450,6 +484,7 @@ const Wound = () => {
     View PPT Report
   </a>
 
+
 </div>
 
 <style>{`
@@ -466,7 +501,7 @@ const Wound = () => {
       {/* Experience & Learnings */}
      <div style={{ maxWidth: "900px", margin: "0 auto 4rem" }}>
   <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>My Experience & Learnings</h2>
-  <p>I gained hands-on experience building an end-to-end Brain Tumor Classification system. Learned to process medical imaging data, train machine learning models, and implement computer vision workflows in a practical environment. Improved data preprocessing practices, model evaluation, and technical problem-solving skills. This project strengthened my knowledge in Python, NumPy, OpenCV, Pandas, Scikit-Learn, Matplotlib, and building effective image classification pipelines.</p>
+  <p>I gained hands-on experience building an end-to-end Chronic Wound Analysis system. Learned to process medical imaging data, train deep learning models, and implement computer vision workflows in a practical environment. Improved data preprocessing practices, model evaluation, and technical problem-solving skills. This project strengthened my knowledge in Python, NumPy, OpenCV, Pandas, Scikit-Learn, Matplotlib, and building effective image classification pipelines.</p>
   <p>Working through the model development lifecycle helped me understand data handling challenges, feature extraction, and classification report evaluation. I also explored model optimization, result visualization, and performance tuning throughout the project.</p>
 </div>
 
