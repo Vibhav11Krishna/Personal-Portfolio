@@ -7,7 +7,7 @@ import Wound1Img from "../assets/Wound1.jpg";
 import Wound2Img from "../assets/Wound2.jpg";
 import Wound3Img from "../assets/Wound3.jpg";
 import Wound4Img from "../assets/Wound4.jpg";
-import UNetImg from "../assets/UNetModel.png";
+import UNetImg from "../assets/UnetModel.png";
 import ResNetImg from "../assets/ResNet.png";
 import Model1Img from "../assets/Model1.jpg";
 import Model2Img from "../assets/Model2.jpg";
