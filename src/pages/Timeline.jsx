@@ -171,7 +171,7 @@ const Timeline = () => {
       image: <img src={NIT} alt="TP" style={imgStyle} />,
       label: "Internship - National Institute Of Technology , Patna",
       description:
-        "Internship Ongoing in the field of Data Analytics with python , ML , Image Processing",
+        "Internship in the field of Data Analytics with python , ML , Image Processing",
       skills: [
         <SiScikitlearn size={35} color="#29ABE2" style={iconStyle} />,
         <SiJupyter size={35} color="#F37626" style={iconStyle} />,
