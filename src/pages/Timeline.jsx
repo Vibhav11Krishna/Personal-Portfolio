@@ -26,6 +26,7 @@ import shreepati from "../assets/logoshreepati.png";
 import NIT from "../assets/NIT.png";
 import amiee from "../assets/AMIEE.jpg";
 import algonauts from "../assets/Algonauts.jpeg";
+import gate from "../assets/gate.svg";
 
 const Timeline = () => {
   useEffect(() => {
@@ -193,6 +194,13 @@ const Timeline = () => {
         srcs: [algonauts],
         alt: "Team & Logo",
       },
+    },
+     {
+      year: "2026",
+      image: <img src={gate} alt="SIH" style={imgStyle} />,
+      label: "GATE Examination (M-TECH)",
+      description:
+        " Preparing for GATE examination to pursue M-Tech in Computer Science and Engineering.",
     },
   ];
   return (

@@ -370,21 +370,56 @@ const National = () => {
       </div>
      
 
-  {/* Classification Report PDF Viewer */}
-<div style={{ maxWidth: "900px", margin: "0 auto 4rem", textAlign: "center" }}>
+  {/* Internship Certificate / PDF Preview */}
+<div style={{ maxWidth: "900px", margin: "0 auto 4rem", textAlign: "center", padding: "0 1rem" }}>
   <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Internship Certificate</h2>
-  <iframe
-    src={`${NitCertificatePdf}#toolbar=0`}
-    title="Classification Report PDF"
+  
+  <div
     style={{
-      width: "100%",
-      maxWidth: "590px",
-      height: "400px",
+      background: "#2b2b2b",
+      padding: "1rem",
       borderRadius: "12px",
-      border: "1px solid #ccc",
+      border: "1px solid #333",
+      display: "inline-block",
+      width: "100%",
+      maxWidth: "500px",
     }}
-    className="certificate-pdf"
-  />
+  >
+    <img
+      src={certificateImg}
+      alt="Internship Certificate Preview"
+      style={{
+        width: "100%",
+        height: "auto",
+        maxHeight: "350px",
+        objectFit: "contain",
+        borderRadius: "8px",
+        marginBottom: "1rem",
+      }}
+    />
+    <br />
+    <a
+      href={NitCertificatePdf}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "8px",
+        padding: "0.6rem 1.2rem",
+        background: "#FF3B3B",
+        color: "#fff",
+        fontWeight: "600",
+        borderRadius: "8px",
+        textDecoration: "none",
+        fontSize: "0.9rem",
+        transition: "transform 0.2s, box-shadow 0.2s",
+      }}
+    >
+      <AiOutlineFilePdf size={20} />
+      View Certificate PDF
+    </a>
+  </div>
 </div>
 
 {/* Report Buttons Section */}

@@ -28,8 +28,8 @@ import {
   FaPython, 
 } from 'react-icons/fa';
 import { SiPostgresql } from 'react-icons/si';
-import hackathonLogo from "../assets/Mitra.png";
-import problemImg from "../assets/Algonauts.jpeg";
+import hackathonLogo from "../assets/Algonauts.jpeg";
+import problemImg from "../assets/Mitra.png";
 import pptImg from "../assets/creativex.jpg";
 import pulkitImg from "../assets/leader.png";
 import alokImg from "../assets/Alok.jpeg";
@@ -45,6 +45,7 @@ import Metro6 from "../assets/Metro6.jpeg";
 import { AiOutlineFilePdf } from "react-icons/ai";
 import pptFile from "../assets/MetroMitra.pdf"; // <-- your PPT PDF file
 import certificateImg from "../Certificates/Hackathon.jpeg";
+import NitCertificatePdf from "../Certificates/Hackathon.pdf";
 
 const projectOverview = [
   {
@@ -124,7 +125,7 @@ const MetroMitraPage = () => {
           src={hackathonLogo}
           alt="CreativeX Logo"
           style={{
-            width: "510px",
+            width: "250px",
             height: "190px",
             objectFit: "cover",
             borderRadius: "12px",
@@ -555,21 +556,56 @@ const MetroMitraPage = () => {
   `}</style>
       </div>
 
-       {/* Certificate */}
-<div style={{ maxWidth: "900px", margin: "0 auto 4rem", textAlign: "center" }}>
-  <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Certificate</h2>
-  <img
-    src={certificateImg}
-    alt="Certificate"
+   {/* Internship Certificate / PDF Preview */}
+<div style={{ maxWidth: "900px", margin: "0 auto 4rem", textAlign: "center", padding: "0 1rem" }}>
+  <h2 style={{ color: "#FF3B3B", marginBottom: "1rem" }}>Internship Certificate</h2>
+  
+  <div
     style={{
-      width: "130%",
-      maxWidth: "660px",
-      height: "450px",
+      background: "#2b2b2b",
+      padding: "1rem",
       borderRadius: "12px",
-      objectFit: "cover",
+      border: "1px solid #333",
+      display: "inline-block",
+      width: "100%",
+      maxWidth: "500px",
     }}
-    className="certificate-img"
-  />
+  >
+    <img
+      src={certificateImg}
+      alt="Internship Certificate Preview"
+      style={{
+        width: "100%",
+        height: "auto",
+        maxHeight: "350px",
+        objectFit: "contain",
+        borderRadius: "8px",
+        marginBottom: "1rem",
+      }}
+    />
+    <br />
+    <a
+      href={NitCertificatePdf}
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "8px",
+        padding: "0.6rem 1.2rem",
+        background: "#FF3B3B",
+        color: "#fff",
+        fontWeight: "600",
+        borderRadius: "8px",
+        textDecoration: "none",
+        fontSize: "0.9rem",
+        transition: "transform 0.2s, box-shadow 0.2s",
+      }}
+    >
+      <AiOutlineFilePdf size={20} />
+      View Certificate PDF
+    </a>
+  </div>
 </div>
       {/* Links */}
       <div
