@@ -26,7 +26,7 @@ import shreepati from "../assets/logoshreepati.png";
 import NIT from "../assets/NIT.png";
 import amiee from "../assets/AMIEE.jpg";
 import algonauts from "../assets/Algonauts.jpeg";
-import gate from "../assets/gate.svg";
+import gate from "../assets/GATE.svg";
 
 const Timeline = () => {
   useEffect(() => {
