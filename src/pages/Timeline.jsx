@@ -13,6 +13,7 @@ import { FaAngular } from "react-icons/fa";
 import { SiMongodb, SiMysql } from "react-icons/si";
 import { SiScikitlearn } from "react-icons/si";
 import { SiJupyter } from "react-icons/si";
+import { SiPython, SiNumpy, SiOpencv, SiPandas,SiLinux, SiChartdotjs } from "react-icons/si";
 import dpsIcon from "../assets/dps.png";
 import doosIcon from "../assets/doon.png";
 import rpLogo from "../assets/rps.png";
@@ -186,9 +187,12 @@ const Timeline = () => {
       description:
         "Internship in the field of Data Analytics with python , ML , Image Processing",
       skills: [
-        <SiScikitlearn size={35} color="#29ABE2" style={iconStyle} />,
+        <SiScikitlearn size={35} color="#F7931E" style={iconStyle} />,
         <SiJupyter size={35} color="#F37626" style={iconStyle} />,
-      ],
+        <SiNumpy size={35} color="#013243" style={iconStyle} />,
+        <SiOpencv size={35} color="#5C3EE8" style={iconStyle} />,
+        <SiPandas size={35} color="#150458" style={iconStyle} />,
+      ]
       
     },
     {
