@@ -49,7 +49,7 @@ const Footer = () => {
           textShadow: "0 0 12px rgba(255,59,59,0.8)",
         }}
       >
-        Pulkit
+        Pulkit Krishna
       </div>
 
       {/* Navigation Links */}
@@ -129,7 +129,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <div style={{ fontSize: "0.85rem", color: "#aaa" }}>
-        © {new Date().getFullYear()} Pulkit. All rights reserved.
+        © {new Date().getFullYear()} Pulkit Krishna Porfolio. All rights reserved.
       </div>
 
       {/* Smooth Glow CSS */}

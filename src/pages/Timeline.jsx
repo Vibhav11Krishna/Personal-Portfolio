@@ -27,6 +27,7 @@ import NIT from "../assets/NIT.png";
 import amiee from "../assets/AMIEE.jpg";
 import algonauts from "../assets/Algonauts.jpeg";
 import gate from "../assets/GATE.svg";
+import Web from "../assets/Web.jpg";
 
 const Timeline = () => {
   useEffect(() => {
@@ -85,10 +86,21 @@ const Timeline = () => {
       description: "Started B.Tech in CSE.",
     },
     {
-      year: "2024–2025",
+      year: "2023-24",
       image: <img src={rpLogo} alt="RP Sharma" style={imgStyle} />,
       label: "Completed 1st Year B.Tech CSE",
       description: "Gained strong foundations in HTML, CSS, and JavaScript.",
+      skills: [
+        <FaHtml5 size={35} color="#E34F26" style={iconStyle} />,
+        <FaCss3Alt size={35} color="#1572B6" style={iconStyle} />,
+        <FaJs size={35} color="#F7DF1E" style={iconStyle} />,
+      ],
+    },
+    {
+      year: "2024",
+      image: <img src={Web} alt="RP Sharma" style={imgStyle} />,
+      label: "Internship - Internshipwala Carrers ",
+      description: "Worked on front-end foundation languages and understood the basics of web development.",
       skills: [
         <FaHtml5 size={35} color="#E34F26" style={iconStyle} />,
         <FaCss3Alt size={35} color="#1572B6" style={iconStyle} />,
