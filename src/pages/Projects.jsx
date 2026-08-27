@@ -24,7 +24,7 @@ import EducationLogo from "../assets/office3.png";
 import Green from "../assets/office1.png";
 import ParlourLogo from "../assets/parlour.png";
 import tracker from "../assets/tracker.png";
-import billing from "../assets/billing.png";
+import billing from "../assets/parlour4.png";
 import  KKA from "../assets/KKA.png";
 import metro from "../assets/Metro.jpeg";
 import brain from "../assets/Brain.jpg";

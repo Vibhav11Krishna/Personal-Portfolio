@@ -33,9 +33,9 @@ import aboutImg from "../assets/parlour1.png";
 import serviceImg from "../assets/parlour2.png";
 import bookingImg from "../assets/parlour3.png";
 import contactImg from "../assets/parlour5.png";
-import billingImg from "../assets/parlour6.png";
-import veiwImg from "../assets/parlour7.png";
-import invoiceImg from "../assets/parlour8.png";
+import billingImg from "../assets/parlour4.png";
+import veiwImg from "../assets/parlour6.png";
+import invoiceImg from "../assets/parlour7.png";
 // Cloudinary Imports
 import { Cloudinary } from "@cloudinary/url-gen";
 import { AdvancedVideo } from "@cloudinary/react";
@@ -207,68 +207,6 @@ const SnsWebsitePage = () => {
         </div>
       </div>
 
-       {/* ---------- PROJECT VIDEO PREVIEW ---------- */}
-<div
-  style={{
-    maxWidth: "1400px",
-    margin: "0 auto 3rem",
-    padding: "0 10px",
-  }}
->
-  <h2
-    style={{
-      color: "#ff4b4b",
-      textAlign: "center",
-      marginBottom: "1rem",
-      fontSize: "2rem",
-      fontWeight: "700",
-    }}
-  >
-    Project Walkthrough Video Demo
-  </h2>
-
-  <p
-    style={{
-      textAlign: "center",
-      color: "#cfcfcf",
-      marginBottom: "1.8rem",
-      fontSize: ".95rem",
-    }}
-  >
-    High-resolution vertical project showcase
-  </p>
-
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "center",
-    }}
-  >
-    <div
-      style={{
-        width: "100%",
-        maxWidth: "500px",   // full & big
-        borderRadius: "22px",
-        overflow: "hidden",
-        boxShadow: "0 18px 50px rgba(0,0,0,.55)",
-        border: "1px solid rgba(255,255,255,.12)",
-        background: "#000",
-      }}
-    >
-      <AdvancedVideo
-        cldVid={snsVideo}
-        controls
-        style={{
-          width: "100%",
-          height: "100%",
-          aspectRatio: "8 / 16",  // Instagram Portrait
-          objectFit: "cover",
-          display: "block",
-        }}
-      />
-    </div>
-  </div>
-</div>
 
        
 
@@ -585,7 +523,7 @@ const SnsWebsitePage = () => {
         label: "GitHub",
       },
       {
-        href: "https://stylenshine.great-site.net/?i=1",
+        href: "https://stylenshinestudio.com/",
         icon: <FaGlobe />,
         label: "Website",
       },
